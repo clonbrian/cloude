@@ -1,0 +1,4940 @@
+{
+  "info": {
+    "name": "CreditMPS - Bonus Event Admin",
+    "description": "由 testadmin_creditmps_com.har 轉出，包含新增活動(insertBonusEvent)與查詢活動(queryBonusEvent)兩個請求。\n\n使用前請先設定 Collection 變數 sessionCookie：\n1. 瀏覽器登入 testadmin.creditmps.com 後台\n2. F12 開 DevTools -> Network，點任一筆 admin 請求\n3. 複製 Request Headers 裡完整的 Cookie 值（例如 JSESSIONID=xxxxxxxx）\n4. 貼到本 Collection 的變數 sessionCookie",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://testadmin.creditmps.com",
+      "type": "string"
+    },
+    {
+      "key": "sessionCookie",
+      "value": "PASTE_YOUR_COOKIE_HERE",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Insert Bonus Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "{\"mega\":[\"50\",\"100\",\"1000\"],\"mini\":[\"5\",\"10\",\"15\",\"20\",\"25\"],\"major\":[\"30\",\"35\",\"40\",\"45\",\"50\"]}",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "TREASURE_PICK",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "brianTestInstantpay",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-14 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-21 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-14 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-13 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-21 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JILI",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "USD",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "USD",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-20 16:38:07.080",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-14 16:30:00.903",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JILI\":[\"16\",\"253\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"mega\":{\"probability\":{\"50\":70,\"100\":25,\"1000\":5},\"prizes\":{\"50\":2147483647,\"100\":2147483647,\"1000\":2147483647},\"turnoverPerTicket\":500,\"maxTicketPerPlayer\":3},\"mini\":{\"probability\":{\"5\":50,\"10\":20,\"15\":15,\"20\":10,\"25\":5},\"prizes\":{\"5\":2147483647,\"10\":2147483647,\"15\":2147483647,\"20\":2147483647,\"25\":2147483647},\"turnoverPerTicket\":100,\"maxTicketPerPlayer\":10},\"major\":{\"probability\":{\"30\":50,\"35\":20,\"40\":15,\"45\":10,\"50\":5},\"prizes\":{\"30\":2147483647,\"35\":2147483647,\"40\":2147483647,\"45\":2147483647,\"50\":2147483647},\"turnoverPerTicket\":200,\"maxTicketPerPlayer\":5}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"mini\":{\"5\":4,\"10\":2,\"15\":1},\"major\":{},\"mega\":{}}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "tinaTestInstantpay",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Background/10784VNJILITR_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Query Bonus Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "platform",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-06",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-08-16",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/queryBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "queryBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Daily Mission (with Challenge)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "DAILY_MISSION",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "JDBMMKDM08100830",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-08-10 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-08-31 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-08-10 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-08-09 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-08-31 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JDB",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-22 10:02:02.603",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-22 10:02:02.603",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "24",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JDB\":[\"\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{\"JDB\":[\"7003\",\"14098\",\"14100\"]}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"20000\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"40000\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"60000\"}},\"dailySchedule\":[{\"missionDate\":\"2026-08-10\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-08-11\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-08-12\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-08-13\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-08-14\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-08-15\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-16\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-17\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-18\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-19\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-20\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-21\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-22\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-23\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-24\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-25\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-26\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-08-27\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-28\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-29\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-08-30\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]}],\"isActiveCumulativeSetting\":false}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"prizes\":{}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>နေ့စဉ်မစ်ရှင် ၂၁ ခုရှိပြီး တစ်ရက်လျှင် မစ်ရှင်တစ်ခုဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်ကို ပြီးမြောက်ပါက ဆုကြေးကို ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်တွင် JDB ဂိမ်း ၃ ခုသာ ပါဝင်သည် —\r\n        Cai Shen Fishing, Fruity Bonanza Combo, Koi Trio။\r\n        (\"GO\" ကိုနှိပ်၍ အီးဗင့်ဂိမ်းစာရင်းသို့ ဝင်ရောက်နိုင်သည်)\r\n    </li>\r\n    <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>\r\n</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Roulette",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "300,500,1000,2000,3000,5000,10000,200000",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "ROULETTE",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "JDBMMKRL07200802",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-20 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-08-03 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-20 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-19 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-08-04 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JDB",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-22 16:17:40.022",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-14 12:40:00.125",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "1000000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "330000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "50",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "8",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JDB\":[\"14109\",\"14108\",\"14107\",\"14105\",\"14099\",\"7003\",\"9025\",\"18026\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"300\":30,\"500\":25,\"1000\":25,\"2000\":6,\"3000\":6,\"5000\":6,\"10000\":2,\"200000\":0},\"prizes\":{\"300\":4200,\"500\":3500,\"1000\":3500,\"2000\":1000,\"3000\":1000,\"5000\":1000,\"10000\":300,\"200000\":0}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"1000\":244,\"500\":236,\"300\":298,\"5000\":52,\"3000\":58,\"2000\":40,\"10000\":23}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>နေ့ ၁ 20-07 10:30 ~ 21-07 10:30</li>\r\n        <li>နေ့ ၂ 21-07 10:30 ~ 22-07 10:30</li>\r\n        <li>နေ့ ၃ 22-07 10:30 ~ 23-07 10:30</li>\r\n        <li>နေ့ ၄ 23-07 10:30 ~ 24-07 10:30</li>\r\n        <li>နေ့ ၅ 24-07 10:30 ~ 25-07 10:30</li>\r\n        <li>နေ့ ၆ 25-07 10:30 ~ 26-07 10:30</li>\r\n        <li>နေ့ ၇ 26-07 10:30 ~ 27-07 10:30</li>\r\n        <li>နေ့ ၈ 27-07 10:30 ~ 28-07 10:30</li>\r\n        <li>နေ့ ၉ 28-07 10:30 ~ 29-07 10:30</li>\r\n        <li>နေ့ ၁၀ 29-07 10:30 ~ 30-07 10:30</li>\r\n        <li>နေ့ ၁၁ 30-07 10:30 ~ 31-07 10:30</li>\r\n        <li>နေ့ ၁၂ 31-07 10:30 ~ 01-08 10:30</li>\r\n        <li>နေ့ ၁၃ 01-08 10:30 ~ 02-08 10:30</li>\r\n        <li>နေ့ ၁၄ 02-08 10:30 ~ 03-08 10:30</li>\r\n\tEX:\r\n\t<ul class=\"list-dot\">\r\n        <li>K 3,300,000 လောင်းပါက တိကက် 10 စောင် ရရှိမည်</li>\r\n        <li>K 6,600,000 လောင်းပါက တိကက် 20 စောင် ရရှိမည်</li>\r\n        <li>K 9,900,000 လောင်းပါက တိကက် 30 စောင် ရရှိမည်</li>\r\n        <li>K 13,200,000 လောင်းပါက တိကက် 40 စောင် ရရှိမည်</li>\r\n        <li>K 16,500,000 လောင်းပါက တိကက် 50 စောင် ရရှိမည်</li>\r\n\t</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html 即時版-->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>ဘောနပ်စ်ဂိမ်း 8 ခုတွင် <span style=\"color:#FFD700;\"><strong> K 330,000</strong></span> လောင်းပါက<br> တိကက် <span style=\"color:#FFD700;\"><strong> 1</strong></span> စောင် ရရှိမည်</li>\r\n\t\t<li>ကစားသမားတစ်ဦးလျှင် တစ်နေ့ အများဆုံး တိကက် 50 စောင်။</li>\r\n\t\t<li><span style=\"color:#FFD700;\"><strong>ဆုကြေးရယူခြင်း</strong></span>: တိကက် 1 စောင် ဖြင့် ကျပန်းဆုကြေးကို ချက်ချင်းရယူနိုင်သည်!</li>\r\n\t\t<li>တိကက်အားလုံးကို 04-08-2026, 10:30 (AM) မတိုင်မီ ရယူပြီးစီးရမည်။</li>\r\n\t\t<li>ဘောနပ်စ်ဂိမ်း 8 ခုတွင် <span style=\"color:#FFD700;\"><strong> K 100 </strong></span> လောင်းပါက<br> MPS VIP Point <span style=\"color:#FFD700;\"><strong> 1</strong></span> မှတ် ရရှိမည်။</li>\r\n        <li>MPS VIP Point 1 မှတ်သည် K 1 နှင့် မညီမျှပါ။</li>\r\n        <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu/ Member Info တွင် စစ်ဆေးနိုင်သည်။</li>\r\n\t\t<li>EX: ဘောနပ်စ်ဂိမ်း 8 ခုတွင် K 330,000 လောင်းပါက တိကက် 1 စောင် နှင့် MPS VIP Points 3,300 မှတ် ရရှိမည်။</li>\r\n        <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>\r\n\t</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html --> ယနေ့ သင် <span id=\"eventTurnover\" class=\"txt-rate\"></span> <!--今天投了多少--> လောင်းထားပြီး → တိကက် <span id=\"todayTickets\"></span><!--今天的票--> စောင် ရရှိပြီ <br> နောက်ထပ် <span id=\"needMoreTurnover\" class=\"txt-rate\"></span><!--再投多少--> လောင်းပါက တိကက် <span id=\"earnTicket\"></span><!--可以再拿幾張票--> စောင် ထပ်ရရှိမည်",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10933JDB.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Golden Egg (with Rank/Medal Reward)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "2,5,10,15,20,30,50,100,500",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "GOLDEN_EGG",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "egg",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "BNGPHPGE07230731",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-23 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-31 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-23 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-22 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-08-01 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "BNG",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-20 12:42:33.192",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-20 11:33:25.153",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "4000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "3600",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"BNG\":[\"849\",\"459\",\"297\",\"864\",\"880\",\"852\",\"986\",\"457\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"2\":17.6,\"5\":17.6,\"10\":17.6,\"15\":14.7,\"20\":14.7,\"30\":7.4,\"50\":7.4,\"100\":3,\"500\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"2\":2400,\"5\":2400,\"10\":2400,\"15\":2000,\"20\":2000,\"30\":1000,\"50\":1000,\"100\":400,\"500\":0}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "{\"daily\":\"60,60,60,60,400,400,400,400,1000,1000\"}",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>1st day 23/07 12:00 ~ 24/07 12:00</li>\r\n\t\t<li>2nd day 24/07 12:00 ~ 25/07 12:00</li>\r\n        <li>3rd day 25/07 12:00 ~ 26/07 12:00</li>\r\n        <li>4th day 26/07 12:00 ~ 27/07 12:00</li>\r\n        <li>5th day 27/07 12:00 ~ 28/07 12:00</li>\r\n\t\t<li>2nd day 28/07 12:00 ~ 29/07 12:00</li>\r\n        <li>3rd day 29/07 12:00 ~ 30/07 12:00</li>\r\n        <li>4th day 30/07 12:00 ~ 31/07 12:00</li>\r\n        EX:\r\n\t<ul class=\"list-dot\">\r\n        <li>Bet ₱54,000 get 15 tickets</li>\r\n        <li>Bet ₱162,000 get 45 tickes</li>\r\n        <li>Bet ₱237,600 get 66 tickets</li>\r\n\t\t<li>Bet ₱316,800 get 88 tickets</li>\r\n\t\t<li>Bet ₱360,000 get 100 tickets</li>\r\n\t</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html -->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱3,600</strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> ticket.</li>\r\n\t\t<li>Max 100 tickets per pseson per day.</li>\r\n\t\t<li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: redeem 1/10/100 tickets to get random bonus instantly</li>\r\n\t\t<li>All tickets must redeem before 1st, AUG 2026, 12:00 (PM)</li>\t\t\r\n\t\t<li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱100</strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> MPS VIP Point.</li>\r\n        <li>1 MPS VIP Point is not equivalent to 1 peso.</li>\r\n        <li>Player can check number of MPS VIP Points at Menu/Member Info.</li>\r\n        <li>EX: Bet 8 bonus games for ₱3,600 will get 1 ticket and 36 MPS VIP Ppints.</li>\r\n\t\t<li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\r\n\t</ul>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->\r\nTODAY you bet <span id=\"eventTurnover\"  class=\"txt-rate\"></span> <!--今天投了多少--> → \r\n<span id=\"todayTickets\"></span><!--今天的票--> ticket(s) <br>\r\nBet <span id=\"needMoreTurnover\"  class=\"txt-rate\"></span><!--再投多少-->\r\nto get <span id=\"earnTicket\"></span><!--可以再拿幾張票--> more ticket",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10900BNGPHPAU_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10900BNGPHPAU.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rebate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "REBATE",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "JDBPHPRB07170731",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-17 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-08-01 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-17 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-16 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-08-01 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JDB",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-15 20:26:50.860",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-13 15:55:26.228",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JDB\":[\"14077\",\"14092\",\"14065\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"minRebateTurnover\":1000,\"prizes\":{},\"rebateRatio\":0.002}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<div class=\"tooltip-box\">\r\n     <ul class=\"list-dot\">\r\n         <li>rebate 0.2% if total bet >=1000.</li>\r\n         <li>Total bet will be reset everyday.  ex: Day1 total bet : 1000, can get 2 peso.  Day2 total bet : 999, no rebate on Day2.</li>\r\n         <li>Rebate amount will be auto issued every minute.</li>\r\n         <li>No cap limit. The more you bet, the more rebate to you.</li>\r\n     </ul>\r\n </div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html Rebate活動使用中-->\r\nStart to rebate 0.2% after total bet>=₱1000.\r\nToday bet: <span id=\"eventTurnover\"  class=\"txt-rate\"></span>",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10902JDBPHPRE.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auto Redeem (3-Tier / 三級自爆)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "{\"mega\":[\"40\",\"60\",\"80\",\"100\",\"150\",\"200\",\"300\",\"500\",\"1500\",\"8888\"],\"mini\":[\"5\",\"10\",\"15\",\"20\",\"30\",\"40\",\"50\",\"100\",\"200\",\"500\"],\"major\":[\"10\",\"15\",\"20\",\"30\",\"40\",\"50\",\"100\",\"200\",\"500\",\"2000\"]}",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "AUTO_REDEEM",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "SVVND3AR07150730",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-15 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-31 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-15 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-14 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-31 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "SVCASINO",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "VND",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "VND",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-22 16:18:10.036",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-14 18:27:13.342",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "5000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"SVCASINO\":[\"SVCASINO\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"mega\":{\"probability\":{\"40\":20,\"60\":20,\"80\":20,\"100\":10,\"150\":8,\"200\":8,\"300\":8,\"500\":3,\"1500\":3,\"8888\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"40\":2147483647,\"60\":2147483647,\"80\":2147483647,\"100\":2147483647,\"150\":2147483647,\"200\":2147483647,\"300\":2147483647,\"500\":2147483647,\"1500\":2147483647,\"8888\":2147483647},\"turnoverPerTicket\":350000,\"maxTicketPerPlayer\":100},\"mini\":{\"probability\":{\"5\":16,\"10\":16,\"15\":16,\"20\":10,\"30\":10,\"40\":10,\"50\":8,\"100\":8,\"200\":6,\"500\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"5\":2147483647,\"10\":2147483647,\"15\":2147483647,\"20\":2147483647,\"30\":2147483647,\"40\":2147483647,\"50\":2147483647,\"100\":2147483647,\"200\":2147483647,\"500\":2147483647},\"turnoverPerTicket\":30000,\"maxTicketPerPlayer\":1},\"major\":{\"probability\":{\"10\":16,\"15\":16,\"20\":16,\"30\":10,\"40\":10,\"50\":10,\"100\":10,\"200\":6,\"500\":6,\"2000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"10\":2147483647,\"15\":2147483647,\"20\":2147483647,\"30\":2147483647,\"40\":2147483647,\"50\":2147483647,\"100\":2147483647,\"200\":2147483647,\"500\":2147483647,\"2000\":2147483647},\"turnoverPerTicket\":100000,\"maxTicketPerPlayer\":2}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"mini\":{\"50\":341,\"10\":740,\"30\":470,\"40\":434,\"100\":380,\"15\":727,\"5\":801,\"20\":529,\"200\":284},\"major\":{\"200\":88,\"500\":65,\"30\":129,\"10\":191,\"100\":136,\"15\":214,\"50\":148,\"40\":131,\"20\":215},\"mega\":{\"150\":9,\"200\":7,\"40\":13,\"60\":18,\"300\":9,\"80\":22,\"1500\":1,\"100\":11,\"500\":4}}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Ngày 1 15-07 11:00 ~ 16-07 11:00</li>\r\n        <li>Ngày 2 16-07 11:00 ~ 17-07 11:00</li>\r\n        <li>Ngày 3 17-07 11:00 ~ 18-07 11:00</li>\r\n        <li>Ngày 4 18-07 11:00 ~ 19-07 11:00</li>\r\n        <li>Ngày 5 19-07 11:00 ~ 20-07 11:00</li>\r\n        <li>Ngày 6 20-07 11:00 ~ 21-07 11:00</li>\r\n        <li>Ngày 7 21-07 11:00 ~ 22-07 11:00</li>\r\n        <li>Ngày 8 22-07 11:00 ~ 23-07 11:00</li>\r\n        <li>Ngày 9 23-07 11:00 ~ 24-07 11:00</li>\r\n        <li>Ngày 10 24-07 11:00 ~ 25-07 11:00</li>\r\n        <li>Ngày 11 25-07 11:00 ~ 26-07 11:00</li>\r\n        <li>Ngày 12 26-07 11:00 ~ 27-07 11:00</li>\r\n        <li>Ngày 13 27-07 11:00 ~ 28-07 11:00</li>\r\n        <li>Ngày 14 28-07 11:00 ~ 29-07 11:00</li>\r\n        <li>Ngày 15 29-07 11:00 ~ 30-07 11:00</li>\r\n        <li>Ngày 16 30-07 11:00 ~ 31-07 11:00</li>\r\n    </ul>\r\n   </div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Cược tất cả trò chơi SVCASINO để nhận vé theo cấp.</li>      \r\n        <li>Người chơi có thể nhận vé không giới hạn.</li>\r\n        <li>Sự kiện bắt đầu từ LV1. LV2 sẽ được mở khóa sau khi LV1 đạt số vé tối đa, và LV3 sẽ được mở khóa sau khi LV2 đạt số vé tối đa.</li>\r\n        <li class=\"ticket-tier-summary\">\r\n            <ul class=\"ticket-tier-list\">\r\n                <li class=\"ticket-tier-item tier-min\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV1\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Thưởng tối đa :</span>\r\n                    <span class=\"txt-rate VND\" id=\"miniMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-med\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV2\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Thưởng tối đa :</span>\r\n                    <span class=\"txt-rate VND\" id=\"majorMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-max\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV3\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Thưởng tối đa :</span>\r\n                    <span class=\"txt-rate VND\" id=\"megaMaxPrize\"></span>\r\n                </li>\r\n            </ul>\r\n        </li>\r\n        <li><span style=\"color:#FFD700;\"><strong>Nhận thưởng</strong></span>: Khi người chơi đạt doanh thu cược yêu cầu, hệ thống sẽ tự động phát thưởng Instant Pay của cấp tương ứng, tiền thưởng sẽ được cộng ngay lập tức.</li>\r\n        <li>Cược tất cả trò chơi SVCASINO đủ <span style=\"color:#FFD700;\"><strong>₫ 100 K</strong></span> để nhận <span style=\"color:#FFD700;\"><strong>1</strong></span> Điểm VIP MPS.</li>\r\n        <li>1 Điểm VIP MPS không tương đương với ₫ 1 (K).</li>\r\n        <li>Người chơi có thể kiểm tra số Điểm VIP MPS tại Menu / Thông tin thành viên.</li>\r\n        <li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ khuyến mãi bất cứ lúc nào.</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10893SVVNAU_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10893SVVNAU.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Instant Challenge",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "INSTANT_CHALLENGE",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "PGPHPIC07080729",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-08 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-30 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-08 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-22 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-31 08",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "POCKET",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-22 12:02:08.321",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-07 10:19:59.224",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"POCKET\":[]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{\"POCKET\":[\"1623475\",\"1760238\",\"1492288\",\"135\",\"104\",\"1508783\",\"65\",\"89\"]}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"challengePrize\":50,\"maxChallengePrizeInOneDay\":100,\"challengingGameCount\":3,\"maxTicketCountInOneDay\":2,\"calculatedGameType\":\"FH,SLOT,ARCADE,RNGTABLE\",\"prizes\":{},\"winlossCalculatedRate\":0.1,\"calculatedPlatform\":\"POCKET\",\"turnoverCalculatedRate\":0.001}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>System issues instant challenge tickets every day.</li> <li>Start challenge and bet on 3 challenge games with 20X turnover for bonus.</li> <li>Player can give up current ticket and start next one.</li> <li>Each ticket may challenge with different games.</li> <li>New tickets will be issued daily at 12:00 PM, and the challenge must be completed within 20 hours after clicking challenge to receive the bonus.</li> <li>All tickets must finished challenge before 08:00 AM 31-07-2026.</li> <li>Bet on bonus games for ₱100 to get 1 MPS VIP Point.</li> <li>1 MPS VIP Point is not equivalent to ₱1.</li> <li>Player can check number of MPS VIP Points at Menu/ Member Info.</li> <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li> <li>EX: Start first ticket challenge than bet ₱100000 turnover to get ₱5000 bonus and 50 MPS VIP points. System will issue bonus to player instantly when challenge finish. Player can give up the first ticket challenge to start next ticket challenge.</li> </ul> </div>",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10904PGMMIC.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Treasure Pick (Single-Tier, 單/九寶箱)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "2,5,8,15,20,30,50,80,777",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "TREASURE_PICK",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "YBPHPTP07160724",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-16 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-25 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-16 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-07-15 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-26 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "YB",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-22 16:18:26.020",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-07-13 16:17:59.957",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "5000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "3900",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "9",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"YB\":[\"3008\",\"1032\",\"1048\",\"1043\",\"1056\",\"1052\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"2\":20,\"5\":20,\"8\":16.6,\"15\":13.4,\"20\":10,\"30\":10,\"50\":6.6,\"80\":3.4,\"777\":0},\"prizes\":{\"2\":5400,\"5\":5400,\"8\":4500,\"15\":3600,\"20\":2700,\"30\":2700,\"50\":1800,\"80\":900,\"777\":0}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"2\":2502,\"8\":2008,\"80\":439,\"20\":1236,\"5\":2457,\"15\":1699,\"50\":782,\"30\":1231}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "{\"daily\":\"50,50,50,50,300,300,300,300,800,800\"}",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>1st day 16-07 12:00 ~ 17-07 12:00</li>\r\n        <li>2nd day 17-07 12:00 ~ 18-07 12:00</li>\r\n        <li>3rd day 18-07 12:00 ~ 19-07 12:00</li>\r\n        <li>4th day 19-07 12:00 ~ 20-07 12:00</li>\r\n        <li>5th day 20-07 12:00 ~ 21-07 12:00</li>\r\n        <li>6th day 21-07 12:00 ~ 22-07 12:00</li>\r\n        <li>7th day 22-07 12:00 ~ 23-07 12:00</li>\r\n        <li>8th day 23-07 12:00 ~ 24-07 12:00</li>\r\n        <li>9th day 24-07 12:00 ~ 25-07 12:00</li>\r\n        <p><strong>EX:</strong></p>\r\n        <ul class=\"list-dot\">\r\n            <li>Bet ₱39,000 → 10 tickets</li>\r\n            <li>Bet ₱78,000 → 20 tickets</li>\r\n            <li>Bet ₱195,000 → 50 tickets</li>\r\n            <li>Bet ₱273,000 → 70 tickets</li>\r\n            <li>Bet ₱390,000 → 100 tickets</li>\r\n        </ul>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html 即時版-->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Bet 6 bonus games for <span style=\"color:#FFD700;\"><strong>₱3,900</strong></span> to<br>\r\n            get <span style=\"color:#FFD700;\"><strong>1</strong></span> ticket\r\n        </li>\r\n        <li>One player Max <span style=\"color:#FFD700;\"><strong>100</strong></span> tickets everyday.</li>\r\n        <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: redeem 1 ticket to get random bonus instantly!</li>\r\n        <li>All tickets must redeem before <span style=\"color:#FFD700;\"><strong>26-07-2026, 12:00 (PM)</strong></span></li>\r\n        <li>Bet 6 bonus games for <span style=\"color:#FFD700;\"><strong>₱100</strong></span> to<br>\r\n            get <span style=\"color:#FFD700;\"><strong>1</strong></span> MPS VIP Point.\r\n        </li>\r\n        <li>1 MPS VIP Point is not equivalent to ₱1.</li>\r\n        <li>Player can check number of MPS VIP Points at Menu / Member Info.</li>\r\n        <li>EX: Bet 6 bonus games for ₱3,900 will get 1 ticket and 39 MPS VIP Points.</li>\r\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->\r\nTODAY you bet <span id=\"eventTurnover\"  class=\"txt-rate\"></span> <!--今天投了多少--> → \r\n<span id=\"todayTickets\"></span><!--今天的票--> ticket(s) <br>\r\nBet <span id=\"needMoreTurnover\"  class=\"txt-rate\"></span><!--再投多少-->\r\nto get <span id=\"earnTicket\"></span><!--可以再拿幾張票--> more ticket",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Background/10898PHPYB_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10898PHPYB.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Treasure Pick (3-Tier Instant Pay / 三單寶箱自爆)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "{\"mega\":[\"100\",\"200\",\"300\",\"400\",\"500\",\"1000\",\"2000\",\"5000\",\"100000\"],\"mini\":[\"10\",\"20\",\"30\",\"50\",\"100\",\"150\",\"200\",\"300\",\"5000\"],\"major\":[\"30\",\"50\",\"100\",\"200\",\"300\",\"500\",\"800\",\"1200\",\"20000\"]}",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "TREASURE_PICK",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "SVMMKIP07010718",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-07-01 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-19 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-07-01 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-06-30 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-20 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "SVCASINO",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "MMK",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-19 11:58:40.033",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-06-29 18:09:33.150",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "300000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"SVCASINO\":[\"SVCASINO\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"mega\":{\"probability\":{\"100\":20,\"200\":20,\"300\":20,\"400\":20,\"500\":5,\"1000\":5,\"2000\":5,\"5000\":5,\"100000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"100\":2147483647,\"200\":2147483647,\"300\":2147483647,\"400\":2147483647,\"500\":2147483647,\"1000\":2147483647,\"2000\":2147483647,\"5000\":2147483647,\"100000\":2147483647},\"turnoverPerTicket\":500000,\"maxTicketPerPlayer\":1000},\"mini\":{\"probability\":{\"10\":20,\"20\":20,\"30\":20,\"50\":20,\"100\":5,\"150\":5,\"200\":5,\"300\":5,\"5000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"10\":2147483647,\"20\":2147483647,\"30\":2147483647,\"50\":2147483647,\"100\":2147483647,\"150\":2147483647,\"200\":2147483647,\"300\":2147483647,\"5000\":2147483647},\"turnoverPerTicket\":40000,\"maxTicketPerPlayer\":2},\"major\":{\"probability\":{\"30\":24,\"50\":24,\"100\":16,\"200\":16,\"300\":5,\"500\":5,\"800\":5,\"1200\":5,\"20000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"30\":2147483647,\"50\":2147483647,\"100\":2147483647,\"200\":2147483647,\"300\":2147483647,\"500\":2147483647,\"800\":2147483647,\"1200\":2147483647,\"20000\":2147483647},\"turnoverPerTicket\":150000,\"maxTicketPerPlayer\":2}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"mini\":{\"30\":1217,\"50\":1187,\"10\":1260,\"150\":294,\"20\":1304,\"300\":302,\"100\":285,\"200\":278},\"major\":{\"50\":450,\"30\":494,\"1200\":111,\"100\":290,\"300\":113,\"200\":312,\"800\":88,\"500\":88},\"mega\":{\"100\":1091,\"200\":1130,\"300\":1108,\"400\":1137,\"500\":274,\"2000\":307,\"1000\":284,\"5000\":279}}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>နေ့ ၁ 01-07 10:30 AM ~ 02-07 10:30 AM</li>\r\n        <li>နေ့ ၂ 02-07 10:30 AM ~ 03-07 10:30 AM</li>\r\n        <li>နေ့ ၃ 03-07 10:30 AM ~ 04-07 10:30 AM</li>\r\n        <li>နေ့ ၄ 04-07 10:30 AM ~ 05-07 10:30 AM</li>\r\n        <li>နေ့ ၅ 05-07 10:30 AM ~ 06-07 10:30 AM</li>\r\n        <li>နေ့ ၆ 06-07 10:30 AM ~ 07-07 10:30 AM</li>\r\n        <li>နေ့ ၇ 07-07 10:30 AM ~ 08-07 10:30 AM</li>\r\n        <li>နေ့ ၈ 08-07 10:30 AM ~ 09-07 10:30 AM</li>\r\n        <li>နေ့ ၉ 09-07 10:30 AM ~ 10-07 10:30 AM</li>\r\n        <li>နေ့ ၁၀ 10-07 10:30 AM ~ 11-07 10:30 AM</li>\r\n        <li>နေ့ ၁၁ 11-07 10:30 AM ~ 12-07 10:30 AM</li>\r\n        <li>နေ့ ၁၂ 12-07 10:30 AM ~ 13-07 10:30 AM</li>\r\n        <li>နေ့ ၁၃ 13-07 10:30 AM ~ 14-07 10:30 AM</li>\r\n        <li>နေ့ ၁၄ 14-07 10:30 AM ~ 15-07 10:30 AM</li>\r\n        <li>နေ့ ၁၅ 15-07 10:30 AM ~ 16-07 10:30 AM</li>\r\n        <li>နေ့ ၁၆ 16-07 10:30 AM ~ 17-07 10:30 AM</li>\r\n        <li>နေ့ ၁၇ 17-07 10:30 AM ~ 18-07 10:30 AM</li>\r\n        <li>နေ့ ၁၈ 18-07 10:30 AM ~ 19-07 10:30 AM</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html -->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>SVCASINO တွင် လောင်း၍ အဆင့်တိကက်များ ရယူပါ။</li>      \r\n        <li>ကစားသမားများသည် တိကက်များကို အကန့်အသတ်မရှိ ရရှိနိုင်သည်။</li>\r\n        <li>အီးဗင့်သည် LV1 မှ စတင်သည်။ LV1 ၏ တိကက်အများဆုံးအရေအတွက် ပြည့်ပြီးနောက် LV2 ပွင့်မည်ဖြစ်ပြီး၊ LV2 ၏ တိကက်အများဆုံးအရေအတွက် ပြည့်ပြီးနောက် LV3 ပွင့်မည်ဖြစ်သည်။</li>\r\n        <li class=\"ticket-tier-summary\">\r\n            <ul class=\"ticket-tier-list\">\r\n                <li class=\"ticket-tier-item tier-min\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV1\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span>\r\n                    <span class=\"txt-rate MMK\" id=\"miniMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-med\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV2\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span>\r\n                    <span class=\"txt-rate MMK\" id=\"majorMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-max\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV3\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span>\r\n                    <span class=\"txt-rate MMK\" id=\"megaMaxPrize\"></span>\r\n                </li>\r\n            </ul>\r\n        </li>\r\n        <li><span style=\"color:#FFD700;\"><strong>ဆုကြေးရယူခြင်း</strong></span>: ကစားသမားများသည် သတ်မှတ်ထားသော လောင်းကြေးပမာဏ ပြည့်မီပါက <span style=\"color:#FFD700;\">ရတနာသေတ္တာကို နှိပ်၍</span> သက်ဆိုင်ရာအဆင့်၏ တိကက်များကို ရယူနိုင်ပြီး ဆုကြေးများ ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>\r\n        <li><span style=\"color:#FFD700;\"><strong>ဆုကြေးများကို မရယူပါက ဆုကြေးအားလုံးကို 10:30 AM တွင် ရှင်းလင်းမည်ဖြစ်သည်။</strong></span></li>\r\n        <li>SVCASINO တွင် <strong>K 100</strong> လောင်းပါက MPS VIP Point <strong>1</strong> မှတ် ရရှိမည်။</li>\r\n        <li>MPS VIP Point 1 မှတ်သည် K 1 နှင့် မညီမျှပါ။</li>\r\n        <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu / Member Info တွင် စစ်ဆေးနိုင်သည်။</li>\r\n        <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Background/10823MM2SVCASINOTR_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10823MM2SVCASINOTR.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Treasure Pick (3-Tier + Daily/Weekly Medal)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "{\"mega\":[\"15\",\"25\",\"35\",\"50\",\"80\",\"100\",\"150\",\"200\",\"300\",\"888\",\"10000\"],\"mini\":[\"2\",\"5\",\"8\",\"12\",\"15\",\"25\",\"35\",\"50\",\"60\",\"100\",\"500\"],\"major\":[\"5\",\"10\",\"15\",\"25\",\"35\",\"50\",\"60\",\"80\",\"120\",\"150\",\"2000\"]}",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "TREASURE_PICK",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "JILIPHP3TP06260707",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-06-26 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-07-08 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-06-26 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-06-25 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-07-09 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JILI",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-07-08 11:59:52.148",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-06-22 18:52:24.704",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "10000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JILI\":[\"110\",\"736\",\"598\",\"103\",\"594\",\"77\",\"51\",\"696\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"mega\":{\"probability\":{\"15\":13,\"25\":13,\"35\":13,\"50\":13,\"80\":13,\"100\":13,\"150\":7,\"200\":7,\"300\":4,\"888\":4,\"10000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"15\":2147483647,\"25\":2147483647,\"35\":2147483647,\"50\":2147483647,\"80\":2147483647,\"100\":2147483647,\"150\":2147483647,\"200\":2147483647,\"300\":2147483647,\"888\":2147483647,\"10000\":2147483647},\"turnoverPerTicket\":50000,\"maxTicketPerPlayer\":9999},\"mini\":{\"probability\":{\"2\":20,\"5\":20,\"8\":20,\"12\":10,\"15\":10,\"25\":5,\"35\":5,\"50\":5,\"60\":3,\"100\":2,\"500\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"2\":2147483647,\"5\":2147483647,\"8\":2147483647,\"12\":2147483647,\"15\":2147483647,\"25\":2147483647,\"35\":2147483647,\"50\":2147483647,\"60\":2147483647,\"100\":2147483647,\"500\":2147483647},\"turnoverPerTicket\":5000,\"maxTicketPerPlayer\":3},\"major\":{\"probability\":{\"5\":13,\"10\":13,\"15\":13,\"25\":10,\"35\":10,\"50\":13,\"60\":10,\"80\":8,\"120\":5,\"150\":5,\"2000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"5\":2147483647,\"10\":2147483647,\"15\":2147483647,\"25\":2147483647,\"35\":2147483647,\"50\":2147483647,\"60\":2147483647,\"80\":2147483647,\"120\":2147483647,\"150\":2147483647,\"2000\":2147483647},\"turnoverPerTicket\":15000,\"maxTicketPerPlayer\":5}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"mini\":{\"8\":12294,\"2\":12318,\"15\":6223,\"5\":12542,\"35\":3073,\"12\":6237,\"25\":3049,\"60\":1894,\"50\":3102,\"100\":1239},\"major\":{\"15\":1918,\"35\":1562,\"5\":1910,\"150\":745,\"120\":740,\"80\":1236,\"60\":1496,\"50\":1887,\"25\":1426,\"10\":2010},\"mega\":{\"25\":773,\"100\":729,\"35\":754,\"888\":228,\"50\":791,\"200\":419,\"15\":774,\"80\":745,\"300\":242,\"150\":419}}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "{\"daily\":\"50,50,50,50,50,300,300,300,500,500\",\"weekly\":\"300,300,300,300,300,800,800,800,1500,1500\"}",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>1st day 26/06 12:00 PM ~ 27/06 12:00 PM</li>\r\n        <li>2nd day 27/06 12:00 PM ~ 28/06 12:00 PM</li>\r\n        <li>3rd day 28/06 12:00 PM ~ 29/06 12:00 PM</li>\r\n        <li>4th day 29/06 12:00 PM ~ 30/06 12:00 PM</li>\r\n        <li>5th day 30/06 12:00 PM ~ 01/07 12:00 PM</li>\r\n        <li>6th day 01/07 12:00 PM ~ 02/07 12:00 PM</li>\r\n        <li>7th day 02/07 12:00 PM ~ 03/07 12:00 PM</li>\r\n        <li>8th day 03/07 12:00 PM ~ 04/07 12:00 PM</li>\r\n        <li>9th day 04/07 12:00 PM ~ 05/07 12:00 PM</li>\r\n        <li>10th day 05/07 12:00 PM ~ 06/07 12:00 PM</li>\r\n        <li>11th day 06/07 12:00 PM ~ 07/07 12:00 PM</li>\r\n        <li>12th day 07/07 12:00 PM ~ 08/07 12:00 PM</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html -->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Bet 8 bonus games to earn tier tickets.</li>      \r\n        <li>Players can receive unlimited tickets.</li>\r\n        <li>The event starts from LV1. LV2 will be unlocked after LV1 reaches its max ticket amount, and LV3 will be unlocked after LV2 reaches its max ticket amount.</li>\r\n        <li class=\"ticket-tier-summary\">\r\n            <ul class=\"ticket-tier-list\">\r\n                <li class=\"ticket-tier-item tier-min\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV1\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\r\n                    <span class=\"txt-rate PHP\" id=\"miniMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-med\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV2\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\r\n                    <span class=\"txt-rate PHP\" id=\"majorMaxPrize\"></span>\r\n                </li>\r\n                <li class=\"ticket-tier-item tier-max\">\r\n                    <span class=\"ticket-tier-label\">\r\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\r\n                        LV3\r\n                    </span>\r\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\r\n                    <span class=\"txt-rate PHP\" id=\"megaMaxPrize\"></span>\r\n                </li>\r\n            </ul>\r\n        </li>\r\n        <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: once players reach the required turnover, <span style=\"color:#FFD700;\">click the treasure box</span> to redeem tickets of the corresponding level, and the rewards will be credited instantly.</li>\r\n        <li><span style=\"color:#FFD700;\"><strong>If the rewards are not claimed, all rewards will be cleared at 12:00 PM.</strong></span></li>\r\n        <li>Bet 8 bonus games for <strong>₱100</strong> to get <strong>1</strong> MPS VIP Point.</li>\r\n        <li>1 MPS VIP Point is not equivalent to ₱1.</li>\r\n        <li>Players can check the number of MPS VIP Points at Menu / Member Info.</li>\r\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\r\n    </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10816JILIPHPTR_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10816JILIPHPTR.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Signup (with Challenge)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "20,40,120,250",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "SIGNUP",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "W24JILIPHPSIGNUP",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-06-10 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-06-25 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-06-08 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-06-09 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-06-26 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JILI",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-06-25 11:59:39.956",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-06-08 10:13:28.360",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "22",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "24",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JILI\":[]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{\"JILI\":[\"696\",\"103\",\"403\"]}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"20\":29,\"40\":29,\"120\":21,\"250\":21},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"20\":105000,\"40\":105000,\"120\":75000,\"250\":75000}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"250\":38690,\"20\":53550,\"40\":53432,\"120\":38705}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html SingUp Bonus-->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li><span style=\"color:#FFD700;\"><strong>Congrats. You get 3 free signup bonus tickets!</li></strong></span>\r\n<li><span style=\"color:#FAFAFA;\">Click bonus icon to redeem tickets.</span></li>\r\n<li><span style=\"color:#FFD700;\"><strong>Bonus Claim:</strong></span><br>\r\n<span style=\"color:#FAFAFA;\">Pick up bonus and start challenge mode, bet on 3 challenge games with 22X turnover for bonus.</span></li>\r\n<li><span style=\"color:#FFD700;\"><strong>Bonus Cancelled:</strong></span> <span style=\"color:#FAFAFA;\">Challenge mode would be expired in 24 hours or at event close.</span></li>\r\n<li><span style=\"color:#FAFAFA;\">All tickets must redeem and finish challenge by 26/06/2026, 12:00 PM.</span></li>\r\n        <li><span style=\"color:#FAFAFA;\">The company has the right to revoke, cancel or suspend the promotion at any time.</span></li>\r\n<li>EX: Ticket redeem on 11/06/2026 12:00 get ₱100 bonus and start challenge mode, bet ₱2,200 turnover to get ₱100 bonus. Challenge mode will expire on 12/06/2026 12:00.\r\n</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10745JILIPHPAU-4.webp",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10745JILIPHPAU-3.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Raffle (戳戳樂)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "2,5,8,10,20,50,70,120",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "RAFFLE",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "W23JDBPHP",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-06-01 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-06-14 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-06-01 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-05-31 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-06-15 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JDB",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-06-14 11:59:46.034",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-05-28 17:19:04.434",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "10000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "3900",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "8",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JDB\":[\"14109\",\"14108\",\"14107\",\"14105\",\"14104\",\"7003\",\"9017\",\"18029\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"2\":16.9,\"5\":16.9,\"8\":16.9,\"10\":16.9,\"20\":16.9,\"50\":8.5,\"70\":4.2,\"120\":2.8},\"prizes\":{\"2\":7800,\"5\":7800,\"8\":7800,\"10\":7800,\"20\":7800,\"50\":3900,\"70\":1950,\"120\":1300}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"20\":3271,\"8\":3190,\"5\":3330,\"50\":1617,\"70\":843,\"10\":3298,\"2\":3318,\"120\":576}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>1st day 01/06 12:00 ~ 02/06 12:00</li>\r\n\t\t<li>2nd day 02/06 12:00 ~ 03/06 12:00</li>\r\n        <li>3rd day 03/06 12:00 ~ 04/06 12:00</li>\r\n        <li>4th day 04/06 12:00 ~ 05/06 12:00</li>\r\n        <li>5th day 05/06 12:00 ~ 06/06 12:00</li>\r\n\t\t<li>6th day 06/06 12:00 ~ 07/06 12:00</li>\r\n        <li>7th day 07/06 12:00 ~ 08/06 12:00</li>\r\n        <li>8th day 08/06 12:00 ~ 09/06 12:00</li>\r\n\t\t<li>9th day 09/06 12:00 ~ 10/06 12:00</li>\r\n\t\t<li>10th day 10/06 12:00 ~ 11/06 12:00</li>\r\n\t\t<li>11th day 11/06 12:00 ~ 12/06 12:00</li>\r\n\t\t<li>12th day 12/06 12:00 ~ 13/06 12:00</li>\r\n\t\t<li>13th day 13/06 12:00 ~ 14/06 12:00</li>\r\n\tEX:\r\n\t<ul class=\"list-dot\">\r\n        <li>Bet ₱ 39,000 get 10 tickets</li>\r\n        <li>Bet ₱ 136,500 get 35 tickes</li>\r\n        <li>Bet ₱ 195,000 get 50 tickets</li>\r\n\t\t<li>Bet ₱ 343,200 get 88 tickets</li>\r\n\t\t<li>Bet ₱ 390,000 get 100 tickets</li>\r\n\t</ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html -->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱ 3,900</strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> ticket</li>\r\n\t\t<li>One player Max 100 tickets everyday.</li>\r\n\t\t<li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: redeem 1 ticket to get random bonus instantly!</li>\r\n\t\t<li>All tickets must redeem before 15th JUNE 2026, 12:00 (PM)</li>\r\n\t\t<li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱ 100 </strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> MPS VIP Point.</li>\r\n        <li>1 MPS VIP Point is not equivalent to ₱ 1.</li>\r\n        <li>Player can check number of MPS VIP Points at Menu/ Member Info.</li>\r\n\t\t<li>EX: Bet 8 bonus games for ₱ 3,900 will get 1 ticket and 39 MPS VIP Points.</li>\r\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time</li>\r\n\t</ul>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->\r\nTODAY you bet <span id=\"eventTurnover\"  class=\"txt-rate\"></span> <!--today turnover--> → \r\n<span id=\"todayTickets\"></span><!--today tickets--> ticket(s) <br>\r\nBet <span id=\"needMoreTurnover\"  class=\"txt-rate\"></span><!--how much more turnover-->\r\nto get <span id=\"earnTicket\"></span><!--how much more ticket--> more ticket",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10697JDBPHPRA_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10697JDBPHPRA.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auto Redeem (Single-Tier / 單層自爆)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "3,6,8,12,20,30,40,80,120,160",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "AUTO_REDEEM",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "W19PGPHPAR",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-05-07 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-05-16 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-05-07 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-05-06 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-05-16 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "POCKET",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-05-16 11:59:46.103",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-05-05 12:56:33.809",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "10000000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "8000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"POCKET\":[\"1778752\",\"1695365\",\"1402846\",\"103\",\"1418544\",\"1420892\",\"89\",\"1492288\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{\"isActiveCumulativeSetting\":false}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"probability\":{\"3\":20.8,\"6\":20.8,\"8\":20.9,\"12\":20.9,\"20\":4.1,\"30\":4.1,\"40\":3.4,\"80\":3.4,\"120\":0.8,\"160\":0.8},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"3\":13500,\"6\":13500,\"8\":13500,\"12\":13500,\"20\":2700,\"30\":2700,\"40\":2160,\"80\":2160,\"120\":540,\"160\":540}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "{\"3\":8419,\"6\":8400,\"30\":1588,\"8\":8384,\"20\":1645,\"80\":1368,\"12\":8483,\"40\":1341,\"160\":335,\"120\":321}",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n  <ul class=\"list-dot\">\r\n    <li>1st day 07/05/2026 12:00 ~ 08/05/2026 12:00</li>\r\n    <li>2nd day 08/05/2026 12:00 ~ 09/05/2026 12:00</li>\r\n    <li>3rd day 09/05/2026 12:00 ~ 10/05/2026 12:00</li>\r\n    <li>4th day 10/05/2026 12:00 ~ 11/05/2026 12:00</li>\r\n    <li>5th day 11/05/2026 12:00 ~ 12/05/2026 12:00</li>\r\n    <li>6th day 12/05/2026 12:00 ~ 13/05/2026 12:00</li>\r\n    <li>7th day 13/05/2026 12:00 ~ 14/05/2026 12:00</li>\r\n    <li>8th day 14/05/2026 12:00 ~ 15/05/2026 12:00</li>\r\n    <li>9th day 15/05/2026 12:00 ~ 16/05/2026 12:00</li>\r\n  </ul>\r\n\r\n  <p><strong>Example:</strong></p>\r\n\r\n  <ul class=\"list-dot\">\r\n    <li>Bet ₱1,200,000 → 150 tickets</li>\r\n    <li>Bet ₱5,280,000 → 660 tickets</li>\r\n    <li>Bet ₱7,040,000 → 880 tickets</li>\r\n    <li>Bet ₱13,440,000 → 1,680 tickets</li>\r\n    <li>Bet ₱16,000,000 → 2,000 tickets</li>\r\n  </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html 即時版-->\r\n<div class=\"ticket-box\">\r\n  <ul class=\"list-dot\">\r\n    <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱8,000</strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> ticket</li>\r\n    <li>One player can get unlimited tickets every day.</li>\r\n    <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: system auto redeem tickets and give random bonus instantly.</li>\r\n    <li>All tickets must redeem before 16/05/2026, 12:00 (PM)</li>\r\n    <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong> ₱100 </strong></span> to<br> get <span style=\"color:#FFD700;\"><strong> 1</strong></span> MPS VIP Point.</li>\r\n    <li>1 MPS VIP Point is not equivalent to ₱1.</li>\r\n    <li>Player can check number of MPS VIP Points at Menu/ Member Info.</li>\r\n    <li>EX: Bet 8 bonus games for ₱8,000 will get 1 ticket and 80 MPS VIP Points.</li>\r\n    <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\r\n  </ul>\r\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->\r\nTODAY you bet <span id=\"eventTurnover\"  class=\"txt-rate\"></span> <!--今天投了多少--> → \r\n<span id=\"todayTickets\"></span><!--今天的票--> ticket(s) <br>\r\nBet <span id=\"needMoreTurnover\"  class=\"txt-rate\"></span><!--再投多少-->\r\nto get <span id=\"earnTicket\"></span><!--可以再拿幾張票--> more ticket",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/10536_Banner2.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Latest Activity",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "prizeDisplayOrder",
+              "value": "{\"mini\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"10\", \"50\"], \"major\": [\"1\", \"2\", \"3\", \"4\", \"7\", \"8\", \"10\", \"15\", \"20\", \"150\"], \"mega\": [\"5\", \"8\", \"11\", \"14\", \"17\", \"20\", \"23\", \"30\", \"50\", \"500\"]}",
+              "type": "text"
+            },
+            {
+              "key": "miniGameOriginalDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGameExtraDisplayOrder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "TREASURE_PICK",
+              "type": "text"
+            },
+            {
+              "key": "skinName",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "bonusId",
+              "value": "JILIMYR3TP08170907",
+              "type": "text"
+            },
+            {
+              "key": "startDate",
+              "value": "2026-08-17 12",
+              "type": "text"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-09-08 12",
+              "type": "text"
+            },
+            {
+              "key": "bannerStartTime",
+              "value": "2026-08-17 12",
+              "type": "text"
+            },
+            {
+              "key": "drawFinishDate",
+              "value": "2026-08-16 12",
+              "type": "text"
+            },
+            {
+              "key": "redeemDeadlineDate",
+              "value": "2026-09-09 12",
+              "type": "text"
+            },
+            {
+              "key": "activeHours",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "platform",
+              "value": "JILI",
+              "type": "text"
+            },
+            {
+              "key": "isShowEasyGame",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "MYR",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "MYR",
+              "type": "text"
+            },
+            {
+              "key": "paymentShareholder",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "accessLevel",
+              "value": "public",
+              "type": "text"
+            },
+            {
+              "key": "updateTime",
+              "value": "2026-08-14 15:20:49.403",
+              "type": "text"
+            },
+            {
+              "key": "createTime",
+              "value": "2026-08-14 15:20:49.403",
+              "type": "text"
+            },
+            {
+              "key": "isInstantPay",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "isJackpotMode",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "grandPrize",
+              "value": "500000",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerTicket",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverPerPoint",
+              "value": "100",
+              "type": "text"
+            },
+            {
+              "key": "maxTicketPerPlayer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "issueType",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "presentPrizeNum",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isAllowChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isForcingChallenge",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isChallengeFailNoBonus",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "bonusMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "minBonusToMultiply",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeExpireHours",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "isStickerSliding",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyApp",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "requiredGames",
+              "value": "{\"JILI\":[\"38\",\"696\",\"539\",\"736\"]}",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinGameIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyMissionSetting",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "prizeDistribution",
+              "value": "{\"mini\": {\"probability\": {\"1\": 30, \"2\": 20, \"3\": 15, \"4\": 15, \"5\": 5, \"6\": 5, \"7\": 5, \"8\": 3, \"10\": 2, \"50\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"1\": 2147483647, \"2\": 2147483647, \"3\": 2147483647, \"4\": 2147483647, \"5\": 2147483647, \"6\": 2147483647, \"7\": 2147483647, \"8\": 2147483647, \"10\": 2147483647, \"50\": 2147483647}, \"turnoverPerTicket\": 600, \"maxTicketPerPlayer\": 1}, \"major\": {\"probability\": {\"1\": 17.5, \"2\": 17.5, \"3\": 17.5, \"4\": 17.5, \"7\": 10, \"8\": 10, \"10\": 5, \"15\": 3, \"20\": 2, \"150\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"1\": 2147483647, \"2\": 2147483647, \"3\": 2147483647, \"4\": 2147483647, \"7\": 2147483647, \"8\": 2147483647, \"10\": 2147483647, \"15\": 2147483647, \"20\": 2147483647, \"150\": 2147483647}, \"turnoverPerTicket\": 1500, \"maxTicketPerPlayer\": 2}, \"mega\": {\"probability\": {\"5\": 17.5, \"8\": 17.5, \"11\": 17.5, \"14\": 17.5, \"17\": 10, \"20\": 10, \"23\": 5, \"30\": 3, \"50\": 2, \"500\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"5\": 2147483647, \"8\": 2147483647, \"11\": 2147483647, \"14\": 2147483647, \"17\": 2147483647, \"20\": 2147483647, \"23\": 2147483647, \"30\": 2147483647, \"50\": 2147483647, \"500\": 2147483647}, \"turnoverPerTicket\": 5000, \"maxTicketPerPlayer\": 9999}}",
+              "type": "text"
+            },
+            {
+              "key": "usedPrizeDistribution",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniGamePrizeDistribution",
+              "value": "{}",
+              "type": "text"
+            },
+            {
+              "key": "isAllowRankReward",
+              "value": "false",
+              "type": "text"
+            },
+            {
+              "key": "rankRewardSetting",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "miniJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "majorJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "megaJackpotPool",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "hintHtml",
+              "value": "<!-- Hint Html -->\n<div class=\"tooltip-box\">\n    <ul class=\"list-dot\">\n        <li>1st day 17-08 12:00 PM ~ 18-08 12:00 PM</li>\n        <li>2nd day 18-08 12:00 PM ~ 19-08 12:00 PM</li>\n        <li>3rd day 19-08 12:00 PM ~ 20-08 12:00 PM</li>\n        <li>4th day 20-08 12:00 PM ~ 21-08 12:00 PM</li>\n        <li>5th day 21-08 12:00 PM ~ 22-08 12:00 PM</li>\n        <li>6th day 22-08 12:00 PM ~ 23-08 12:00 PM</li>\n        <li>7th day 23-08 12:00 PM ~ 24-08 12:00 PM</li>\n        <li>8th day 24-08 12:00 PM ~ 25-08 12:00 PM</li>\n        <li>9th day 25-08 12:00 PM ~ 26-08 12:00 PM</li>\n        <li>10th day 26-08 12:00 PM ~ 27-08 12:00 PM</li>\n        <li>11th day 27-08 12:00 PM ~ 28-08 12:00 PM</li>\n        <li>12th day 28-08 12:00 PM ~ 29-08 12:00 PM</li>\n        <li>13th day 29-08 12:00 PM ~ 30-08 12:00 PM</li>\n        <li>14th day 30-08 12:00 PM ~ 31-08 12:00 PM</li>\n        <li>15th day 31-08 12:00 PM ~ 01-09 12:00 PM</li>\n        <li>16th day 01-09 12:00 PM ~ 02-09 12:00 PM</li>\n        <li>17th day 02-09 12:00 PM ~ 03-09 12:00 PM</li>\n        <li>18th day 03-09 12:00 PM ~ 04-09 12:00 PM</li>\n        <li>19th day 04-09 12:00 PM ~ 05-09 12:00 PM</li>\n        <li>20th day 05-09 12:00 PM ~ 06-09 12:00 PM</li>\n        <li>21st day 06-09 12:00 PM ~ 07-09 12:00 PM</li>\n        <li>22nd day 07-09 12:00 PM ~ 08-09 12:00 PM</li>\n    </ul>\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "footerHtml",
+              "value": "<!-- Footer Html -->\n<div class=\"ticket-box\">\n    <ul class=\"list-dot\">\n        <li>Bet JILI games to earn tier tickets.</li>      \n        <li>Players can receive unlimited tickets.</li>\n        <li>The event starts from LV1. LV2 will be unlocked after LV1 reaches its max ticket amount, and LV3 will be unlocked after LV2 reaches its max ticket amount.</li>\n        <li class=\"ticket-tier-summary\">\n            <ul class=\"ticket-tier-list\">\n                <li class=\"ticket-tier-item tier-min\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV1\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"miniMaxPrize\"></span>\n                </li>\n                <li class=\"ticket-tier-item tier-med\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV2\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"majorMaxPrize\"></span>\n                </li>\n                <li class=\"ticket-tier-item tier-max\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV3\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"megaMaxPrize\"></span>\n                </li>\n            </ul>\n        </li>\n        <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: once players reach the required turnover, <span style=\"color:#FFD700;\">click the treasure box</span> to redeem tickets of the corresponding level, and the rewards will be credited instantly.</li>\n        <li><span style=\"color:#FFD700;\"><strong>If the rewards are not claimed, all rewards will be cleared at 12:00 PM.</strong></span></li>\n        <li>Bet JILI games for <strong>RM 100</strong> to get <strong>1</strong> MPS VIP Point.</li>\n        <li>1 MPS VIP Point is not equivalent to RM 1.</li>\n        <li>Players can check the number of MPS VIP Points at Menu / Member Info.</li>\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\n    </ul>\n</div>",
+              "type": "text"
+            },
+            {
+              "key": "infoHtml",
+              "value": "<!-- Info Html -->",
+              "type": "text"
+            },
+            {
+              "key": "multiplyHtml",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "backgroundUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/11083JILIPHPTR_BG.webp",
+              "type": "text"
+            },
+            {
+              "key": "signupBannerUrl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "gameHallBannerUrl",
+              "value": "img.mpsimg.com/Bonusevent/Banner/11083JILIPHPTR.webp",
+              "type": "text"
+            },
+            {
+              "key": "arenaCode",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertBonusEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rank Record (龍虎榜/排行榜) - Insert",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "syncUserIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "allowPlatform",
+              "value": "BNG",
+              "type": "text"
+            },
+            {
+              "key": "allowGameType",
+              "value": "SLOT,ARCADE",
+              "type": "text"
+            },
+            {
+              "key": "amountLimit",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "winRateLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyRankLimit",
+              "value": "9",
+              "type": "text"
+            },
+            {
+              "key": "weeklyRankLimit",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "monthlyRankLimit",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "reserveRanking",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "weeklyOrderType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "monthlyOrderType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "latestSuccessSyncTime",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinExpiredTime",
+              "value": "2026-08-26 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "startTime",
+              "value": "2026-08-12 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "rankDays",
+              "value": "14",
+              "type": "text"
+            },
+            {
+              "key": "displayTime",
+              "value": "2026-08-26 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "displayOrder",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "challengeLimitHour",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "rewardSetting",
+              "value": "{\"daily\":[{\"name\":\"10000\",\"quotas\":1},{\"name\":\"5000\",\"quotas\":1},{\"name\":\"2000\",\"quotas\":1},{\"name\":\"1000\",\"quotas\":2},{\"name\":\"500\",\"quotas\":4}],\"weekly\":[{\"name\":\"0\",\"quotas\":0}],\"monthly\":[{\"name\":\"0\",\"quotas\":0}]}",
+              "type": "text"
+            },
+            {
+              "key": "tipText",
+              "value": "<ul>\n<li class=\"tit\">BNG Single Win Tournament (12th August 12:00 pm. ~ 26th August 2026 12:00 pm.)</li>\n<li class=\"tit\">Term and Condition</li>\n<li class=\"number_1\">BNG Platform(Any games)</li>\n<li class=\"number_2\">Winning amount for Single Bet more than 2,000 peso will be ranked</li>\n<li>Reward</li>\n<li class=\"number_3\">List 9 Ranking</li>\n<li class=\"number_4\">Daily Reward\n<br>1st Prize 10,000 peso\n<br>2nd Prize 5,000 peso\n<br>3rd Prize 2,000 peso\n<br>4th/5th Prize 1,000 peso\n<br>6th~9th Prize 500 peso\n</li>\n<!--將會隱藏\n<li class=\"number_5\">Weekly Leader Board (based on number of times you rank on the Daily Leader Board)\n<br>1st Prize 30,000 peso\n<br>2nd Prize 15,000 peso\n<br>3rd~5th Prize 5,000 peso\n</li>\n將會隱藏-->\n<li class=\"tit\">(1) Ranking could delay for 5 minutes and would reward to your account by 13:00 every day.</li>\n<li class=\"tit\">(2) No challenge required and reward will be issued instantly.</li>\n</ul>",
+              "type": "text"
+            },
+            {
+              "key": "rankType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyWeek",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "RANK_RECORD",
+              "type": "text"
+            },
+            {
+              "key": "beforeStartDisplayTime",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "afterStartDisplayTime",
+              "value": "0",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertRankRecordSetting",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertRankRecordSetting"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Race Win (快贏) - Insert",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/javascript, */*; q=0.01"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{sessionCookie}}"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "syncUserIds",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "currency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "walletCurrency",
+              "value": "PHP",
+              "type": "text"
+            },
+            {
+              "key": "allowPlatform",
+              "value": "JILI",
+              "type": "text"
+            },
+            {
+              "key": "allowGameType",
+              "value": "SLOT,ARCADE",
+              "type": "text"
+            },
+            {
+              "key": "amountLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "winRateLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "dailyRankLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "weeklyRankLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "monthlyRankLimit",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "reserveRanking",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "weeklyOrderType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "monthlyOrderType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "latestSuccessSyncTime",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "freeSpinExpiredTime",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "startTime",
+              "value": "2026-08-12 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "rankDays",
+              "value": "8",
+              "type": "text"
+            },
+            {
+              "key": "displayTime",
+              "value": "2026-08-20 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "displayOrder",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "challengeLimitHour",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "challengeGames",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "rewardSetting",
+              "value": "{\"1\":{\"id\":1,\"name\":\"100000\",\"quotas\":2,\"target\":2000000,\"gameId\":\"103\", \"nextQuotasInHours\":\"3\"},\"2\":{\"id\":2,\"name\":\"8000\",\"quotas\":10,\"target\":600000,\"gameId\":\"103\", \"nextQuotasInHours\":\"1\"},\"3\":{\"id\":3,\"name\":\"3000\",\"quotas\":50,\"target\":300000,\"gameId\":\"103\", \"nextQuotasInHours\":\"1\"}}",
+              "type": "text"
+            },
+            {
+              "key": "tipText",
+              "value": "<!-- eventTipEN -->\n<ul>\n<li class=\"tit\">JILI RACE WINNER</li>\n<li>Rewards</li>\n<li class=\"tit\">Prize Structure:</li>\n<li>The 1st 2M winner can get 100,000 immediately</li>\n<li>The 1st 600K winner can get 8,000 immediately</li>\n<li>The 1st 300K winner can get 3,000 immediately</li>\n</ul>",
+              "type": "text"
+            },
+            {
+              "key": "rankType",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "isOnlyWeek",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "presentType",
+              "value": "RACE_WIN",
+              "type": "text"
+            },
+            {
+              "key": "beforeStartDisplayTime",
+              "value": "12",
+              "type": "text"
+            },
+            {
+              "key": "afterStartDisplayTime",
+              "value": "12",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/insertRankRecordSetting",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "insertRankRecordSetting"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

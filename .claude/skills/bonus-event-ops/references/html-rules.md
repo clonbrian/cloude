@@ -10,6 +10,8 @@
 | CAD / USD | 00:00 |
 | MYR | 12:00 PM |
 
+⚠️ This table applies to `insertBonusEvent` activity types only. RANK_RECORD / RACE_WIN (`insertRankRecordSetting`) use **12:00 GMT+8 for `startTime` and `displayTime` regardless of currency** — see the RACE_WIN spec in `api-rules.md`.
+
 ## Currency → symbol
 | Currency | Symbol format |
 |---|---|

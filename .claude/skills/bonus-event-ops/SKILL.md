@@ -31,7 +31,7 @@ Whatever template (HTML or HAR/API example) the user provides is a **structural 
 ## Workflow: Postman API request
 
 1. Determine `presentType` from the activity type (see `references/activity-codes.md` for the mapping table)
-2. If this exact type has an established template in the collection, reuse its JSON field structure and substitute actual values (dates, currency, platform, game IDs, prize/probability tables, medal settings)
+2. If this exact type has an established template in the collection, reuse its **field structure** and substitute actual values (dates, currency, platform, game IDs, prize/probability tables, medal settings). Reuse the structure, not the values — a template item is a single data point and can carry an outlier value. Where a reference file states a per-type default (e.g. the RACE_WIN table in `api-rules.md`), that default wins over whatever the template item happens to contain. If any HAR in the conversation includes a `findAll*` query response, mine it for the real field distribution before trusting either.
 3. If this is a brand new type with no template yet, ask the user for a HAR file of that type before proceeding
 4. Compute `updateTime`/`createTime` using the actual current GMT+8 time with real milliseconds — run:
    ```
@@ -42,7 +42,12 @@ Whatever template (HTML or HAR/API example) the user provides is a **structural 
 6. Update the **`Latest Activity`** item in `BonusEvent_Admin.postman_collection.json` — overwrite its body entirely with the new activity's fields. Do NOT create a new item per activity; do NOT keep multiple "latest activity" slots — even for companion activities meant to be submitted together (e.g. a Hacksaw daily mission and a BNG daily mission sharing one announcement title are still two separate, sequential asks — each one replaces the previous "Latest Activity" content, full stop). Every new activity submission replaces whatever was there before, even if it's a completely different provider/currency/type than what was there previously — this is intentional, not a bug to work around.
 7. Permanent per-type template items (Daily Mission, Roulette, Golden Egg, Rebate, Auto Redeem single/3-tier, Instant Challenge, Treasure Pick single/nine/3-tier, Signup, Raffle, Rank Record, Race Win, etc.) are never removed or overwritten — they stay as reference. Only add a new permanent template item when the user provides a HAR for a genuinely new `presentType`/endpoint not yet covered.
 8. Cookie/session handling: always use `{{sessionCookie}}` as a Cookie header placeholder and `{{baseUrl}}` for the host — never hardcode an actual session value or environment URL. These are Postman collection-level variables the user sets themselves via Postman's Cookie Manager and Collection Variables.
-9. After building/updating the collection JSON, validate it parses as JSON, copy to the outputs directory, and use `present_files` to hand it to the user. Briefly summarize what changed (activity ID, key computed values) — don't just say "here you go."
+9. If a HAR of an attempted submission is available, read the response **body** before treating the submission as done — this endpoint returns HTTP 200 for rejections and only signals failure via an `error` key (see `references/api-rules.md`).
+10. After building/updating the collection JSON, validate it parses as JSON, copy to the outputs directory, and use `present_files` to hand it to the user. Briefly summarize what changed (activity ID, key computed values) — don't just say "here you go."
+
+## When the user shares a HAR of their own submission
+
+Brian sometimes submits an activity by hand and then hands over the HAR to compare. Do a real field-by-field diff (script it, don't eyeball it) and report every delta with evidence. His submission is authoritative about the API's *shape* — field names, encoding, which fields exist — but it is not automatically authoritative about *values*: a `{"status":"200","message":"success"}` response only proves the payload parsed. Where his value contradicts both the brief text and the historical convention, that's a probable data-entry slip in a live production record and needs flagging, not silent adoption into this skill. See "Reconciling a user's own submission HAR" in `references/api-rules.md` for the three-bucket sorting rule.
 
 ## When something doesn't fit the known rules
 

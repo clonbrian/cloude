@@ -15,10 +15,17 @@ Some providers use a short form in the activity ID/display text but a different,
 | Provider | ID / display text uses | API `platform` field uses |
 |---|---|---|
 | SVCASINO | `SV` | `SVCASINO` (full name) |
-| PG | `PG` | `POCKET` |
-| Hacksaw | `HS` | `HACKSAW` (confirm if a shorter API code ever surfaces) |
+| PG | `PG` | `POCKET` — confirmed in production |
+| Hacksaw | `HS` | `HACKSAW` — confirmed in production |
+| FaChai | `FC` | `FACHAI` — confirmed in production |
+| JILI | `JILI` | `JILI` (no mismatch) |
+| JDB | `JDB` | `JDB` (no mismatch) |
+| BNG | `BNG` | `BNG` (no mismatch) |
+| YB | `YB` | `YB` (no mismatch) — confirmed in production |
+| ACEWIN | (abbreviation not yet seen) | `ACEWIN` |
+| VERTEXPLAY | (abbreviation not yet seen) | `VERTEXPLAY` |
 
-If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value.
+Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.
 
 ## Market-code prefix ambiguity
 A 2-letter market prefix in an activity label (e.g. "MY1", "PH2", "MM1") is NOT the same thing as an ISO currency code, and can be ambiguous — e.g. "MY" could mean Myanmar (MMK) or Malaysia (MYR). Cross-check against the currency symbol used in the brief/promo copy (K→MMK, RM→MYR, ₱→PHP, ₫→VND, ৳→BDT) before locking in a currency, and ask the user to confirm if there's any doubt. Getting this wrong cascades into wrong clearing time, wrong symbol, wrong language, and a wrong activity ID.
@@ -52,7 +59,10 @@ These go to `insertRankRecordSetting`, NOT `insertBonusEvent`. Completely differ
 | LH / 龍虎榜 / 排行榜 | `RANK_RECORD` |
 | 快贏 | `RACE_WIN` |
 
-The number in a label like "LH2" is the `displayOrder` API field value, not part of any ID — this API has no ID field at all. "LH" itself is just Brian's internal shorthand for "this is a leaderboard-type activity," not something to write into any parameter.
+The number in a label like "LH2" or "RACE2" is the `displayOrder` API field value, not part of any ID — this API has no ID field at all. Confirmed in production for both families, and it applies to a market-prefix label too — the number is wherever it appears in the label: `202608-PH-RACE2` → `displayOrder: 2`, and `MM2 JDB快贏` → `displayOrder: 2`. "LH" / "RACE" themselves are just Brian's internal shorthand for the activity family, not something to write into any parameter.
+
+## Cost notes in a brief (`c: 26W`)
+A `c:` line is Brian's internal cost/budget estimate. It maps to **no API field in any activity type** — don't hunt for one and don't bend a real field to fit it. Compute the actual maximum payout from the prize table and compare: for RACE_WIN that's Σ(prize × quotas). If the two disagree, say so with both numbers and let Brian decide. Observed case: a brief said `c: 26W` while the prize table summed to 21W, and the computed figure was the correct one — the brief's note was a typo. So compute it every time and raise the mismatch; don't assume the brief's estimate is authoritative, and equally don't adjust any field to make the numbers agree.
 
 ## presentPrizeNum conventions by type
 | Type | presentPrizeNum |

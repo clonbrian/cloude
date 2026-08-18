@@ -10,16 +10,21 @@ Brian's instruction: **translate the English version straight into the market la
 
 Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `12 နာရီ`, not `၁၂ နာရီ`), and currency symbols keep their spacing convention (`K 100`, `₫ 100 K`, `RM 100`).
 
-Standard industry terms to reuse rather than literal-translating:
+Standard industry terms to reuse rather than literal-translating. The Burmese column is **Brian's own approved wording** — prefer it over any alternative:
+
 | English | Burmese (MMK) | Vietnamese (VND) |
 |---|---|---|
 | turnover / 流水 | လောင်းကြေးပမာဏ | doanh thu cược |
 | bonus | ဘောနပ်စ် | tiền thưởng |
 | challenge | စိန်ခေါ်မှု | thử thách |
-| ticket | လက်မှတ် | vé |
+| instant challenge | အမြန်စိန်ခေါ်မှု | thử thách tức thì |
+| ticket | တက်ကတ် | vé |
 | player | ကစားသမား | người chơi |
 | promotion | ပရိုမိုးရှင်း | khuyến mãi |
 | system | စနစ် | hệ thống |
+| Menu / Member Info | မီနူး / အဖွဲ့ဝင်အချက်အလက် | Menu / Thông tin thành viên |
+
+Two corrections against earlier Claude output: use `တက်ကတ်` for ticket (not `လက်မှတ်`) and `အမြန်စိန်ခေါ်မှု` for instant challenge (not `ချက်ချင်းစိန်ခေါ်မှု`). Also translate "Menu / Member Info" into the market language rather than leaving it in English.
 
 Extend this table when a new market or term comes up.
 
@@ -208,23 +213,31 @@ Same LV1/LV2/LV3 skeleton as above, but the intro line is simpler ("Bet {N} bonu
 ```html
 <!-- Info Html --> <div class="ticket-box"> <ul class="list-dot"> 
 <li>System issues instant challenge tickets every day.</li> 
-<li>Start challenge and bet on {challengingGameCount} challenge games with {turnoverMultiplier}X turnover for bonus.</li> 
+<li>Start challenge and bet on {challengingGameCount} challenge games with {turnoverMultiplier}X turnover. (Bonus = turnover ÷ {turnoverMultiplier})</li> 
 <li>Player can give up current ticket and start next one.</li> 
 <li>Each ticket may challenge with different games.</li> 
 <li>New tickets will be issued daily at {clearing_time}, and the challenge must be completed within {challengeExpireHours} hours after clicking challenge to receive the bonus.</li> 
 <li>All tickets must finished challenge before {redeemDeadline}.</li> 
-<li>Bet on bonus games for {SYM}100 to get 1 MPS VIP Point.</li> 
+<li>MPS VIP Points are calculated based on challenge turnover (MPS VIP Points = turnover ÷ 100).</li> 
 <li>1 MPS VIP Point is not equivalent to {SYM}1.</li> 
 <li>Player can check number of MPS VIP Points at Menu/ Member Info.</li> 
 <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li> 
-<li>EX: Start first ticket challenge than bet {SYM}{turnoverExample} turnover to get {SYM}{bonusExample} bonus and {points} MPS VIP points. System will issue bonus to player instantly when challenge finish. Player can give up the first ticket challenge to start next ticket challenge.</li> 
+<li>EX: Start first ticket challenge than bet {SYM}{turnoverExample} turnover to get {SYM}{bonusExample} bonus ({turnoverExample} ÷ {turnoverMultiplier}) and {points} MPS VIP Points ({turnoverExample} ÷ 100). System will issue bonus to player instantly when challenge finish. Player can give up the first ticket challenge to start next ticket challenge.</li> 
 </ul> </div>
 ```
 This type puts everything in `infoHtml`, not `footerHtml`/`hintHtml`.
 
-`{points}` = `{bonusExample}` ÷ 100 (the **bonus**, not the turnover) — see "MPS VIP Point rule" in `html-rules.md`. The stored template item's EX line showing ₱5,000 bonus → 50 points is therefore correct as written.
+### Show the arithmetic, don't just state a rate (Brian's approved format)
+This skeleton was revised to Brian's own wording. Three deliberate choices — keep them:
+1. **Write formulas inline.** `(Bonus = turnover ÷ {turnoverMultiplier})` and `(MPS VIP Points = turnover ÷ 100)`, plus the parenthesised working in the EX line. The older phrasing "Bet on bonus games for {SYM}100 to get 1 MPS VIP Point" is ambiguous enough that it caused a real error — it reads as if points come from the payout. Prefer the explicit division.
+2. **VIP points get their own line stating the basis** (challenge turnover), replacing the old rate-only line.
+3. **Keep "Player can give up current ticket and start next one"** as a standalone line *and* the equivalent sentence at the end of the EX line. Brian confirmed both stay — do not drop either.
 
-Two other values in that same stored item (`PGPHPIC07080729`) are genuinely stale and should not be copied: its EX numbers contradict its own `prizeDistribution` (`challengePrize` 50 × `turnoverMultiplier` 20 = 1,000, not the ₱100,000 shown), and its `gameHallBannerUrl` says `PGMMIC` while the currency is PHP. Take structure from this item, take numbers from the brief.
+All 11 `<li>` remain; nothing was removed, two lines were reworded.
+
+`{points}` = `{turnoverExample}` ÷ 100 (the **turnover**, not the payout) — see "MPS VIP Point rule" in `html-rules.md`. The stored template item's EX line showing ₱100,000 turnover → 50 points is **wrong**; the correct figure there is 1,000. Never reuse that 50.
+
+Three values in that stored item (`PGPHPIC07080729`) are stale and must not be copied: the 50-point figure above; its EX turnover/bonus numbers, which contradict its own `prizeDistribution` (`challengePrize` 50 × `turnoverMultiplier` 20 = 1,000, not the ₱100,000 shown); and its `gameHallBannerUrl`, which says `PGMMIC` while the currency is PHP. Take structure from this item, take numbers from the brief.
 
 ---
 

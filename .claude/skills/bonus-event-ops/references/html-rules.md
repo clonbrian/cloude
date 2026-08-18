@@ -92,16 +92,31 @@ Game IDs in parentheses after a game name (e.g. `Alibaba (110)`) are for identif
 ## MPS VIP Point rule
 Fixed at 100 currency units = 1 MPS VIP Point, regardless of currency. E.g. PHP → "Bet ₱100 to get 1 MPS VIP Point", MMK → "K 100 လောင်းပါက...", VND → "₫ 100 K...".
 
-### Point count in an EX / example line — always divide the BONUS (settled)
-When a skeleton's example line states a point total, compute it as **bonus ÷ 100**, never turnover ÷ 100.
+### Point count in an EX / example line — divide the TURNOVER (settled)
+When a skeleton's example line states a point total, compute it as **turnover ÷ 100**, i.e. `turnoverPerPoint`:
 
 ```
-points = {bonusExample} / 100
+points = {turnoverExample} / turnoverPerPoint      # turnoverPerPoint is 100 in every stored item
 ```
 
-This holds for **every activity type**, not just Instant Challenge — confirmed by Brian. It is deliberately inconsistent with the "bet {SYM}100 to get 1 point" line sitting in the same block; that line describes the general earning rate, while the EX line's figure is derived from the payout. Do not "correct" the EX line to match the turnover, and do not flag the two as contradictory.
+This is just the "Bet {SYM}100 on bonus games to get 1 MPS VIP Point" line in the same block applied to the example's turnover figure — the two are consistent, not in tension.
 
-Worked example (JILI MMK Instant Challenge): ticket base K 5,000 × 18X turnover = K 90,000 turnover → EX line reads **K 90,000 turnover → K 5,000 bonus → 50 MPS VIP points** (5,000 ÷ 100), not 900.
+Verified across every stored item carrying an EX line (5 of 6 agree; the 6th is the known-bad Instant Challenge template):
+
+| Activity | EX turnover | EX points | turnover ÷ 100 |
+|---|---|---|---|
+| Roulette (MMK) | K 330,000 | 3,300 | 3,300 ✓ |
+| Golden Egg (PHP) | ₱3,600 | 36 | 36 ✓ |
+| Treasure Pick single-tier (PHP) | ₱3,900 | 39 | 39 ✓ |
+| Raffle (PHP) | ₱3,900 | 39 | 39 ✓ |
+| Auto Redeem single-tier (PHP) | ₱8,000 | 80 | 80 ✓ |
+| Instant Challenge (PHP) | ₱100,000 | 50 | 1,000 ✗ **stale template** |
+
+⚠️ **Do not take the Instant Challenge template's 50 as the rule.** It is the single outlier in the collection and it is wrong; the correct figure for that example is 1,000. An earlier pass through this skill read it as authoritative because only that one item was checked — when a formula is in doubt, test it against *every* item that carries an example, not the nearest template.
+
+Terminology note: 「bonus」 in Brian's phrasing (and in the copy itself) means **bonus games** — the qualifying game pool being wagered on — not the bonus payout. "用 bonus 去除" therefore means dividing the turnover bet on bonus games.
+
+Worked example (JILI MMK Instant Challenge): ticket base K 5,000 × 18X = K 90,000 turnover → EX line reads **K 90,000 turnover → K 5,000 bonus → 900 MPS VIP points** (90,000 ÷ 100).
 
 ## grandPrize field
 `grandPrize` is NOT computed from ticket values or turnover — it comes verbatim from the number stated in the activity's promotional copy (e.g. English announcement text saying "RM 500,000" → `grandPrize: 500000`). Always ask for or wait for the promo copy if it hasn't been provided; don't invent a round number as a placeholder.

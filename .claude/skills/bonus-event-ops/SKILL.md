@@ -29,6 +29,7 @@ Brian has already answered these more than once. Treating them as ambiguous wast
 5. **MPS VIP Point totals in an EX/example line are `bonus ÷ 100`**, for every activity type — not turnover ÷ 100. See `html-rules.md`.
 6. **Localized HTML is translated directly from the English skeleton** in every language, using standard gambling terminology. Never ask Brian for a localized sample, HAR, or reference translation — `html-templates.md` already holds every skeleton he needs supplied.
 7. **API parameter → server time (GMT+8, 24-hour). Player-facing HTML → converted to market time (12-hour AM/PM).** This covers every timestamp including `redeemDeadlineDate`. The two intentionally differ by the market's offset from GMT+8; that is not a bug to reconcile. See `html-rules.md`.
+8. **A single localized line from Brian is the activity title, not truncated body copy.** Titles live in the banner artwork and have no API field. The body always comes from the skeletons in `html-templates.md`. The only per-activity input he must supply is `gameHallBannerUrl`. Never ask him to "re-paste the rest" — that is the same failure as asking for copy outright.
 
 ## Workflow: HTML request
 

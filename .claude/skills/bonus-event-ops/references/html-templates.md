@@ -23,6 +23,19 @@ Standard industry terms to reuse rather than literal-translating:
 
 Extend this table when a new market or term comes up.
 
+### A title line is NOT truncated body copy — never ask for "the rest"
+
+When Brian sends a localized line like `JILI အမြန်စိန်ခေါ်မှု` under a heading such as 「提供緬甸文文案如下」, that line **is** the whole thing he's supplying: the activity title. It is not the first line of a paste that got cut off. Generate the body from the skeleton in this file and move on.
+
+**Activity titles are not an API field.** All 14 stored template items have zero `<h1>`–`<h6>`/`<title>` tags in `hintHtml`/`footerHtml`/`infoHtml`/`multiplyHtml`; the title is baked into the banner artwork. So a supplied title needs no field at all — it tells you what the banner image says, nothing more.
+
+### The only two per-activity inputs that can't be derived
+Everything else comes from the brief plus these skeletons. Only these two require Brian:
+1. **`gameHallBannerUrl`** — the banner path. Store it exactly as given, **without** an `https://` prefix (template convention: `img.mpsimg.com/Bonusevent/Banner/<id>.webp`). Markdown link syntax in his message is his client auto-linking; strip it.
+2. **the localized title** — context only, per above.
+
+If he hasn't sent the banner path yet, leave `gameHallBannerUrl` empty and mention it in one line at the end. Do not block the deliverable on it, and do not ask about anything else.
+
 These are the reusable structural skeletons observed across real activities, captured in generic English so they can be produced without the user re-pasting a template every time. **Always run the result through `references/html-rules.md`** — translate to the target currency's language, swap the currency symbol, recompute the clearing time, and swap any `class="txt-rate XXX"` currency code — before delivering.
 
 Placeholders use `{CURLY_BRACES}`. `{N}` = day count. System-injected `<span>` fields always stay empty regardless of type.

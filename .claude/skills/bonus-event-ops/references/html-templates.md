@@ -1,5 +1,28 @@
 # HTML Skeleton Templates (per activity type)
 
+## Coverage status — do NOT ask Brian to re-supply copy that is already here
+
+All 11 activity types below have a complete, parameterised English skeleton. **Never ask Brian for promo copy for a type listed here** — every placeholder is computable from the API brief he already gave (game count, turnover multiplier, expiry hours, deadline, currency symbol, clearing time). Asking again is the failure mode this file exists to prevent.
+
+## Localization: translate the English skeleton directly (settled — all languages)
+
+Brian's instruction: **translate the English version straight into the market language using standard gambling/casino terminology.** This applies to every language — Burmese, Vietnamese, Bengali, French, and any market added later. No approved localized reference copy is needed and none should be requested — never ask for a localized HAR, sample, or existing translation.
+
+Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `12 နာရီ`, not `၁၂ နာရီ`), and currency symbols keep their spacing convention (`K 100`, `₫ 100 K`, `RM 100`).
+
+Standard industry terms to reuse rather than literal-translating:
+| English | Burmese (MMK) | Vietnamese (VND) |
+|---|---|---|
+| turnover / 流水 | လောင်းကြေးပမာဏ | doanh thu cược |
+| bonus | ဘောနပ်စ် | tiền thưởng |
+| challenge | စိန်ခေါ်မှု | thử thách |
+| ticket | လက်မှတ် | vé |
+| player | ကစားသမား | người chơi |
+| promotion | ပရိုမိုးရှင်း | khuyến mãi |
+| system | စနစ် | hệ thống |
+
+Extend this table when a new market or term comes up.
+
 These are the reusable structural skeletons observed across real activities, captured in generic English so they can be produced without the user re-pasting a template every time. **Always run the result through `references/html-rules.md`** — translate to the target currency's language, swap the currency symbol, recompute the clearing time, and swap any `class="txt-rate XXX"` currency code — before delivering.
 
 Placeholders use `{CURLY_BRACES}`. `{N}` = day count. System-injected `<span>` fields always stay empty regardless of type.
@@ -185,6 +208,10 @@ Same LV1/LV2/LV3 skeleton as above, but the intro line is simpler ("Bet {N} bonu
 </ul> </div>
 ```
 This type puts everything in `infoHtml`, not `footerHtml`/`hintHtml`.
+
+`{points}` = `{bonusExample}` ÷ 100 (the **bonus**, not the turnover) — see "MPS VIP Point rule" in `html-rules.md`. The stored template item's EX line showing ₱5,000 bonus → 50 points is therefore correct as written.
+
+Two other values in that same stored item (`PGPHPIC07080729`) are genuinely stale and should not be copied: its EX numbers contradict its own `prizeDistribution` (`challengePrize` 50 × `turnoverMultiplier` 20 = 1,000, not the ₱100,000 shown), and its `gameHallBannerUrl` says `PGMMIC` while the currency is PHP. Take structure from this item, take numbers from the brief.
 
 ---
 

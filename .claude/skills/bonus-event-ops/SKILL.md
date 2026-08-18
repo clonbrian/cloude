@@ -18,6 +18,18 @@ Read `references/activity-codes.md` for activity type code lookups and provider 
 
 Whatever template (HTML or HAR/API example) the user provides is a **structural reference only**. Every currency-dependent, provider-dependent, or activity-specific value in it must be replaced with the actual activity's values — never carry over a template's placeholder currency, clearing time, symbol, language, provider name, or game list. If Claude catches itself about to leave a template value unchanged "because it's probably fine," that's the signal to double check against the actual brief.
 
+## Settled conventions — never raise these as open questions again
+
+Brian has already answered these more than once. Treating them as ambiguous wastes his time.
+
+1. **All API date fields use hour 12 (12:00 GMT+8), every currency, every type.** That's server backend time. The currency clearing times (MMK 10:30, VND 11:00, etc.) belong only to player-facing HTML/banner/announcement copy. One MMK activity correctly shows `12` in the API and 10:30 in the Burmese HTML. The sole computed exception is `redeemDeadlineDate`. See "The 12:00 rule" in `api-rules.md`.
+2. **INSTANT_CHALLENGE caps are always daily caps** — 「每人上限X, 上限張數Y張」 means X/day and Y/day.
+3. **「可設定為公開 / 僅某某站台開放」 is announcement content**, not an API field. `accessLevel` stays `public`.
+4. **`calculatedGameType` codes** are exactly: `LIVEARENA`, `LIVE`, `SPORTS`, `LOTTERY`, `FH`, `SLOT`, `ARCADE`, `RNGTABLE`. "FISH" in a brief means `FH`.
+5. **MPS VIP Point totals in an EX/example line are `bonus ÷ 100`**, for every activity type — not turnover ÷ 100. See `html-rules.md`.
+6. **Localized HTML is translated directly from the English skeleton** in every language, using standard gambling terminology. Never ask Brian for a localized sample, HAR, or reference translation — `html-templates.md` already holds every skeleton he needs supplied.
+7. **API parameter → server time (GMT+8, 24-hour). Player-facing HTML → converted to market time (12-hour AM/PM).** This covers every timestamp including `redeemDeadlineDate`. The two intentionally differ by the market's offset from GMT+8; that is not a bug to reconcile. See `html-rules.md`.
+
 ## Workflow: HTML request
 
 1. Identify the activity type and pull its skeleton from `references/html-templates.md`. If the user supplies their own template instead (they still can, and it should be respected as the source of truth for that request), use theirs.

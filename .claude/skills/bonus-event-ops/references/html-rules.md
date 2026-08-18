@@ -1,6 +1,6 @@
 # HTML Generation Rules
 
-## Currency → clearing time
+## Currency → clearing time (PLAYER-FACING TEXT ONLY)
 | Currency | Clearing time |
 |---|---|
 | PHP | 12:00 PM |
@@ -10,7 +10,36 @@
 | CAD / USD | 00:00 |
 | MYR | 12:00 PM |
 
-⚠️ This table applies to `insertBonusEvent` activity types only. RANK_RECORD / RACE_WIN (`insertRankRecordSetting`) use **12:00 GMT+8 for `startTime` and `displayTime` regardless of currency** — see the RACE_WIN spec in `api-rules.md`.
+⚠️ **This table NEVER touches an API field.** It governs only what a player reads: HTML body copy, banner text, and announcement text. It is the local display time shown to that market.
+
+**Every API date field, in every endpoint, for every currency, uses 12:00 GMT+8** — that is the server's backend time, not a market-local time. Do not "convert" a 12:00 in a brief into a currency clearing time, and do not flag the two as a discrepancy needing confirmation. See "The 12:00 rule" in `api-rules.md`. Verified against all 15 stored template items (PHP, MMK, VND, USD, MYR — 15/15 at hour `12`), and confirmed directly by Brian.
+
+So a single MMK activity legitimately carries **both** times: `startDate = 2026-08-24 12` in the API request, and "10:30 AM" in the Burmese HTML the player sees. That is correct and expected, not a contradiction.
+
+### Why the table looks the way it does
+The clearing times are not arbitrary — each is the server's 12:00 GMT+8 expressed in that market's own timezone:
+
+| Currency | Market timezone | 12:00 GMT+8 becomes |
+|---|---|---|
+| PHP / MYR | UTC+8 | 12:00 PM |
+| VND | UTC+7 | 11:00 AM |
+| MMK | UTC+6:30 | 10:30 AM |
+| BDT | UTC+6 | 10:00 AM |
+
+## The one-line rule for every timestamp (settled)
+
+> **API parameter → server time. Player-facing HTML → converted to market time.**
+
+Confirmed by Brian. It covers every timestamp in both workstreams, including ones with no dedicated rule elsewhere.
+
+| | Timezone | Clock format | Example |
+|---|---|---|---|
+| Any API field (`startDate`, `endDate`, `bannerStartTime`, `drawFinishDate`, `redeemDeadlineDate`, `startTime`, `displayTime`) | GMT+8 server time, never converted | **24-hour** (`YYYY-MM-DD HH`, hour `00`–`23`) | `2026-10-01 00` |
+| Any timestamp inside `infoHtml` / `hintHtml` / `footerHtml` / `tipText` / banner / announcement | converted to the market's timezone | **12-hour AM/PM**, date as `DD-MM-YYYY` | `30-09-2026 10:30 PM` |
+
+Both rows above describe the *same instant* — an MMK activity ending `2026-10-01 00` on the server correctly reads `30-09-2026 10:30 PM` to a Burmese player. Never "reconcile" the two by making them match; a mismatch of exactly the market's UTC offset from GMT+8 is the proof they're right.
+
+⚠️ Writing `00:00` as `12:00 AM` in an API field is a format error — API hours are 24-hour and never carry AM/PM.
 
 ## Currency → symbol
 | Currency | Symbol format |
@@ -62,6 +91,17 @@ Game IDs in parentheses after a game name (e.g. `Alibaba (110)`) are for identif
 
 ## MPS VIP Point rule
 Fixed at 100 currency units = 1 MPS VIP Point, regardless of currency. E.g. PHP → "Bet ₱100 to get 1 MPS VIP Point", MMK → "K 100 လောင်းပါက...", VND → "₫ 100 K...".
+
+### Point count in an EX / example line — always divide the BONUS (settled)
+When a skeleton's example line states a point total, compute it as **bonus ÷ 100**, never turnover ÷ 100.
+
+```
+points = {bonusExample} / 100
+```
+
+This holds for **every activity type**, not just Instant Challenge — confirmed by Brian. It is deliberately inconsistent with the "bet {SYM}100 to get 1 point" line sitting in the same block; that line describes the general earning rate, while the EX line's figure is derived from the payout. Do not "correct" the EX line to match the turnover, and do not flag the two as contradictory.
+
+Worked example (JILI MMK Instant Challenge): ticket base K 5,000 × 18X turnover = K 90,000 turnover → EX line reads **K 90,000 turnover → K 5,000 bonus → 50 MPS VIP points** (5,000 ÷ 100), not 900.
 
 ## grandPrize field
 `grandPrize` is NOT computed from ticket values or turnover — it comes verbatim from the number stated in the activity's promotional copy (e.g. English announcement text saying "RM 500,000" → `grandPrize: 500000`). Always ask for or wait for the promo copy if it hasn't been provided; don't invent a round number as a placeholder.

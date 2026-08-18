@@ -4268,7 +4268,7 @@
           "formdata": [
             {
               "key": "prizeDisplayOrder",
-              "value": "{\"mini\": [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"10\", \"50\"], \"major\": [\"1\", \"2\", \"3\", \"4\", \"7\", \"8\", \"10\", \"15\", \"20\", \"150\"], \"mega\": [\"5\", \"8\", \"11\", \"14\", \"17\", \"20\", \"23\", \"30\", \"50\", \"500\"]}",
+              "value": "",
               "type": "text"
             },
             {
@@ -4283,7 +4283,7 @@
             },
             {
               "key": "presentType",
-              "value": "TREASURE_PICK",
+              "value": "INSTANT_CHALLENGE",
               "type": "text"
             },
             {
@@ -4293,32 +4293,32 @@
             },
             {
               "key": "bonusId",
-              "value": "JILIMYR3TP08170907",
+              "value": "JILIMMKIC08240929",
               "type": "text"
             },
             {
               "key": "startDate",
-              "value": "2026-08-17 12",
+              "value": "2026-08-24 12",
               "type": "text"
             },
             {
               "key": "endDate",
-              "value": "2026-09-08 12",
+              "value": "2026-09-30 12",
               "type": "text"
             },
             {
               "key": "bannerStartTime",
-              "value": "2026-08-17 12",
+              "value": "2026-08-24 12",
               "type": "text"
             },
             {
               "key": "drawFinishDate",
-              "value": "2026-08-16 12",
+              "value": "2026-08-23 12",
               "type": "text"
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-09-09 12",
+              "value": "2026-10-01 00",
               "type": "text"
             },
             {
@@ -4338,12 +4338,12 @@
             },
             {
               "key": "currency",
-              "value": "MYR",
+              "value": "MMK",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "MYR",
+              "value": "MMK",
               "type": "text"
             },
             {
@@ -4358,17 +4358,17 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-08-14 15:20:49.403",
+              "value": "2026-08-18 10:15:12.393",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-08-14 15:20:49.403",
+              "value": "2026-08-18 10:15:12.393",
               "type": "text"
             },
             {
               "key": "isInstantPay",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
@@ -4378,7 +4378,7 @@
             },
             {
               "key": "grandPrize",
-              "value": "500000",
+              "value": "1",
               "type": "text"
             },
             {
@@ -4403,22 +4403,22 @@
             },
             {
               "key": "presentPrizeNum",
-              "value": "1",
+              "value": "0",
               "type": "text"
             },
             {
               "key": "isAllowChallenge",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
               "key": "isForcingChallenge",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
               "key": "isChallengeFailNoBonus",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
@@ -4428,17 +4428,17 @@
             },
             {
               "key": "turnoverMultiplier",
-              "value": "1",
+              "value": "18",
               "type": "text"
             },
             {
               "key": "minBonusToMultiply",
-              "value": "1",
+              "value": "0",
               "type": "text"
             },
             {
               "key": "challengeExpireHours",
-              "value": "1",
+              "value": "12",
               "type": "text"
             },
             {
@@ -4453,12 +4453,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"JILI\":[\"38\",\"696\",\"539\",\"736\"]}",
+              "value": "{\"JILI\":[]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{}",
+              "value": "{\"JILI\":[\"32\",\"47\",\"259\",\"536\",\"720\",\"636\",\"540\",\"736\"]}",
               "type": "text"
             },
             {
@@ -4473,7 +4473,7 @@
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"mini\": {\"probability\": {\"1\": 30, \"2\": 20, \"3\": 15, \"4\": 15, \"5\": 5, \"6\": 5, \"7\": 5, \"8\": 3, \"10\": 2, \"50\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"1\": 2147483647, \"2\": 2147483647, \"3\": 2147483647, \"4\": 2147483647, \"5\": 2147483647, \"6\": 2147483647, \"7\": 2147483647, \"8\": 2147483647, \"10\": 2147483647, \"50\": 2147483647}, \"turnoverPerTicket\": 600, \"maxTicketPerPlayer\": 1}, \"major\": {\"probability\": {\"1\": 17.5, \"2\": 17.5, \"3\": 17.5, \"4\": 17.5, \"7\": 10, \"8\": 10, \"10\": 5, \"15\": 3, \"20\": 2, \"150\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"1\": 2147483647, \"2\": 2147483647, \"3\": 2147483647, \"4\": 2147483647, \"7\": 2147483647, \"8\": 2147483647, \"10\": 2147483647, \"15\": 2147483647, \"20\": 2147483647, \"150\": 2147483647}, \"turnoverPerTicket\": 1500, \"maxTicketPerPlayer\": 2}, \"mega\": {\"probability\": {\"5\": 17.5, \"8\": 17.5, \"11\": 17.5, \"14\": 17.5, \"17\": 10, \"20\": 10, \"23\": 5, \"30\": 3, \"50\": 2, \"500\": 0}, \"adjust\": {\"min\": -50, \"max\": 50}, \"prizes\": {\"5\": 2147483647, \"8\": 2147483647, \"11\": 2147483647, \"14\": 2147483647, \"17\": 2147483647, \"20\": 2147483647, \"23\": 2147483647, \"30\": 2147483647, \"50\": 2147483647, \"500\": 2147483647}, \"turnoverPerTicket\": 5000, \"maxTicketPerPlayer\": 9999}}",
+              "value": "{\"challengePrize\":5000,\"maxChallengePrizeInOneDay\":40000,\"challengingGameCount\":3,\"maxTicketCountInOneDay\":2,\"calculatedGameType\":\"FH,SLOT,ARCADE\",\"prizes\":{},\"winlossCalculatedRate\":0.13,\"calculatedPlatform\":\"JILI\",\"turnoverCalculatedRate\":0.001}",
               "type": "text"
             },
             {
@@ -4513,17 +4513,17 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html -->\n<div class=\"tooltip-box\">\n    <ul class=\"list-dot\">\n        <li>1st day 17-08 12:00 PM ~ 18-08 12:00 PM</li>\n        <li>2nd day 18-08 12:00 PM ~ 19-08 12:00 PM</li>\n        <li>3rd day 19-08 12:00 PM ~ 20-08 12:00 PM</li>\n        <li>4th day 20-08 12:00 PM ~ 21-08 12:00 PM</li>\n        <li>5th day 21-08 12:00 PM ~ 22-08 12:00 PM</li>\n        <li>6th day 22-08 12:00 PM ~ 23-08 12:00 PM</li>\n        <li>7th day 23-08 12:00 PM ~ 24-08 12:00 PM</li>\n        <li>8th day 24-08 12:00 PM ~ 25-08 12:00 PM</li>\n        <li>9th day 25-08 12:00 PM ~ 26-08 12:00 PM</li>\n        <li>10th day 26-08 12:00 PM ~ 27-08 12:00 PM</li>\n        <li>11th day 27-08 12:00 PM ~ 28-08 12:00 PM</li>\n        <li>12th day 28-08 12:00 PM ~ 29-08 12:00 PM</li>\n        <li>13th day 29-08 12:00 PM ~ 30-08 12:00 PM</li>\n        <li>14th day 30-08 12:00 PM ~ 31-08 12:00 PM</li>\n        <li>15th day 31-08 12:00 PM ~ 01-09 12:00 PM</li>\n        <li>16th day 01-09 12:00 PM ~ 02-09 12:00 PM</li>\n        <li>17th day 02-09 12:00 PM ~ 03-09 12:00 PM</li>\n        <li>18th day 03-09 12:00 PM ~ 04-09 12:00 PM</li>\n        <li>19th day 04-09 12:00 PM ~ 05-09 12:00 PM</li>\n        <li>20th day 05-09 12:00 PM ~ 06-09 12:00 PM</li>\n        <li>21st day 06-09 12:00 PM ~ 07-09 12:00 PM</li>\n        <li>22nd day 07-09 12:00 PM ~ 08-09 12:00 PM</li>\n    </ul>\n</div>",
+              "value": "<!-- Hint Html -->",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html -->\n<div class=\"ticket-box\">\n    <ul class=\"list-dot\">\n        <li>Bet JILI games to earn tier tickets.</li>      \n        <li>Players can receive unlimited tickets.</li>\n        <li>The event starts from LV1. LV2 will be unlocked after LV1 reaches its max ticket amount, and LV3 will be unlocked after LV2 reaches its max ticket amount.</li>\n        <li class=\"ticket-tier-summary\">\n            <ul class=\"ticket-tier-list\">\n                <li class=\"ticket-tier-item tier-min\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV1\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"miniMaxPrize\"></span>\n                </li>\n                <li class=\"ticket-tier-item tier-med\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV2\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"majorMaxPrize\"></span>\n                </li>\n                <li class=\"ticket-tier-item tier-max\">\n                    <span class=\"ticket-tier-label\">\n                        <i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>\n                        LV3\n                    </span>\n                    <span class=\"ticket-tier-caption\">Max Payout :</span>\n                    <span class=\"txt-rate MYR\" id=\"megaMaxPrize\"></span>\n                </li>\n            </ul>\n        </li>\n        <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: once players reach the required turnover, <span style=\"color:#FFD700;\">click the treasure box</span> to redeem tickets of the corresponding level, and the rewards will be credited instantly.</li>\n        <li><span style=\"color:#FFD700;\"><strong>If the rewards are not claimed, all rewards will be cleared at 12:00 PM.</strong></span></li>\n        <li>Bet JILI games for <strong>RM 100</strong> to get <strong>1</strong> MPS VIP Point.</li>\n        <li>1 MPS VIP Point is not equivalent to RM 1.</li>\n        <li>Players can check the number of MPS VIP Points at Menu / Member Info.</li>\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\n    </ul>\n</div>",
+              "value": "<!-- Info Html -->",
               "type": "text"
             },
             {
               "key": "infoHtml",
-              "value": "<!-- Info Html -->",
+              "value": "<!-- Info Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>စနစ်မှ နေ့စဉ် ချက်ချင်းစိန်ခေါ်မှု လက်မှတ်များ ထုတ်ပေးပါသည်။</li> <li>စိန်ခေါ်မှုစတင်ပြီး စိန်ခေါ်မှုဂိမ်း 3 ခုတွင် 18X လောင်းကြေးပမာဏဖြင့် လောင်းကစားပါက ဘောနပ်စ်ရရှိပါမည်။</li> <li>ကစားသမားသည် လက်ရှိလက်မှတ်ကို စွန့်လွှတ်ပြီး နောက်တစ်ခုကို စတင်နိုင်ပါသည်။</li> <li>လက်မှတ်တစ်ခုစီကို မတူညီသောဂိမ်းများဖြင့် စိန်ခေါ်နိုင်ပါသည်။</li> <li>လက်မှတ်အသစ်များကို နေ့စဉ် 10:30 AM တွင် ထုတ်ပေးမည်ဖြစ်ပြီး၊ ဘောနပ်စ်ရရှိရန် စိန်ခေါ်မှုကိုနှိပ်ပြီးနောက် 12 နာရီအတွင်း ပြီးမြောက်ရပါမည်။</li> <li>လက်မှတ်အားလုံးကို 30-09-2026 10:30 PM မတိုင်မီ စိန်ခေါ်မှု ပြီးမြောက်ရပါမည်။</li> <li>ဘောနပ်စ်ဂိမ်းများတွင် K 100 လောင်းကစားပါက MPS VIP Point 1 မှတ် ရရှိပါမည်။</li> <li>MPS VIP Point 1 မှတ်သည် K 1 နှင့် ညီမျှခြင်း မရှိပါ။</li> <li>ကစားသမားသည် MPS VIP Point အရေအတွက်ကို Menu/ Member Info တွင် စစ်ဆေးနိုင်ပါသည်။</li> <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့် ရှိပါသည်။</li> <li>ဥပမာ - ပထမလက်မှတ်စိန်ခေါ်မှုကို စတင်ပြီး K 90,000 လောင်းကြေးပမာဏ လောင်းကစားပါက K 5,000 ဘောနပ်စ်နှင့် MPS VIP Point 50 မှတ် ရရှိပါမည်။ စိန်ခေါ်မှုပြီးဆုံးသည်နှင့် စနစ်မှ ကစားသမားထံ ဘောနပ်စ်ကို ချက်ချင်းထုတ်ပေးပါမည်။ ကစားသမားသည် ပထမလက်မှတ်စိန်ခေါ်မှုကို စွန့်လွှတ်ပြီး နောက်လက်မှတ်စိန်ခေါ်မှုကို စတင်နိုင်ပါသည်။</li> </ul> </div>",
               "type": "text"
             },
             {
@@ -4533,7 +4533,7 @@
             },
             {
               "key": "backgroundUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11083JILIPHPTR_BG.webp",
+              "value": "",
               "type": "text"
             },
             {
@@ -4543,7 +4543,7 @@
             },
             {
               "key": "gameHallBannerUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11083JILIPHPTR.webp",
+              "value": "",
               "type": "text"
             },
             {

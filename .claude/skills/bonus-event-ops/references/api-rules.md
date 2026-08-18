@@ -10,6 +10,16 @@ File: `BonusEvent_Admin.postman_collection.json`
 - **`Latest Activity`** — single item, always overwritten (never duplicated) with whichever real activity the user most recently asked for. This is true even when consecutive activities are for different providers/currencies/types — each new ask replaces the previous one entirely.
 - Endpoint `insertBonusEvent` uses **multipart/form-data**. Endpoint `insertRankRecordSetting` uses **application/x-www-form-urlencoded**. Don't mix the two.
 
+## The 12:00 rule — all API date fields (settled; do not re-ask)
+
+**Every date field in every request to this admin API uses hour `12` (12:00 GMT+8), for every currency and every `presentType`.** This is the server backend's time. It is NOT a market-local time and is NOT derived from the currency clearing-time table in `html-rules.md` — that table exists purely for player-facing HTML, banners, and announcements.
+
+Applies to `startDate`, `endDate`, `bannerStartTime`, `drawFinishDate` on `insertBonusEvent`, and to `startTime` / `displayTime` on `insertRankRecordSetting`. Evidence: all 15 stored template items across PHP/MMK/VND/USD/MYR carry hour `12`, and 114 production RACE_WIN records do the same. Brian has confirmed this directly and has been asked more than once — **do not raise it again as a discrepancy to confirm.**
+
+One legitimate exception exists and it is computed, never chosen: `redeemDeadlineDate` takes whatever hour falls out of its own formula (e.g. INSTANT_CHALLENGE's `endDate + challengeExpireHours` → `2026-10-01 00`). An hour other than `12` on that one field is expected.
+
+A brief for an MMK activity that says "12pm" is correct as written. The 10:30 that belongs to MMK shows up only in the Burmese copy the player reads.
+
 ## updateTime / createTime
 Always fetch the real current GMT+8 timestamp with actual milliseconds immediately before building the item:
 ```bash
@@ -39,6 +49,11 @@ Applies independent of `presentType` — Golden Egg, Treasure Pick, Roulette, et
   ```
 - Reward value = base ticket unit (commonly 100) × multiplier stated in the brief. E.g. base 100: "60%" → 60, "3X" → 300, "4X" → 400, "5X" → 500, "8X" → 800, "10X" → 1000, "15X" → 1500.
 - The count of values in the comma list = the count given (e.g. "日 50%×4, 3X×3, 5X×2" → 4 fives of 50, then 3 of 300, then 2 of 500 = 9 comma-separated values total).
+
+## Brief lines that map to NO API field — don't hunt for one, don't ask
+
+- **「可設定為公開」 / 「僅某某站台(m9 / inf / m7spin / agd88 等)會被打開」** — this is announcement copy describing which sites will publicise the event. It is not an API setting. `accessLevel` stays `public` (15/15 template items) and no site/agent list is posted. Confirmed by Brian; do not raise it as an open question again.
+- **`c: 26W` cost notes** — see `activity-codes.md`. Compute the real figure and compare, but don't look for a field.
 
 ## Skin-specific required params
 | presentType | Required field | Known values |
@@ -74,15 +89,43 @@ No ticket concept — `presentPrizeNum: 0`, `maxTicketPerPlayer: 0`.
 ```json
 {
   "challengePrize": <base ticket amount>,
-  "challengingGameCount": <e.g. 3 for "8選3">,
-  "maxTicketCountInOneDay": <per-player daily cap>,
-  "maxChallengePrizeInOneDay": <daily total cap>,
+  "maxChallengePrizeInOneDay": <per-player DAILY prize cap>,
+  "challengingGameCount": <e.g. 3 for "8挑3">,
+  "maxTicketCountInOneDay": <per-player DAILY ticket count cap>,
+  "calculatedGameType": "FH,SLOT,ARCADE,RNGTABLE",
+  "prizes": {},
   "winlossCalculatedRate": <decimal, rebate rate on losses>,
-  "turnoverCalculatedRate": <decimal, rebate rate on win turnover>,
   "calculatedPlatform": <provider's real platform code, e.g. "POCKET" for PG>,
-  "calculatedGameType": "FH,SLOT,ARCADE,RNGTABLE" (or similar — game categories counted)
+  "turnoverCalculatedRate": <decimal, rebate rate on win turnover>
 }
 ```
+- **`prizes: {}` is always present and always empty** — INSTANT_CHALLENGE has no prize pool. Don't drop the key.
+- **Every cap on this type is a DAILY cap** (confirmed by Brian). A brief saying "每人上限4萬, 上限張數2張" with no 每日 wording still means 4萬/day and 2張/day. Never read either as a whole-activity total, and don't ask.
+- `challengePrize` is the *base* ticket value; the actual ticket is computed from the loss rebate, so it can exceed the base. That's why `maxChallengePrizeInOneDay` can sit well above `challengePrize × maxTicketCountInOneDay` without being an error — don't flag the gap.
+- The brief's 「綁定流水 N 倍」 is **not** in `prizeDistribution` — it's the top-level `turnoverMultiplier`. Likewise 「票券 N 小時過期」 is top-level `challengeExpireHours`.
+
+#### calculatedGameType — the complete code set
+`LIVEARENA`, `LIVE`, `SPORTS`, `LOTTERY`, `FH`, `SLOT`, `ARCADE`, `RNGTABLE`
+
+Comma-separated, no spaces. `FH` = fish/捕魚 — a brief writing "FISH" means `FH`. Use only codes from this list; if a brief names a category not on it, ask rather than inventing a code.
+
+#### INSTANT_CHALLENGE top-level fields that differ from other types
+| Field | Value |
+|---|---|
+| `isAllowChallenge` / `isForcingChallenge` / `isChallengeFailNoBonus` | all `true` |
+| `turnoverMultiplier` | the brief's 綁定流水倍數 (other types leave this at `1`) |
+| `challengeExpireHours` | the brief's 票券過期小時 (other types leave this at `1`) |
+| `requiredGames` | `{"<PLATFORM>":[]}` — empty array. Note the Daily Mission template uses `[""]` instead; both forms are accepted, so match the template for the type you're building |
+| `challengeGames` | `{"<PLATFORM>":["id","id",...]}` — the real 8挑3 game list |
+| `presentPrizeNum`, `maxTicketPerPlayer` | `0` |
+| `grandPrize`, `turnoverPerTicket`, `bonusMultiplier` | `1` |
+| `isInstantPay` | `false` |
+| `dailyMissionSetting`, `miniGamePrizeDistribution` | `{}` |
+
+#### INSTANT_CHALLENGE date relationships
+- `bannerStartTime` = `startDate`
+- `drawFinishDate` = `startDate` **minus 1 day**, hour 12 (14/15 template items follow this; the Instant Challenge template's own value is an edit artifact — its `drawFinishDate` equals its `updateTime` date, so ignore that one)
+- `redeemDeadlineDate` = `endDate` **plus `challengeExpireHours`** — the only field allowed an hour other than 12. A brief's 「(+N hours)」 / 「打流水結束」 note is stating exactly this, and it should reconcile to the same value; if it doesn't, say so.
 
 ### DAILY_MISSION
 ```json
@@ -119,7 +162,7 @@ Endpoint `insertRankRecordSetting`, `application/x-www-form-urlencoded`. No `bon
 | `presentType` | `RACE_WIN` | |
 | `currency` / `walletCurrency` | market currency | both always the same value |
 | `allowPlatform` | provider's **API** platform value | see activity-codes.md provider table — ID abbreviation ≠ API value for several providers |
-| `startTime` | `YYYY-MM-DD HH:mm:ss` | activity start. **Time-of-day is 12:00 GMT+8 regardless of currency** — the clearing-time table in `html-rules.md` governs `insertBonusEvent` types only, NOT this endpoint. Verified: MMK 29/31, PHP 53/55, USD 20/22, VND 6/6, BDT 1/1 all start at 12:00. Take the time from the brief and cross-check it is 12:00; if the brief says otherwise, ask before using a currency clearing time |
+| `startTime` | `YYYY-MM-DD HH:mm:ss` | activity start. **12:00 GMT+8 regardless of currency** — see "The 12:00 rule" above; this is the universal API convention, not a RACE_WIN quirk. Verified: MMK 29/31, PHP 53/55, USD 20/22, VND 6/6, BDT 1/1 |
 | `rankDays` | whole days between start and end | recompute independently from the two timestamps |
 | `displayTime` | activity **END** time | i.e. `startTime` + `rankDays`. This is NOT a "start showing" time despite the name — verify it equals the brief's end datetime |
 | `displayOrder` | number in the activity label | `RACE2` → `2`, `LH2` → `2` (confirmed in production) |

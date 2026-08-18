@@ -66,16 +66,25 @@ Note this is a *display* convention only. API `prizeDistribution` and other nume
 ### VND is displayed at 1:1000 — the trailing `K` is mandatory
 VND figures are shown in thousands, so **every VND amount in player-facing copy carries a `K` suffix**. `₫ 100 K` means 100,000 dong. Dropping the K understates the amount by 1000× and is a serious error, not a formatting nit.
 
+**The API value and the displayed number are THE SAME — `K` is a label, not a conversion.** VND API fields are themselves already expressed in thousands-units, so no arithmetic happens between the API and the HTML:
+
+| API field value | HTML copy |
+|---|---|
+| `turnoverPerPoint` = `100` | `₫ 100 K` |
+| `1000` | `₫ 1000 K` |
+
+Evidence: the stored VND item (Auto Redeem 3-Tier) has `turnoverPerPoint` = 100 and its Vietnamese copy reads `₫ 100 K` — the same 100, with K appended. Its `prizeDistribution` tiers (mini 5–500, mega 40–8888) only make sense as thousands: 8,888 dong would be worth a few US cents, impossible for a mega jackpot, while 8,888 K = ~8.9M dong is plausible. Contrast PHP's Golden Egg, whose tiers (2–500) are literal pesos with no scaling.
+
+⚠️ **Never multiply or divide a VND figure when moving between the brief, the API, and the HTML.** An earlier version of this file wrongly stated that API fields carry the "full unscaled value" (e.g. `100000` for 100,000 dong). That is wrong and would inflate every VND amount 1000×. Brian corrected it.
+
 | Context | Correct | Wrong |
 |---|---|---|
 | Rate line | `Cược ... đủ ₫ 100 K để nhận 1 Điểm VIP MPS` | `₫ 100` |
 | Non-equivalence line | `1 Điểm VIP MPS không tương đương với ₫ 1 (K).` | `₫ 1` |
 
-Note the second form: when the amount stands alone as a unit reference rather than a sum to bet, the K goes **in parentheses** — `₫ 1 (K)`. Both forms are taken from the stored VND item (Auto Redeem 3-Tier) and both are Brian-confirmed.
+Note the second form: when the amount stands alone as a unit reference rather than a sum to bet, the K goes **in parentheses** — `₫ 1 (K)`. Both forms are taken from the stored VND item and both are Brian-confirmed.
 
-Because of the 1:1000 display, VND amounts rarely need thousands separators — the K already absorbs three digits. Apply separators only if the displayed number itself reaches 1,000 or more (i.e. ≥ 1,000,000 dong).
-
-This applies to HTML/banner/announcement copy only. **API numeric fields carry the full unscaled value with no K** — a `prizeDistribution` entry for 100,000 dong is `100000`, not `100`.
+**Unverified:** no stored VND example reaches 1,000, so whether a displayed VND number of 1,000+ takes a thousands separator (`₫ 1,000 K` vs `₫ 1000 K`) is not established. Ask Brian the first time it comes up rather than assuming.
 
 ## Currency → HTML content language
 | Currency | Language |

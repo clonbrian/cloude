@@ -227,6 +227,9 @@ Same LV1/LV2/LV3 skeleton as above, but the intro line is simpler ("Bet {N} bonu
 ```
 This type puts everything in `infoHtml`, not `footerHtml`/`hintHtml`.
 
+### Formatting the numbers in this skeleton
+`{SYM}` in the skeleton is written flush against the placeholder, but that is shorthand — apply the per-currency spacing and the mandatory thousands separators from "Currency → symbol" in `html-rules.md`. For MMK that means `K 90,000` and `K 5,000`, not `K90000`. The bare figures inside the parenthesised working (`90,000 ÷ 18`) take separators too but no symbol.
+
 ### Show the arithmetic, don't just state a rate (Brian's approved format)
 This skeleton was revised to Brian's own wording. Three deliberate choices — keep them:
 1. **Write formulas inline.** `(Bonus = turnover ÷ {turnoverMultiplier})` and `(MPS VIP Points = turnover ÷ 100)`, plus the parenthesised working in the EX line. The older phrasing "Bet on bonus games for {SYM}100 to get 1 MPS VIP Point" is ambiguous enough that it caused a real error — it reads as if points come from the payout. Prefer the explicit division.

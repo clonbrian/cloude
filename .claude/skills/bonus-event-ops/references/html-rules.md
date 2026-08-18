@@ -42,15 +42,40 @@ Both rows above describe the *same instant* — an MMK activity ending `2026-10-
 ⚠️ Writing `00:00` as `12:00 AM` in an API field is a format error — API hours are 24-hour and never carry AM/PM.
 
 ## Currency → symbol
-| Currency | Symbol format |
-|---|---|
-| PHP | ₱ |
-| VND | **₫ (K)** — special combined format, e.g. `₫ 100 K`, `1 MPS VIP Point is not equivalent to ₫ 1 (K).` |
-| MMK | K (with space before number, e.g. `K 100`, `K 330,000`) |
-| BDT | ৳ |
-| CAD | CA$ |
-| USD | $ |
-| MYR | RM (with space before number, e.g. `RM 100`) |
+
+### Thousands separators are MANDATORY
+**Every money figure of 1,000 or more takes comma thousands separators in HTML copy.** Write `K 90,000`, not `K90000`; `₱3,600`, not `₱3600`. This applies to all currencies and all activity types.
+
+Verified against stored templates: separators are present in every item except the Rebate and Instant Challenge templates, both already flagged as carrying stale content. Those two are not precedent — the ~40 other occurrences are. Amounts under 1,000 take no separator (`K 100`, `₱1`).
+
+Note this is a *display* convention only. API `prizeDistribution` and other numeric fields stay as bare integers with no separators.
+
+### Space after the symbol — per currency
+| Currency | Symbol format | Space? | Evidence |
+|---|---|---|---|
+| MMK | `K 90,000`, `K 100`, `K 1` | **yes** | 10/10 stored occurrences (Roulette, Treasure Pick 3-Tier) |
+| VND | **`₫ 100 K`** — see the VND note below | **yes** | 2/2 |
+| MYR | `RM 100` | **yes** | — |
+| PHP | `₱3,600`, `₱100`, `₱1` | **no** | 7 activities without space; only Raffle uses `₱ 3,900`, treat as outlier |
+| BDT | `৳` | no | — |
+| CAD | `CA$` | no | — |
+| USD | `$` | no | — |
+
+⚠️ A past Claude output wrote MMK as `K90000` — no space *and* no separator, wrong on both counts. Check this table rather than copying whatever the previous activity's HTML happened to use.
+
+### VND is displayed at 1:1000 — the trailing `K` is mandatory
+VND figures are shown in thousands, so **every VND amount in player-facing copy carries a `K` suffix**. `₫ 100 K` means 100,000 dong. Dropping the K understates the amount by 1000× and is a serious error, not a formatting nit.
+
+| Context | Correct | Wrong |
+|---|---|---|
+| Rate line | `Cược ... đủ ₫ 100 K để nhận 1 Điểm VIP MPS` | `₫ 100` |
+| Non-equivalence line | `1 Điểm VIP MPS không tương đương với ₫ 1 (K).` | `₫ 1` |
+
+Note the second form: when the amount stands alone as a unit reference rather than a sum to bet, the K goes **in parentheses** — `₫ 1 (K)`. Both forms are taken from the stored VND item (Auto Redeem 3-Tier) and both are Brian-confirmed.
+
+Because of the 1:1000 display, VND amounts rarely need thousands separators — the K already absorbs three digits. Apply separators only if the displayed number itself reaches 1,000 or more (i.e. ≥ 1,000,000 dong).
+
+This applies to HTML/banner/announcement copy only. **API numeric fields carry the full unscaled value with no K** — a `prizeDistribution` entry for 100,000 dong is `100000`, not `100`.
 
 ## Currency → HTML content language
 | Currency | Language |
@@ -90,7 +115,7 @@ Game IDs in parentheses after a game name (e.g. `Alibaba (110)`) are for identif
 - Per-day hint lists (e.g. "1st day X~Y", "2nd day Y~Z" for turnover/ticket unlock schedules) must have exactly as many entries as the day count, with dates/times rewritten to the actual activity dates and the currency's clearing time — never left as template placeholder dates.
 
 ## MPS VIP Point rule
-Fixed at 100 currency units = 1 MPS VIP Point, regardless of currency. E.g. PHP → "Bet ₱100 to get 1 MPS VIP Point", MMK → "K 100 လောင်းပါက...", VND → "₫ 100 K...".
+Fixed at 100 currency units = 1 MPS VIP Point, regardless of currency. E.g. PHP → "Bet ₱100 to get 1 MPS VIP Point", MMK → "K 100 လောင်းပါက...", VND → "₫ 100 K..." (never "₫ 100" — VND always takes the K suffix, see above).
 
 ### Point count in an EX / example line — divide the TURNOVER (settled)
 When a skeleton's example line states a point total, compute it as **turnover ÷ 100**, i.e. `turnoverPerPoint`:

@@ -153,6 +153,26 @@ Terminology note: 「bonus」 in Brian's phrasing (and in the copy itself) means
 Worked example (JILI MMK Instant Challenge): ticket base K 5,000 × 18X = K 90,000 turnover → EX line reads **K 90,000 turnover → K 5,000 bonus → 900 MPS VIP points** (90,000 ÷ 100).
 
 ## grandPrize field
-`grandPrize` is NOT computed from ticket values or turnover — it comes verbatim from the number stated in the activity's promotional copy (e.g. English announcement text saying "RM 500,000" → `grandPrize: 500000`). Always ask for or wait for the promo copy if it hasn't been provided; don't invent a round number as a placeholder.
+`grandPrize` is **required — `insertBonusEvent` rejects an empty value** with `{"error": "grandPrize was empty"}`. Never ship a request with it blank; get the number before building, not after.
+
+It is NOT computed from ticket values, turnover, or the prize table — it comes verbatim from the number stated in the activity's promotional copy (e.g. English announcement text saying "RM 500,000" → `grandPrize: 500000`). Always ask for or wait for the promo copy if it hasn't been provided; don't invent a round number as a placeholder.
+
+Confirmed non-derivable: across the 14 stored template items there is no consistent relationship between `grandPrize` and the top prize amount — MMK Treasure Pick 3-tier is 300,000,000 against a 100,000 top prize (3,000×), MMK Roulette is 1,000,000,000 against 200,000 (5,000×), VND Auto Redeem 3-tier is 5,000,000 against 8,888. Do not attempt a ratio.
+
+Reference values by market, useful only for prompting Brian — not for filling in:
+
+| Activity | Currency | grandPrize |
+|---|---|---|
+| Auto Redeem 3-tier (三級自爆) | MMK | 500,000,000 |
+| Treasure Pick 3-tier | MMK | 300,000,000 |
+| Roulette | MMK | 1,000,000,000 |
+| Golden Egg | PHP | 4,000,000 |
+| Treasure Pick single-tier | PHP | 5,000,000 |
+| Raffle / Auto Redeem single-tier | PHP | 10,000,000 |
+| Auto Redeem 3-tier | VND | 5,000,000 |
+
+Note the MMK Auto Redeem 3-tier value (500,000,000) sits between the two other MMK headline figures and is unrelated to that activity's own 200,000 top prize — further confirmation that this number is a marketing figure, not a derived one.
+
+Types with no headline prize (Rebate, Instant Challenge, Daily Mission, Signup) use `1`.
 
 ## Activity ID (also produced alongside HTML — see references/activity-codes.md for the full naming scheme)

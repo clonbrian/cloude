@@ -4,27 +4,34 @@
 
 All 11 activity types below have a complete, parameterised English skeleton. **Never ask Brian for promo copy for a type listed here** — every placeholder is computable from the API brief he already gave (game count, turnover multiplier, expiry hours, deadline, currency symbol, clearing time). Asking again is the failure mode this file exists to prevent.
 
-## Localization: translate the English skeleton directly (settled — all languages)
+## Localization: use stored approved copy first, translate only as fallback
 
-Brian's instruction: **translate the English version straight into the market language using standard gambling/casino terminology.** This applies to every language — Burmese, Vietnamese, Bengali, French, and any market added later. No approved localized reference copy is needed and none should be requested — never ask for a localized HAR, sample, or existing translation.
+Priority order — do not skip step 1:
+1. **If this file holds approved market-language copy for the activity type being built, use it.** Substitute only the activity-specific bits (game scope, counts, dates, amounts). Approved copy reads naturally; machine translation does not, and Brian notices.
+2. **Only if no approved copy exists for that type**, translate the English skeleton directly using standard gambling terminology.
+
+Never ask Brian to supply localized copy — but when he volunteers it, **store it here verbatim under its activity type** so step 1 works next time. An earlier version of this file said only "translate directly, never ask", which caused Claude to machine-translate a 3-tier Auto Redeem body even though approved Burmese wording existed. That was wrong.
+
+**Wording is per activity type, not global.** Brian's Instant Challenge copy and his Auto Redeem 3-tier copy differ on the same concepts — IC uses `တက်ကတ်` for ticket and translates "Menu / Member Info" into Burmese, while 3AR uses `တိကက်`/`လက်မှတ်` and leaves "Menu / Member Info" in English. Both are correct for their own type. Match the type you are building; never cross-apply wording between types.
 
 Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `12 နာရီ`, not `၁၂ နာရီ`), and currency symbols keep their spacing convention (`K 100`, `₫ 100 K`, `RM 100`).
 
-Standard industry terms to reuse rather than literal-translating. The Burmese column is **Brian's own approved wording** — prefer it over any alternative:
+Standard industry terms. **The Burmese column varies by activity type — check the approved copy for your type before using this table**:
 
-| English | Burmese (MMK) | Vietnamese (VND) |
-|---|---|---|
-| turnover / 流水 | လောင်းကြေးပမာဏ | doanh thu cược |
-| bonus | ဘောနပ်စ် | tiền thưởng |
-| challenge | စိန်ခေါ်မှု | thử thách |
-| instant challenge | အမြန်စိန်ခေါ်မှု | thử thách tức thì |
-| ticket | တက်ကတ် | vé |
-| player | ကစားသမား | người chơi |
-| promotion | ပရိုမိုးရှင်း | khuyến mãi |
-| system | စနစ် | hệ thống |
-| Menu / Member Info | မီနူး / အဖွဲ့ဝင်အချက်အလက် | Menu / Thông tin thành viên |
-
-Two corrections against earlier Claude output: use `တက်ကတ်` for ticket (not `လက်မှတ်`) and `အမြန်စိန်ခေါ်မှု` for instant challenge (not `ချက်ချင်းစိန်ခေါ်မှု`). Also translate "Menu / Member Info" into the market language rather than leaving it in English.
+| English | Burmese — Instant Challenge | Burmese — Auto Redeem 3-tier | Vietnamese (VND) |
+|---|---|---|---|
+| turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược |
+| bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng |
+| ticket | တက်ကတ် | **တိကက်** (in a max-count phrase: လက်မှတ်) | vé |
+| challenge | စိန်ခေါ်မှု | — | thử thách |
+| instant challenge | အမြန်စိန်ခေါ်မှု | — | thử thách tức thì |
+| event / programme | — | အစီအစဉ် | chương trình |
+| unlock | — | လော့ခ်ဖွင့် | mở khóa |
+| max payout | — | အများဆုံးဆုကြေး | — |
+| player | ကစားသမား | ကစားသမား | người chơi |
+| promotion | ပရိုမိုးရှင်း | ပရိုမိုးရှင်း | khuyến mãi |
+| system | စနစ် | စနစ် | hệ thống |
+| Menu / Member Info | မီနူး / အဖွဲ့ဝင်အချက်အလက် | **keep English** | Menu / Thông tin thành viên |
 
 Extend this table when a new market or term comes up.
 
@@ -204,8 +211,34 @@ Two sub-variants for the "Bonus Claim" line, depending on whether the source typ
 
 `{ALL_GAMES_OR_GAME_COUNT}` — use "all {PROVIDER} games" if the brief says all of a provider's games qualify, otherwise "{N} bonus games" with the actual count.
 
-## Treasure Pick — 3-Tier with Daily/Weekly Medal
-Same LV1/LV2/LV3 skeleton as above, but the intro line is simpler ("Bet {N} bonus games to earn tier tickets.") since no medal-specific HTML line is needed — medal payouts are shown by the game UI automatically from `rankRewardSetting`, not from custom HTML text.
+### Approved Burmese (MMK) copy — use verbatim, do not re-translate
+Brian-supplied. Substitute only the game-scope phrase and any counts; leave every other word alone.
+
+```
+<li>{GAME_SCOPE}တွင် လောင်း၍ အဆင့်တိကက်များကို ရယူပါ။</li>
+<li>ကစားသမားများသည် တိကက်များကို အကန့်အသတ်မရှိ ရရှိနိုင်သည်။</li>
+<li>အစီအစဉ်ကို နေ့စဉ် LV1 မှစတင်ပြီး LV1 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV2 ကို လော့ခ်ဖွင့်မည်ဖြစ်ပြီး LV2 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။</li>
+[tier summary block — caption text is "အများဆုံးဆုကြေး :" for LV1/LV2/LV3, value spans stay EMPTY]
+<li><strong>ဆုကြေးရယူခြင်း</strong>: ကစားသမားများသည် သတ်မှတ်ထားသော လောင်းကြေးပမာဏ ပြည့်မီပါက စနစ်မှ သက်ဆိုင်ရာအဆင့်၏ Instant Pay ဆုကြေးကို အလိုအလျောက် ထုတ်ပေးမည်ဖြစ်ပြီး၊ ဆုကြေးများ ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>
+<li>{GAME_SCOPE}တွင် {SYM} 100 လောင်းပါက MPS VIP Point 1 မှတ် ရရှိမည်။</li>
+<li>MPS VIP Point 1 မှတ်သည် {SYM} 1 နှင့် မညီမျှပါ။</li>
+<li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu / Member Info တွင် စစ်ဆေးနိုင်သည်။</li>
+<li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>
+```
+
+`{GAME_SCOPE}`: a fixed game count → `ဘောနပ်စ်ဂိမ်း N ခု`; all of one provider's games → `<PROVIDER> ဂိမ်းအားလုံး`.
+
+Points to preserve exactly, because earlier Claude output got each one wrong:
+- **`ဆုကြေး`** is the word for bonus/prize money throughout this type — not the transliteration `ဘောနပ်စ်`.
+- **`တိကက်`** for ticket in lines 1–2; **`လက်မှတ်`** inside the max-count phrase in line 3. The mix is intentional.
+- **`အစီအစဉ်`** for the event — not `ပွဲတော်` (that means festival).
+- **`လော့ခ်ဖွင့်`** for unlock; **`အများဆုံးဆုကြေး`** for max payout.
+- **"Menu / Member Info" stays in English** for this type.
+- `ပရိုမိုးရှင်းကို` has no space before `ကို`; the closing line ends `ပြုလုပ်ပိုင်ခွင့်ရှိသည်။`
+
+---
+
+## Treasure Pick — 3-Tier with Daily/Weekly MedalSame LV1/LV2/LV3 skeleton as above, but the intro line is simpler ("Bet {N} bonus games to earn tier tickets.") since no medal-specific HTML line is needed — medal payouts are shown by the game UI automatically from `rankRewardSetting`, not from custom HTML text.
 
 ---
 

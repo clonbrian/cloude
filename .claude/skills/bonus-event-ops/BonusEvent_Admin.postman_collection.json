@@ -4268,7 +4268,7 @@
           "formdata": [
             {
               "key": "prizeDisplayOrder",
-              "value": "",
+              "value": "{\"mega\":[\"500\",\"1000\",\"2000\",\"3000\",\"5000\",\"7500\",\"20000\",\"200000\"],\"mini\":[\"100\",\"200\",\"300\",\"500\",\"750\",\"1000\",\"1250\",\"1500\",\"10000\"],\"major\":[\"300\",\"500\",\"1000\",\"1500\",\"2500\",\"3000\",\"5000\",\"10000\",\"40000\"]}",
               "type": "text"
             },
             {
@@ -4283,7 +4283,7 @@
             },
             {
               "key": "presentType",
-              "value": "INSTANT_CHALLENGE",
+              "value": "AUTO_REDEEM",
               "type": "text"
             },
             {
@@ -4293,7 +4293,7 @@
             },
             {
               "key": "bonusId",
-              "value": "JILIMMKIC08240929",
+              "value": "SVMMK3AR08240913",
               "type": "text"
             },
             {
@@ -4303,7 +4303,7 @@
             },
             {
               "key": "endDate",
-              "value": "2026-09-30 12",
+              "value": "2026-09-14 12",
               "type": "text"
             },
             {
@@ -4318,7 +4318,7 @@
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-10-01 00",
+              "value": "2026-09-14 12",
               "type": "text"
             },
             {
@@ -4328,7 +4328,7 @@
             },
             {
               "key": "platform",
-              "value": "JILI",
+              "value": "SVCASINO",
               "type": "text"
             },
             {
@@ -4358,17 +4358,17 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-08-18 18:35:21.272",
+              "value": "2026-08-21 18:34:30.561",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-08-18 18:35:21.272",
+              "value": "2026-08-21 18:34:30.561",
               "type": "text"
             },
             {
               "key": "isInstantPay",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
@@ -4378,7 +4378,7 @@
             },
             {
               "key": "grandPrize",
-              "value": "1",
+              "value": "500000000",
               "type": "text"
             },
             {
@@ -4408,17 +4408,17 @@
             },
             {
               "key": "isAllowChallenge",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
               "key": "isForcingChallenge",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
               "key": "isChallengeFailNoBonus",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
@@ -4428,17 +4428,17 @@
             },
             {
               "key": "turnoverMultiplier",
-              "value": "18",
+              "value": "1",
               "type": "text"
             },
             {
               "key": "minBonusToMultiply",
-              "value": "0",
+              "value": "1",
               "type": "text"
             },
             {
               "key": "challengeExpireHours",
-              "value": "12",
+              "value": "1",
               "type": "text"
             },
             {
@@ -4453,12 +4453,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"JILI\":[]}",
+              "value": "{\"SVCASINO\":[\"SVCASINO\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"JILI\":[\"32\",\"47\",\"259\",\"536\",\"720\",\"636\",\"540\",\"736\"]}",
+              "value": "{}",
               "type": "text"
             },
             {
@@ -4473,7 +4473,7 @@
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"challengePrize\":5000,\"maxChallengePrizeInOneDay\":40000,\"challengingGameCount\":3,\"maxTicketCountInOneDay\":2,\"calculatedGameType\":\"FH,SLOT,ARCADE\",\"prizes\":{},\"winlossCalculatedRate\":0.13,\"calculatedPlatform\":\"JILI\",\"turnoverCalculatedRate\":0.001}",
+              "value": "{\"mega\":{\"probability\":{\"500\":20,\"1000\":20,\"2000\":17,\"3000\":12,\"5000\":12,\"7500\":10,\"20000\":9,\"200000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"500\":2147483647,\"1000\":2147483647,\"2000\":2147483647,\"3000\":2147483647,\"5000\":2147483647,\"7500\":2147483647,\"20000\":2147483647,\"200000\":2147483647},\"turnoverPerTicket\":3000000,\"maxTicketPerPlayer\":2000},\"mini\":{\"probability\":{\"100\":20,\"200\":20,\"300\":15,\"500\":10,\"750\":10,\"1000\":10,\"1250\":10,\"1500\":5,\"10000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"100\":2147483647,\"200\":2147483647,\"300\":2147483647,\"500\":2147483647,\"750\":2147483647,\"1000\":2147483647,\"1250\":2147483647,\"1500\":2147483647,\"10000\":2147483647},\"turnoverPerTicket\":300000,\"maxTicketPerPlayer\":1},\"major\":{\"probability\":{\"300\":25,\"500\":25,\"1000\":15,\"1500\":15,\"2500\":5,\"3000\":5,\"5000\":5,\"10000\":5,\"40000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"300\":2147483647,\"500\":2147483647,\"1000\":2147483647,\"1500\":2147483647,\"2500\":2147483647,\"3000\":2147483647,\"5000\":2147483647,\"10000\":2147483647,\"40000\":2147483647},\"turnoverPerTicket\":1000000,\"maxTicketPerPlayer\":1}}",
               "type": "text"
             },
             {
@@ -4513,17 +4513,17 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html -->",
+              "value": "<!-- Hint Html --> <div class=\"tooltip-box\"> <ul class=\"list-dot\"> <li>Day 1 24-08-2026 10:30 AM ~ 25-08-2026 10:30 AM</li> <li>Day 2 25-08-2026 10:30 AM ~ 26-08-2026 10:30 AM</li> <li>Day 3 26-08-2026 10:30 AM ~ 27-08-2026 10:30 AM</li> <li>Day 4 27-08-2026 10:30 AM ~ 28-08-2026 10:30 AM</li> <li>Day 5 28-08-2026 10:30 AM ~ 29-08-2026 10:30 AM</li> <li>Day 6 29-08-2026 10:30 AM ~ 30-08-2026 10:30 AM</li> <li>Day 7 30-08-2026 10:30 AM ~ 31-08-2026 10:30 AM</li> <li>Day 8 31-08-2026 10:30 AM ~ 01-09-2026 10:30 AM</li> <li>Day 9 01-09-2026 10:30 AM ~ 02-09-2026 10:30 AM</li> <li>Day 10 02-09-2026 10:30 AM ~ 03-09-2026 10:30 AM</li> <li>Day 11 03-09-2026 10:30 AM ~ 04-09-2026 10:30 AM</li> <li>Day 12 04-09-2026 10:30 AM ~ 05-09-2026 10:30 AM</li> <li>Day 13 05-09-2026 10:30 AM ~ 06-09-2026 10:30 AM</li> <li>Day 14 06-09-2026 10:30 AM ~ 07-09-2026 10:30 AM</li> <li>Day 15 07-09-2026 10:30 AM ~ 08-09-2026 10:30 AM</li> <li>Day 16 08-09-2026 10:30 AM ~ 09-09-2026 10:30 AM</li> <li>Day 17 09-09-2026 10:30 AM ~ 10-09-2026 10:30 AM</li> <li>Day 18 10-09-2026 10:30 AM ~ 11-09-2026 10:30 AM</li> <li>Day 19 11-09-2026 10:30 AM ~ 12-09-2026 10:30 AM</li> <li>Day 20 12-09-2026 10:30 AM ~ 13-09-2026 10:30 AM</li> <li>Day 21 13-09-2026 10:30 AM ~ 14-09-2026 10:30 AM</li> </ul> </div>",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Info Html -->",
+              "value": "<!-- Footer Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>SVCASINO ဂိမ်းအားလုံးတွင် လောင်း၍ အဆင့်တိကက်များကို ရယူပါ။</li> <li>ကစားသမားများသည် တိကက်များကို အကန့်အသတ်မရှိ ရရှိနိုင်သည်။</li> <li>အစီအစဉ်ကို နေ့စဉ် LV1 မှစတင်ပြီး LV1 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV2 ကို လော့ခ်ဖွင့်မည်ဖြစ်ပြီး LV2 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။</li> <li class=\"ticket-tier-summary\"><ul class=\"ticket-tier-list\"><li class=\"ticket-tier-item tier-min\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV1</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"miniMaxPrize\"></span></li><li class=\"ticket-tier-item tier-med\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV2</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"majorMaxPrize\"></span></li><li class=\"ticket-tier-item tier-max\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV3</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"megaMaxPrize\"></span></li></ul></li> <li><strong>ဆုကြေးရယူခြင်း</strong>: ကစားသမားများသည် သတ်မှတ်ထားသော လောင်းကြေးပမာဏ ပြည့်မီပါက စနစ်မှ သက်ဆိုင်ရာအဆင့်၏ Instant Pay ဆုကြေးကို အလိုအလျောက် ထုတ်ပေးမည်ဖြစ်ပြီး၊ ဆုကြေးများ ချက်ချင်းရရှိမည်ဖြစ်သည်။</li> <li>SVCASINO ဂိမ်းအားလုံးတွင် K 100 လောင်းပါက MPS VIP Point 1 မှတ် ရရှိမည်။</li> <li>MPS VIP Point 1 မှတ်သည် K 1 နှင့် မညီမျှပါ။</li> <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu / Member Info တွင် စစ်ဆေးနိုင်သည်။</li> <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li> </ul> </div>",
               "type": "text"
             },
             {
               "key": "infoHtml",
-              "value": "<!-- Info Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>စနစ်မှ နေ့စဉ် အမြန်စိန်ခေါ်မှု တက်ကတ်များ ထုတ်ပေးပါသည်။</li> <li>စိန်ခေါ်မှုကို စတင်ပြီး စိန်ခေါ်မှု ဂိမ်း 3 မျိုးတွင် 18X လောင်းကြေးပမာဏ ဖြင့် လောင်းကစားပါ။ (ဘောနပ်စ် = လောင်းကြေးပမာဏ ÷ 18)</li> <li>ကစားသမားသည် လက်ရှိတက်ကတ်ကို စွန့်လွှတ်ပြီး နောက်တစ်စောင်ကို စတင်နိုင်သည်။</li> <li>တက်ကတ်တစ်စောင်စီတွင် မတူညီသော ဂိမ်းများဖြင့် စိန်ခေါ်နိုင်သည်။</li> <li>တက်ကတ်အသစ်များကို နေ့စဉ် 10:30 AM တွင် ထုတ်ပေးမည်ဖြစ်ပြီး ဆုလာဘ်ရယူရန် စိန်ခေါ်မှုကို နှိပ်ပြီးနောက် 12 နာရီအတွင်း ပြီးစီးရပါမည်။</li> <li>တက်ကတ်အားလုံးသည် 30-09-2026 10:30 PM မတိုင်မီ စိန်ခေါ်မှုကို ပြီးစီးရပါမည်။</li> <li>MPS VIP Points ကို စိန်ခေါ်မှု လောင်းကြေးပမာဏ အပေါ်အခြေခံ၍ တွက်ချက်ပါသည် (MPS VIP Points = လောင်းကြေးပမာဏ ÷ 100)။</li> <li>1 MPS VIP Point သည် K 1 နှင့် မညီမျှပါ။</li> <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို မီနူး / အဖွဲ့ဝင်အချက်အလက် တွင် စစ်ဆေးနိုင်သည်။</li> <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်း ကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ယာယီရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ရန် အခွင့်အရေးရှိသည်။</li> <li>EX: ပထမတက်ကတ် စိန်ခေါ်မှုကို စတင်ပြီးနောက် လောင်းကြေးပမာဏ K 90,000 လောင်းပါက K 5,000 ဘောနပ်စ် (90,000 ÷ 18) နှင့် 900 MPS VIP Points (90,000 ÷ 100) ရရှိမည်ဖြစ်သည်။ စိန်ခေါ်မှု ပြီးဆုံးသည့်အခါ စနစ်မှ ဘောနပ်စ် ကို ချက်ချင်း ထုတ်ပေးမည်ဖြစ်သည်။ ကစားသမားသည် ပထမတက်ကတ် စိန်ခေါ်မှုကို စွန့်လွှတ်ပြီး နောက်တက်ကတ် စိန်ခေါ်မှုကို စတင်နိုင်သည်။</li> </ul> </div>",
+              "value": "<!-- Info Html -->",
               "type": "text"
             },
             {
@@ -4533,7 +4533,7 @@
             },
             {
               "key": "backgroundUrl",
-              "value": "",
+              "value": "img.mpsimg.com/Bonusevent/Banner/11088SVCASINOMMAU_BG.webp",
               "type": "text"
             },
             {
@@ -4543,7 +4543,7 @@
             },
             {
               "key": "gameHallBannerUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11087MM1JILI.webp",
+              "value": "img.mpsimg.com/Bonusevent/Banner/11088SVCASINOMMAU.webp",
               "type": "text"
             },
             {

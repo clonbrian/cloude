@@ -12,7 +12,7 @@ Priority order — do not skip step 1:
 
 Never ask Brian to supply localized copy — but when he volunteers it, **store it here verbatim under its activity type** so step 1 works next time. An earlier version of this file said only "translate directly, never ask", which caused Claude to machine-translate a 3-tier Auto Redeem body even though approved Burmese wording existed. That was wrong.
 
-**Wording is per activity type, not global.** Brian's Instant Challenge copy and his Auto Redeem 3-tier copy differ on the same concepts — IC uses `တက်ကတ်` for ticket and translates "Menu / Member Info" into Burmese, while 3AR uses `တိကက်`/`လက်မှတ်` and leaves "Menu / Member Info" in English. Both are correct for their own type. Match the type you are building; never cross-apply wording between types.
+**Wording is per activity type, not global.** Brian's Instant Challenge copy and his Auto Redeem 3-tier copy differ on the same concepts — IC uses `တက်ကတ်` for ticket and translates "Menu / Member Info" into Burmese, while 3AR uses `တိကက်` throughout and leaves "Menu / Member Info" in English. Both are correct for their own type. Match the type you are building; never cross-apply wording between types.
 
 Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `12 နာရီ`, not `၁၂ နာရီ`), and currency symbols keep their spacing convention (`K 100`, `₫ 100 K`, `RM 100`).
 
@@ -22,7 +22,7 @@ Standard industry terms. **The Burmese column varies by activity type — check 
 |---|---|---|---|
 | turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược |
 | bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng |
-| ticket | တက်ကတ် | **တိကက်** (in a max-count phrase: လက်မှတ်) | vé |
+| ticket | တက်ကတ် | **တိကက်** (everywhere, no exceptions) | vé |
 | challenge | စိန်ခေါ်မှု | — | thử thách |
 | instant challenge | အမြန်စိန်ခေါ်မှု | — | thử thách tức thì |
 | event / programme | — | အစီအစဉ် | chương trình |
@@ -217,10 +217,10 @@ Brian-supplied. Substitute only the game-scope phrase and any counts; leave ever
 ```
 <li>{GAME_SCOPE}တွင် လောင်း၍ အဆင့်တိကက်များကို ရယူပါ။</li>
 <li>ကစားသမားများသည် တိကက်များကို အကန့်အသတ်မရှိ ရရှိနိုင်သည်။</li>
-<li>အစီအစဉ်ကို နေ့စဉ် LV1 မှစတင်ပြီး LV1 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV2 ကို လော့ခ်ဖွင့်မည်ဖြစ်ပြီး LV2 သည် အများဆုံးလက်မှတ်အရေအတွက်သို့ရောက်ရှိပြီးနောက် LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။</li>
+<li>အစီအစဉ်သည် နေ့စဉ် LV1 မှ စတင်ပြီး LV1 အတွက် အများဆုံးတိကက်အရေအတွက် ပြည့်မီပြီးနောက် LV2 ကို လော့ခ်ဖွင့်မည်ဖြစ်ပြီး LV2 အတွက် အများဆုံးတိကက်အရေအတွက် ပြည့်မီပြီးနောက် LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။</li>
 [tier summary block — caption text is "အများဆုံးဆုကြေး :" for LV1/LV2/LV3, value spans stay EMPTY]
 <li><strong>ဆုကြေးရယူခြင်း</strong>: ကစားသမားများသည် သတ်မှတ်ထားသော လောင်းကြေးပမာဏ ပြည့်မီပါက စနစ်မှ သက်ဆိုင်ရာအဆင့်၏ Instant Pay ဆုကြေးကို အလိုအလျောက် ထုတ်ပေးမည်ဖြစ်ပြီး၊ ဆုကြေးများ ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>
-<li>{GAME_SCOPE}တွင် {SYM} 100 လောင်းပါက MPS VIP Point 1 မှတ် ရရှိမည်။</li>
+<li>{GAME_SCOPE}တွင် လောင်းကြေး {SYM} 100 ပြည့်တိုင်း MPS VIP Point 1 မှတ် ရရှိမည်။</li>
 <li>MPS VIP Point 1 မှတ်သည် {SYM} 1 နှင့် မညီမျှပါ။</li>
 <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu / Member Info တွင် စစ်ဆေးနိုင်သည်။</li>
 <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>
@@ -230,11 +230,14 @@ Brian-supplied. Substitute only the game-scope phrase and any counts; leave ever
 
 Points to preserve exactly, because earlier Claude output got each one wrong:
 - **`ဆုကြေး`** is the word for bonus/prize money throughout this type — not the transliteration `ဘောနပ်စ်`.
-- **`တိကက်`** for ticket in lines 1–2; **`လက်မှတ်`** inside the max-count phrase in line 3. The mix is intentional.
+- **`တိကက်`** is the word for ticket **everywhere in this type, with no exceptions.** Brian's original template mixed in `လက်မှတ်` inside the max-count phrase in line 3; he corrected it — one activity uses one word. Do not reintroduce the mix.
 - **`အစီအစဉ်`** for the event — not `ပွဲတော်` (that means festival).
 - **`လော့ခ်ဖွင့်`** for unlock; **`အများဆုံးဆုကြေး`** for max payout.
 - **"Menu / Member Info" stays in English** for this type.
 - `ပရိုမိုးရှင်းကို` has no space before `ကို`; the closing line ends `ပြုလုပ်ပိုင်ခွင့်ရှိသည်။`
+- Threshold verbs are all from the `ပြည့်` family — `ပြည့်မီ` for a quota filling, `ပြည့်တိုင်း` for repeated accrual, `ပြည့်မီပါက` in the bonus-claim line. Never use `ရောက်ရှိ` ("arrive at"), which carries a spatial sense and was the one inconsistency in the original template.
+- The VIP point line reads `... လောင်းကြေး {SYM} 100 ပြည့်တိုင်း ...` — `ပြည့်တိုင်း` ("each time it accumulates to") conveys the per-100 accrual. Do not write `လောင်းပါက` ("if you bet"), which reads as a one-off condition and is the same ambiguity that caused the bonus-vs-turnover error in the VIP point rule.
+- Line 3 opens `အစီအစဉ်သည် နေ့စဉ် LV1 မှ စတင်ပြီး` — **subject** particle `သည်`, not `ကို` — the event is what starts, so the object marker is wrong. The tier clauses that follow take `အတွက်` ("for LV1"), not `သည်`, because it is LV1's ticket quota that fills, not LV1 performing an action. Brian corrected both against his own earlier template (`အစီအစဉ်ကို ... မှစတင်ပြီး`, `LV1 သည် ... သို့ရောက်ရှိပြီးနောက်`); use the corrected forms.
 
 ---
 

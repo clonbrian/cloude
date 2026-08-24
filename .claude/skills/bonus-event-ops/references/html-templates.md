@@ -383,6 +383,33 @@ All four `<span>` values stay empty — system-injected.
 
 ---
 
+
+### RANK_RECORD `tipText` — production template, rankType 0 (單筆贏額)
+Taken verbatim from a live submission; substitute the braces only.
+
+```html
+<ul>
+<li class="tit">{PLATFORM} Single Win Tournament ({D}th {Month} {YYYY} 12:00 pm. ~ {D}th {Month} {YYYY} 12:00 pm.)</li>
+<li class="tit">Term and Condition</li>
+<li class="number_1">{PLATFORM} Platform(Any games)</li>
+<li class="number_2">Winning amount for Single Bet more than {amountLimit} {currency word} will be ranked</li>
+<li>Reward</li>
+<li class="number_3">List {dailyRankLimit} Ranking</li>
+<li class="number_4">Daily Reward
+<br>1st Prize {p1} {currency word}
+<br>2nd Prize {p2} {currency word}
+...
+</li>
+<li class="tit">(1) Ranking could delay for 5 minutes and would reward to your account by 13:00 every day.</li>
+<li class="tit">(2) No challenge required and reward will be issued instantly.</li>
+</ul>
+```
+
+- The `number_2` sentence is what encodes the variant — swap it per `rankType`: 0 → "Winning amount for Single Bet more than N ... will be ranked"; 1 → "Single Winning Ratio more than Nx will be ranked"; 2 → "Daily Wager more than N ... will be ranked"; 3 → "Weekly Total Winning amount more than N ... will be ranked".
+- Amounts here take **thousands separators** (`12,000`), and the currency is spelled as a word (`peso`, `USD`), not a symbol.
+- A weekly block may sit between `number_4` and the closing notes wrapped in `<!--將會隱藏 ... 將會隱藏-->`. Those HTML comments are a deliberate hide/show switch — preserve them as-is when present, and don't treat the commented text as live copy.
+- ⚠️ The prize lines here and `rewardSetting` are entered separately and **drift** — see cross-check 1 in `api-rules.md`. Always diff them rank-for-rank before sending, and re-derive the header date range from `startTime` + `rankDays` rather than copying it from a previous activity.
+
 ## Rank Record / Race Win (`tipText`, not hintHtml/footerHtml/infoHtml)
 These two types don't use the `insertBonusEvent` HTML fields at all — they use a single `tipText` field on the `insertRankRecordSetting` endpoint. Structure is a flat `<ul>`, no tier/progress-bar patterns:
 ```html

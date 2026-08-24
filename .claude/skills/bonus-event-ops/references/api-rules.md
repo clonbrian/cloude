@@ -217,6 +217,70 @@ Endpoint `insertRankRecordSetting`, `application/x-www-form-urlencoded`. No `bon
 - Tier count in `rewardSetting` == tier count in the brief == line count in `tipText`.
 - The brief's cost note (`c: 26W` style) maps to **no API field**. Compute Σ(`name` × `quotas`) and compare; if it disagrees with the stated cost, flag it rather than adjusting any field to force a match.
 
+# RANK_RECORD (龍虎榜/排行榜) — full field spec
+
+Same endpoint and encoding as RACE_WIN: `POST /admin/insertRankRecordSetting`, `application/x-www-form-urlencoded`, 29 fields, **no `updateTime`/`createTime`** (server-generated). There is no `bonusId` on this endpoint — leaderboards are not given an activity ID like `insertBonusEvent` types are.
+
+## rankType decodes the leaderboard variant — this is the field that matters
+
+Derived from 354 production records pulled from `findAllRankRecordSetting`:
+
+| `rankType` | Variant | Chinese | Threshold field | Records |
+|---|---|---|---|---|
+| **0** | Single Winning amount | **單筆贏額** | `amountLimit` | 253 |
+| **1** | Winning Ratio / win rate | **單筆倍數** | `winRateLimit` | 20 |
+| **2** | Daily Wager / turnover | **日流水** | `amountLimit` | 46 |
+| **3** | Weekly Total Winning amount | **週累計贏額** | `amountLimit` | 35 |
+
+The threshold split is clean and exclusive — among RANK_RECORD rows: rankType 0 has `amountLimit` set in 139/140 and `winRateLimit` set in 0; rankType 1 is the exact inverse (0 and 18/18); rankTypes 2 and 3 are 46/46 and 35/35 on `amountLimit`. **Set exactly one threshold field and leave the other empty.** Decoded from the `number_2` rule sentence in each record's own `tipText`, so the mapping is the platform's own wording, not an inference.
+
+Note `rankType` is a RANK_RECORD concept. RACE_WIN rows also carry `rankType: 0`, but with `amountLimit: 0` — for RACE_WIN it is filler, not a variant selector.
+
+## rankType 0 (單筆贏額) — field conventions
+
+| Field | Value | Evidence (of 140 rankType-0 RANK_RECORD rows) |
+|---|---|---|
+| `rankType` | `0` | |
+| `amountLimit` | the single-bet win threshold from the brief | 139/140 populated |
+| `winRateLimit` | **empty** | 0/140 populated |
+| `allowGameType` | `SLOT,ARCADE` | 121/140; `SLOT` alone in 19. Unlike RACE_WIN, this **is** filled for RANK_RECORD |
+| `dailyRankLimit` | how many ranks the board shows | varies with the brief (10/7/5/9 common) |
+| `weeklyRankLimit` / `monthlyRankLimit` | `0` | 126/140 and 138/140 |
+| `weeklyOrderType` / `monthlyOrderType` | `0` | 131/140 and 139/140 |
+| `isOnlyWeek` | `0` | 134/140 |
+| `reserveRanking` | from the brief; `2` is most common | 2 (51), 0 (39), 3 (31) |
+| `challengeLimitHour`, `turnoverMultiplier`, `challengeGames`, `syncUserIds`, `latestSuccessSyncTime` | empty | |
+
+`amountLimit` reference values by market, for sanity-checking a brief — not for filling in blind: PHP 2,000 / 10,000 / 5,000 · MMK 50,000 / 500,000 · VND 500 · USD 1 / 10.
+
+## Date fields
+
+- `startTime` — 12:00 GMT+8, per the 12:00 rule (131/138 land on 04:00 UTC = 12:00 GMT+8)
+- **`displayTime` = `startTime` + `rankDays`** — 128/138 confirm; treat a mismatch as an error to query
+- **`freeSpinExpiredTime` = `displayTime`** — 132/140
+- `beforeStartDisplayTime` / `afterStartDisplayTime` — `0` for RANK_RECORD (RACE_WIN uses 12)
+
+## rewardSetting shape
+
+```json
+{"daily":[{"name":"12000","quotas":1},{"name":"5000","quotas":1},{"name":"1500","quotas":1},
+          {"name":"1000","quotas":1},{"name":"500","quotas":1}],
+ "weekly":[{"name":"0","quotas":0}],
+ "monthly":[{"name":"0","quotas":0}]}
+```
+
+`name` is the prize amount as a **string**, `quotas` the number of winners at that rank. Array order is rank order, 1st place first. **Unused periods are not omitted** — send a single placeholder `[{"name":"0","quotas":0}]` for `weekly`/`monthly` when the board is daily-only.
+
+## Cross-checks before finalizing a RANK_RECORD request
+
+Run all of these. Two of them caught real errors in a production submission (`202608-LH4`, BNG PHP, submitted live with both wrong):
+
+1. **`tipText` prize list must match `rewardSetting` rank-for-rank.** The live BNG record pays 12,000 / 5,000 / 1,500 / 1,000 / 500 but its copy advertises 12,000 / 5,000 / 2,000 / 1,500 / 500 — an extra tier inserted at 3rd place shifted everything below it, and the advertised total (21,000) exceeds what is actually paid (20,000).
+2. **The date range in `tipText` must equal `startTime` ~ `startTime + rankDays`.** That same record starts 26 Aug with `rankDays: 14`, so it ends 9 **September** — the copy says "9th August". Also check both dates carry the year.
+3. `dailyRankLimit` must equal the number of `rewardSetting.daily` entries (accounting for `quotas` > 1 spanning a range like "3rd~5th").
+4. Exactly one of `amountLimit` / `winRateLimit` is set, matching `rankType`.
+5. `displayTime` and `freeSpinExpiredTime` both equal `startTime + rankDays`.
+
 # Validating defaults against production history
 
 A single template item in the collection is one data point and can carry an outlier value — the Race Win template's `allowGameType: SLOT,ARCADE` was copied from a 2-in-114 exception and propagated into a generated request. When a HAR containing a `findAll*` response is available:

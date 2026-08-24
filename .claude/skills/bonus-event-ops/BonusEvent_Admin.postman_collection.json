@@ -4268,7 +4268,7 @@
           "formdata": [
             {
               "key": "prizeDisplayOrder",
-              "value": "{\"mega\":[\"500\",\"1000\",\"2000\",\"3000\",\"5000\",\"7500\",\"20000\",\"200000\"],\"mini\":[\"100\",\"200\",\"300\",\"500\",\"750\",\"1000\",\"1250\",\"1500\",\"10000\"],\"major\":[\"300\",\"500\",\"1000\",\"1500\",\"2500\",\"3000\",\"5000\",\"10000\",\"40000\"]}",
+              "value": "2,5,10,20,30,50,100,888,5000",
               "type": "text"
             },
             {
@@ -4283,7 +4283,7 @@
             },
             {
               "key": "presentType",
-              "value": "AUTO_REDEEM",
+              "value": "ROULETTE",
               "type": "text"
             },
             {
@@ -4293,32 +4293,32 @@
             },
             {
               "key": "bonusId",
-              "value": "SVMMK3AR08240913",
+              "value": "JDBPHPRL08280908",
               "type": "text"
             },
             {
               "key": "startDate",
-              "value": "2026-08-24 12",
+              "value": "2026-08-28 12",
               "type": "text"
             },
             {
               "key": "endDate",
-              "value": "2026-09-14 12",
+              "value": "2026-09-09 12",
               "type": "text"
             },
             {
               "key": "bannerStartTime",
-              "value": "2026-08-24 12",
+              "value": "2026-08-28 12",
               "type": "text"
             },
             {
               "key": "drawFinishDate",
-              "value": "2026-08-23 12",
+              "value": "2026-08-27 12",
               "type": "text"
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-09-14 12",
+              "value": "2026-09-09 12",
               "type": "text"
             },
             {
@@ -4328,7 +4328,7 @@
             },
             {
               "key": "platform",
-              "value": "SVCASINO",
+              "value": "JDB",
               "type": "text"
             },
             {
@@ -4338,12 +4338,12 @@
             },
             {
               "key": "currency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
@@ -4358,17 +4358,17 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-08-21 18:34:30.561",
+              "value": "2026-08-24 17:42:39.594",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-08-21 18:34:30.561",
+              "value": "2026-08-24 17:42:39.594",
               "type": "text"
             },
             {
               "key": "isInstantPay",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
@@ -4378,12 +4378,12 @@
             },
             {
               "key": "grandPrize",
-              "value": "500000000",
+              "value": "5000000",
               "type": "text"
             },
             {
               "key": "turnoverPerTicket",
-              "value": "1",
+              "value": "4400",
               "type": "text"
             },
             {
@@ -4393,7 +4393,7 @@
             },
             {
               "key": "maxTicketPerPlayer",
-              "value": "0",
+              "value": "2",
               "type": "text"
             },
             {
@@ -4403,7 +4403,7 @@
             },
             {
               "key": "presentPrizeNum",
-              "value": "0",
+              "value": "8",
               "type": "text"
             },
             {
@@ -4453,7 +4453,7 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"SVCASINO\":[\"SVCASINO\"]}",
+              "value": "{\"JDB\":[\"14100\",\"14109\",\"14107\",\"14105\",\"14104\",\"7010\",\"9023\",\"18029\"]}",
               "type": "text"
             },
             {
@@ -4473,7 +4473,7 @@
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"mega\":{\"probability\":{\"500\":20,\"1000\":20,\"2000\":17,\"3000\":12,\"5000\":12,\"7500\":10,\"20000\":9,\"200000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"500\":2147483647,\"1000\":2147483647,\"2000\":2147483647,\"3000\":2147483647,\"5000\":2147483647,\"7500\":2147483647,\"20000\":2147483647,\"200000\":2147483647},\"turnoverPerTicket\":3000000,\"maxTicketPerPlayer\":2000},\"mini\":{\"probability\":{\"100\":20,\"200\":20,\"300\":15,\"500\":10,\"750\":10,\"1000\":10,\"1250\":10,\"1500\":5,\"10000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"100\":2147483647,\"200\":2147483647,\"300\":2147483647,\"500\":2147483647,\"750\":2147483647,\"1000\":2147483647,\"1250\":2147483647,\"1500\":2147483647,\"10000\":2147483647},\"turnoverPerTicket\":300000,\"maxTicketPerPlayer\":1},\"major\":{\"probability\":{\"300\":25,\"500\":25,\"1000\":15,\"1500\":15,\"2500\":5,\"3000\":5,\"5000\":5,\"10000\":5,\"40000\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"300\":2147483647,\"500\":2147483647,\"1000\":2147483647,\"1500\":2147483647,\"2500\":2147483647,\"3000\":2147483647,\"5000\":2147483647,\"10000\":2147483647,\"40000\":2147483647},\"turnoverPerTicket\":1000000,\"maxTicketPerPlayer\":1}}",
+              "value": "{\"probability\":{\"2\":22,\"5\":22,\"10\":18,\"20\":18,\"30\":10,\"50\":7,\"100\":3,\"888\":0,\"5000\":0},\"prizes\":{\"2\":4000,\"5\":4000,\"10\":3300,\"20\":3300,\"30\":1800,\"50\":1300,\"100\":540,\"888\":0,\"5000\":0}}",
               "type": "text"
             },
             {
@@ -4513,17 +4513,17 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html --> <div class=\"tooltip-box\"> <ul class=\"list-dot\"> <li>Day 1 24-08-2026 10:30 AM ~ 25-08-2026 10:30 AM</li> <li>Day 2 25-08-2026 10:30 AM ~ 26-08-2026 10:30 AM</li> <li>Day 3 26-08-2026 10:30 AM ~ 27-08-2026 10:30 AM</li> <li>Day 4 27-08-2026 10:30 AM ~ 28-08-2026 10:30 AM</li> <li>Day 5 28-08-2026 10:30 AM ~ 29-08-2026 10:30 AM</li> <li>Day 6 29-08-2026 10:30 AM ~ 30-08-2026 10:30 AM</li> <li>Day 7 30-08-2026 10:30 AM ~ 31-08-2026 10:30 AM</li> <li>Day 8 31-08-2026 10:30 AM ~ 01-09-2026 10:30 AM</li> <li>Day 9 01-09-2026 10:30 AM ~ 02-09-2026 10:30 AM</li> <li>Day 10 02-09-2026 10:30 AM ~ 03-09-2026 10:30 AM</li> <li>Day 11 03-09-2026 10:30 AM ~ 04-09-2026 10:30 AM</li> <li>Day 12 04-09-2026 10:30 AM ~ 05-09-2026 10:30 AM</li> <li>Day 13 05-09-2026 10:30 AM ~ 06-09-2026 10:30 AM</li> <li>Day 14 06-09-2026 10:30 AM ~ 07-09-2026 10:30 AM</li> <li>Day 15 07-09-2026 10:30 AM ~ 08-09-2026 10:30 AM</li> <li>Day 16 08-09-2026 10:30 AM ~ 09-09-2026 10:30 AM</li> <li>Day 17 09-09-2026 10:30 AM ~ 10-09-2026 10:30 AM</li> <li>Day 18 10-09-2026 10:30 AM ~ 11-09-2026 10:30 AM</li> <li>Day 19 11-09-2026 10:30 AM ~ 12-09-2026 10:30 AM</li> <li>Day 20 12-09-2026 10:30 AM ~ 13-09-2026 10:30 AM</li> <li>Day 21 13-09-2026 10:30 AM ~ 14-09-2026 10:30 AM</li> </ul> </div>",
+              "value": "<!-- Hint Html -->\n<div class=\"tooltip-box\">\n    <ul class=\"list-dot\">\n        <li>Day 1 28-08 12:00 ~ 29-08 12:00</li>\n        <li>Day 2 29-08 12:00 ~ 30-08 12:00</li>\n        <li>Day 3 30-08 12:00 ~ 31-08 12:00</li>\n        <li>Day 4 31-08 12:00 ~ 01-09 12:00</li>\n        <li>Day 5 01-09 12:00 ~ 02-09 12:00</li>\n        <li>Day 6 02-09 12:00 ~ 03-09 12:00</li>\n        <li>Day 7 03-09 12:00 ~ 04-09 12:00</li>\n        <li>Day 8 04-09 12:00 ~ 05-09 12:00</li>\n        <li>Day 9 05-09 12:00 ~ 06-09 12:00</li>\n        <li>Day 10 06-09 12:00 ~ 07-09 12:00</li>\n        <li>Day 11 07-09 12:00 ~ 08-09 12:00</li>\n        <li>Day 12 08-09 12:00 ~ 09-09 12:00</li>\n\tEX:\n\t<ul class=\"list-dot\">\n        <li>Bet ₱4,400 get 1 ticket</li>\n        <li>Bet ₱8,800 get 2 tickets</li>\n\t</ul>\n\t</ul>\n</div>",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>SVCASINO ဂိမ်းအားလုံးတွင် လောင်း၍ အဆင့်တိကက်များကို ရယူပါ။</li> <li>ကစားသမားများသည် တိကက်များကို အကန့်အသတ်မရှိ ရရှိနိုင်သည်။</li> <li>အစီအစဉ်သည် နေ့စဉ် LV1 မှ စတင်ပြီး LV1 အတွက် အများဆုံးတိကက်အရေအတွက် ပြည့်မီပြီးနောက် LV2 ကို လော့ခ်ဖွင့်မည်ဖြစ်ပြီး LV2 အတွက် အများဆုံးတိကက်အရေအတွက် ပြည့်မီပြီးနောက် LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။</li> <li class=\"ticket-tier-summary\"><ul class=\"ticket-tier-list\"><li class=\"ticket-tier-item tier-min\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV1</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"miniMaxPrize\"></span></li><li class=\"ticket-tier-item tier-med\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV2</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"majorMaxPrize\"></span></li><li class=\"ticket-tier-item tier-max\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV3</span><span class=\"ticket-tier-caption\">အများဆုံးဆုကြေး :</span><span class=\"txt-rate MMK\" id=\"megaMaxPrize\"></span></li></ul></li> <li><strong>ဆုကြေးရယူခြင်း</strong>: ကစားသမားများသည် သတ်မှတ်ထားသော လောင်းကြေးပမာဏ ပြည့်မီပါက စနစ်မှ သက်ဆိုင်ရာအဆင့်၏ Instant Pay ဆုကြေးကို အလိုအလျောက် ထုတ်ပေးမည်ဖြစ်ပြီး၊ ဆုကြေးများ ချက်ချင်းရရှိမည်ဖြစ်သည်။</li> <li>SVCASINO ဂိမ်းအားလုံးတွင် လောင်းကြေး K 100 ပြည့်တိုင်း MPS VIP Point 1 မှတ် ရရှိမည်။</li> <li>MPS VIP Point 1 မှတ်သည် K 1 နှင့် မညီမျှပါ။</li> <li>ကစားသမားသည် MPS VIP Points အရေအတွက်ကို Menu / Member Info တွင် စစ်ဆေးနိုင်သည်။</li> <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li> </ul> </div>",
+              "value": "<!-- Footer Html 即時版-->\n<div class=\"ticket-box\">\n    <ul class=\"list-dot\">\n        <li>8 bonus games, bet <span style=\"color:#FFD700;\"><strong>₱4,400</strong></span> to get <span style=\"color:#FFD700;\"><strong>1</strong></span> ticket</li>\n\t\t<li>One player Max 2 tickets everyday.</li>\n\t\t<li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: redeem 1 ticket to get random bonus instantly!</li>\n\t\t<li>All tickets must redeem before 09-09-2026, 12:00 (PM).</li>\n\t\t<li>8 bonus games, bet <span style=\"color:#FFD700;\"><strong>₱100</strong></span> to get <span style=\"color:#FFD700;\"><strong>1</strong></span> MPS VIP Point.</li>\n        <li>1 MPS VIP Point is not equivalent to ₱1.</li>\n        <li>Player can check number of MPS VIP Points at Menu/ Member Info.</li>\n\t\t<li>EX: Bet ₱4,400 will get 1 ticket and 44 MPS VIP Points.</li>\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\n\t</ul>\n</div>",
               "type": "text"
             },
             {
               "key": "infoHtml",
-              "value": "<!-- Info Html -->",
+              "value": "<!-- Info Html --> Today you bet <span id=\"eventTurnover\" class=\"txt-rate\"></span> <!--今天投了多少--> and got <span id=\"todayTickets\"></span><!--今天的票--> ticket(s) <br> Bet <span id=\"needMoreTurnover\" class=\"txt-rate\"></span><!--再投多少--> more to get <span id=\"earnTicket\"></span><!--可以再拿幾張票--> more ticket(s)",
               "type": "text"
             },
             {
@@ -4533,7 +4533,7 @@
             },
             {
               "key": "backgroundUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11088SVCASINOMMAU_BG.webp",
+              "value": "",
               "type": "text"
             },
             {
@@ -4543,7 +4543,7 @@
             },
             {
               "key": "gameHallBannerUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11088SVCASINOMMAU.webp",
+              "value": "",
               "type": "text"
             },
             {

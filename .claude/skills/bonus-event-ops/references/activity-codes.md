@@ -9,6 +9,23 @@
 - This naming scheme applies to `insertBonusEvent`-type activities. `insertRankRecordSetting` activities (Rank Record / Race Win, see below) have NO bonusId field at all — don't invent one.
 - SIGNUP-type activities also don't need to follow the date-suffix convention if the user has their own internal label — confirm with the user which convention they want for SIGNUP IDs going forward (default to the standard date-based scheme unless told otherwise).
 
+## Game IDs are NOT always numeric
+
+`requiredGames` / `challengeGames` values are **strings, and the string content varies by provider**. Never assume a numeric ID or coerce one.
+
+| Provider | Game ID style | Example |
+|---|---|---|
+| JILI / JDB / ACEWIN / BNG | short numeric string | `"1007"`, `"14100"`, `"259"` |
+| MGGAMING | prefixed alphanumeric slug | `"SMG_boltsOfZeusCoinGrid"`, `"P5_pocketAce"`, `"P6_faFaMahjong"` |
+
+The MGGAMING prefixes (`SMG_`, `P5_`, `P6_`) are part of the ID and differ between games within the same activity — they are not a provider-wide constant, so copy each one exactly as the brief gives it. When a brief writes the ID in parentheses after the game name, that parenthesised value is the ID verbatim.
+
+## Multiple providers in one activity
+
+`platform` accepts a comma-separated list — production has a `FACHAI,JILI` record. `requiredGames` / `challengeGames` are keyed by provider, so a two-provider activity looks like `{"ACEWIN":["1007"],"MGGAMING":["P5_pocketAce"]}`.
+
+But **do not assume a brief naming two providers is one activity.** Brian split `202608-PHDM3 ACEWIN/MG挑戰簽到` into two separate submissions sharing the same internal campaign number, one per provider, each with its own `bonusId`. Ask which shape he wants before building; the single-provider split is the more common case.
+
 ## Provider abbreviation quirks (ID text vs. API field value)
 Some providers use a short form in the activity ID/display text but a different, longer/different string in the actual API `platform` field. Always check this table before generating an API request — using the wrong one silently fails.
 
@@ -22,7 +39,8 @@ Some providers use a short form in the activity ID/display text but a different,
 | JDB | `JDB` | `JDB` (no mismatch) |
 | BNG | `BNG` | `BNG` (no mismatch) |
 | YB | `YB` | `YB` (no mismatch) — confirmed in production |
-| ACEWIN | (abbreviation not yet seen) | `ACEWIN` |
+| ACEWIN | `AW` — inferred from the two-word-initials pattern, **awaiting Brian's confirmation** | `ACEWIN` |
+| MG / MicroGaming | `MG` — Brian writes "MG" in briefs | `MGGAMING` — confirmed in production (1 record) |
 | VERTEXPLAY | (abbreviation not yet seen) | `VERTEXPLAY` |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.

@@ -128,6 +128,11 @@ Comma-separated, no spaces. `FH` = fish/捕魚 — a brief writing "FISH" means 
 - `redeemDeadlineDate` = `endDate` **plus `challengeExpireHours`** — the only field allowed an hour other than 12. A brief's 「(+N hours)」 / 「打流水結束」 note is stating exactly this, and it should reconcile to the same value; if it doesn't, say so.
 
 ### DAILY_MISSION
+
+**The turnover ladder does not have to ascend.** Brian confirmed a `500 → 700 → 900 → 800` sequence is intentional, with the reward staying at 5 across the last two steps. Never flag a mid-ladder drop as a suspected typo, and never "fix" the ordering — transcribe the amounts exactly as the brief lists them, in brief order.
+
+**`dailySchedule` length must equal the activity's day count.** Verified across the stored 21-day template and two 14-day builds. If a brief's ladder is shorter than the span (e.g. 14 steps for a 28-day activity), that is a genuine gap — ask which it is (ladder repeats / rest not yet supplied / dates wrong) rather than repeating the cycle or padding.
+
 ```json
 {
   "missionSetting": {
@@ -182,6 +187,9 @@ Endpoint `insertRankRecordSetting`, `application/x-www-form-urlencoded`. No `bon
 | `amountLimit`, `winRateLimit`, `dailyRankLimit`, `weeklyRankLimit`, `monthlyRankLimit`, `reserveRanking` | empty | RACE_WIN has no ranking list, so no rank/qualification limits |
 | `latestSuccessSyncTime`, `freeSpinExpiredTime`, `challengeLimitHour`, `turnoverMultiplier`, `challengeGames` | empty | 114/114 |
 | `syncUserIds` | empty | 87/114 empty; only fill when the brief explicitly names a house/agent code |
+
+### displayOrder mirrors the internal LH number
+Brian's internal label carries it: `202608-LH4` → `displayOrder: 4`, `PHLH1` → `displayOrder: 1`. Take the digit from the label rather than asking.
 
 ## rewardSetting shape
 ```json
@@ -245,7 +253,7 @@ Note `rankType` is a RANK_RECORD concept. RACE_WIN rows also carry `rankType: 0`
 | `winRateLimit` | **empty** | 0/140 populated |
 | `allowGameType` | `SLOT,ARCADE` | 121/140; `SLOT` alone in 19. Unlike RACE_WIN, this **is** filled for RANK_RECORD |
 | `dailyRankLimit` | how many ranks the board shows | varies with the brief (10/7/5/9 common) |
-| `weeklyRankLimit` / `monthlyRankLimit` | `0` | 126/140 and 138/140 |
+| `weeklyRankLimit` / `monthlyRankLimit` | **send empty** on insert | The `0` seen in `findAllRankRecordSetting` output is the server's default *after* it stores an empty value — do not copy it back into a request. Two verified-successful production inserts (LH4 BNG, LH1 JDB) both sent these empty. Same for `winRateLimit` on a rankType-0 board, and for `challengeLimitHour` / `turnoverMultiplier` / `challengeGames` / `syncUserIds` / `latestSuccessSyncTime`. |
 | `weeklyOrderType` / `monthlyOrderType` | `0` | 131/140 and 139/140 |
 | `isOnlyWeek` | `0` | 134/140 |
 | `reserveRanking` | from the brief; `2` is most common | 2 (51), 0 (39), 3 (31) |
@@ -259,6 +267,9 @@ Note `rankType` is a RANK_RECORD concept. RACE_WIN rows also carry `rankType: 0`
 - **`displayTime` = `startTime` + `rankDays`** — 128/138 confirm; treat a mismatch as an error to query
 - **`freeSpinExpiredTime` = `displayTime`** — 132/140
 - `beforeStartDisplayTime` / `afterStartDisplayTime` — `0` for RANK_RECORD (RACE_WIN uses 12)
+
+### displayOrder mirrors the internal LH number
+Brian's internal label carries it: `202608-LH4` → `displayOrder: 4`, `PHLH1` → `displayOrder: 1`. Take the digit from the label rather than asking.
 
 ## rewardSetting shape
 

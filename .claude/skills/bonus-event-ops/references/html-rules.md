@@ -96,7 +96,18 @@ Note the second form: when the amount stands alone as a unit reference rather th
 | CAD (Quebec) | French (FR) |
 | MYR | English (same as PHP's approach) |
 
-Rewrite the ENTIRE HTML body into the target language. Do not leave the template's original language in place. Numbers, currency symbols, HTML tags/attributes/comments stay as-is; only human-readable text is translated.
+Rewrite the ENTIRE HTML body into the target language. Do not leave the template's original language in place. Currency symbols and HTML tags/attributes/comments stay as-is; only human-readable text is translated.
+
+### Numerals are per activity type — check the approved copy, do not assume
+An earlier version of this file claimed numbers always stay in Arabic numerals. **That is wrong.** Two independent approved templates contradict it:
+
+| Activity type | Numeral style | Evidence |
+|---|---|---|
+| DAILY_MISSION | **native numerals** for the day count, and small counts **spelled out as a word** | BDT: `২১টি দৈনিক মিশন`, `মাত্র তিনটি YB গেম` (Brian-approved). MMK: `၂၁ ခု`, `၃` |
+| INSTANT_CHALLENGE | Arabic | `3 ခု`, `18X`, `12 နာရီ` (Brian-approved) |
+| AUTO_REDEEM 3-tier | Arabic | `8 ခု`, `K 90,000` (Brian-approved) |
+
+Dates and money amounts stay in Arabic numerals in every type — only counts follow the table above. Native numerals are a **style** choice, not a comprehension one — Bengali and Burmese readers read Arabic numerals fluently, so this never justifies stopping to ask. Match the approved copy for the type when one exists (it keeps new activities consistent with the ones already live), and when none exists pick either and say which you used. When building a type with no approved copy on file, say which convention you used so Brian can correct it.
 
 ## Announcement title — always 3 languages
 For every activity, produce three title variants:

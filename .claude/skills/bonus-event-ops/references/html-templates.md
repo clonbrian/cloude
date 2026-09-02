@@ -18,22 +18,52 @@ Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `1
 
 Standard industry terms. **The Burmese column varies by activity type — check the approved copy for your type before using this table**:
 
-| English | Burmese — Instant Challenge | Burmese — Auto Redeem 3-tier | Vietnamese (VND) |
-|---|---|---|---|
-| turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược |
-| bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng |
+| English | Burmese — Instant Challenge | Burmese — Auto Redeem 3-tier | Vietnamese (VND) | Bengali (BDT) |
+|---|---|---|---|---|
+| turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược | ডোনা টার্নওভার |
+| bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng | পুরস্কার |
 | ticket | တက်ကတ် | **တိကက်** (everywhere, no exceptions) | vé |
-| challenge | စိန်ခေါ်မှု | — | thử thách |
+| challenge | စိန်ခေါ်မှု | — | thử thách | চ্যালেঞ্জ |
 | instant challenge | အမြန်စိန်ခေါ်မှု | — | thử thách tức thì |
 | event / programme | — | အစီအစဉ် | chương trình |
 | unlock | — | လော့ခ်ဖွင့် | mở khóa |
 | max payout | — | အများဆုံးဆုကြေး | — |
-| player | ကစားသမား | ကစားသမား | người chơi |
-| promotion | ပရိုမိုးရှင်း | ပရိုမိုးရှင်း | khuyến mãi |
-| system | စနစ် | စနစ် | hệ thống |
+| player | ကစားသမား | ကစားသမား | người chơi | খেলোয়াড় |
+| promotion | ပရိုမိုးရှင်း | ပရိုမိုးရှင်း | khuyến mãi | প্রমোশন |
+| system | စနစ် | စနစ် | hệ thống | সিস্টেম |
 | Menu / Member Info | မီနူး / အဖွဲ့ဝင်အချက်အလက် | **keep English** | Menu / Thông tin thành viên |
 
 Extend this table when a new market or term comes up.
+
+### Approved Bengali (BDT) copy — Daily Mission — use verbatim
+Brian-supplied (from a 21-day YB build). Substitute only the day count, provider, and game titles.
+
+```
+<!-- Footer Html with challenge-BDT-->
+<div class="ticket-box">
+<ul class="list-dot">
+    <li>{DAYS_BENGALI}টি দৈনিক মিশন, একদিন এক মিশন।</li>
+    <li>তাৎক্ষণিকভাবে পুরষ্কার পেতে প্রতিদিনের মিশন সম্পূর্ণ করুন।</li>
+    <li>প্রতিদিনের মিশন চ্যালেঞ্জে মাত্র {COUNT_WORD} {PROVIDER} গেম যোগ দেবে: {game titles}. ("GO" এ ক্লিক করুন এবং ইভেন্ট গেমের তালিকায় যান)</li>
+    <li>কোম্পানি যেকোনো সময় প্রচারণা সংশোধন, স্থগিত বা বাতিল করার অধিকার সংরক্ষণ করে</li>
+</ul>
+</div>
+```
+
+Points earlier Claude output got wrong — preserve all of these:
+- **HTML comment suffix is `-BDT-`**, not `-BN-`.
+- **`{DAYS_BENGALI}` is a Bengali numeral**: ০১২৩৪৫৬৭৮৯ = 0–9, so 21 → `২১`, 28 → `২৮`.
+- **`{COUNT_WORD}` is the game count spelled out**, not a digit. Use the table below — **never ask Brian for it and never block on it.**
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|
+| একটি | দুটি | তিনটি | চারটি | পাঁচটি | ছয়টি | সাতটি | আটটি | নয়টি | দশটি |
+
+For a count above 10, write the Bengali numeral plus `টি` (e.g. 12 → `১২টি`). Arabic numerals would also be perfectly readable — Bangladeshi players read them daily in balances, prices and mobile banking — so a numeral is never a correctness risk, only a style divergence from the live copy.
+- Second line is **imperative** (`সম্পূর্ণ করুন` — "complete it"), not declarative.
+- `প্রচারণা` for promotion, not the transliteration `প্রমোশন`.
+- Spelling is `পুরষ্কার` (ষ্ক), `প্রতিদিনের মিশন`, `যোগ দেবে`.
+- Game titles end with a plain period `.`, but line 1 and 2 end with the danda `।`, and **the last line carries no final punctuation at all**. Reproduce this inconsistency exactly.
 
 ### A title line is NOT truncated body copy — never ask for "the rest"
 

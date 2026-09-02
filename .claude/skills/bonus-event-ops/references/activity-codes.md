@@ -17,6 +17,7 @@
 |---|---|---|
 | JILI / JDB / ACEWIN / BNG | short numeric string | `"1007"`, `"14100"`, `"259"` |
 | MGGAMING | prefixed alphanumeric slug | `"SMG_boltsOfZeusCoinGrid"`, `"P5_pocketAce"`, `"P6_faFaMahjong"` |
+| PLAYSTAR | dashed catalogue code, fixed width | `"PSS-ON-00174"`, `"PSS-ON-00166"`, `"PSS-ON-00127"` |
 
 The MGGAMING prefixes (`SMG_`, `P5_`, `P6_`) are part of the ID and differ between games within the same activity — they are not a provider-wide constant, so copy each one exactly as the brief gives it. When a brief writes the ID in parentheses after the game name, that parenthesised value is the ID verbatim.
 
@@ -41,6 +42,7 @@ Some providers use a short form in the activity ID/display text but a different,
 | YB | `YB` | `YB` (no mismatch) — confirmed in production |
 | ACEWIN | `AW` — inferred from the two-word-initials pattern, **awaiting Brian's confirmation** | `ACEWIN` |
 | MG / MicroGaming | `MG` — Brian writes "MG" in briefs | `MGGAMING` — confirmed in production (1 record) |
+| PLAYSTAR | `PS` — confirmed by Brian | `PLAYSTAR` — confirmed by Brian (absent from the 354-record production sample) |
 | VERTEXPLAY | (abbreviation not yet seen) | `VERTEXPLAY` |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.

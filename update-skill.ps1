@@ -66,6 +66,11 @@ try {
     Copy-Item "$srcRoot\*" $dest -Recurse -Force
     Say "Files copied." Green
 
+    # Clean up COMMIT_MSG.txt if an earlier manual unzip dropped it in the
+    # skills folder. It lives at the zip root and never belongs in the repo.
+    $stray = Join-Path $Repo '.claude\skills\COMMIT_MSG.txt'
+    if (Test-Path $stray) { Remove-Item $stray -Force; Say "Removed stray COMMIT_MSG.txt" Yellow }
+
     $msgFile = Join-Path $tmp 'COMMIT_MSG.txt'
     if (-not (Test-Path $msgFile)) {
         $msgFile = Join-Path $tmp 'auto_msg.txt'
@@ -85,6 +90,13 @@ try {
 
         git -c "core.quotepath=false" commit -F $msgFile
         if ($LASTEXITCODE -ne 0) { Say "commit failed" Red; $code = 1; return }
+
+        # Flag anything else pending so it does not sit unnoticed
+        $other = git status --porcelain | Where-Object { $_ -notmatch 'skills/bonus-event-ops' }
+        if ($other) {
+            Say "`nOther uncommitted changes in this repo (not touched by this script):" Yellow
+            $other | ForEach-Object { Say "  $_" DarkYellow }
+        }
 
         git push
         if ($LASTEXITCODE -ne 0) {

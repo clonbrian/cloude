@@ -18,19 +18,19 @@ Per `html-rules.md`, numbers stay in Arabic numerals in every language (write `1
 
 Standard industry terms. **The Burmese column varies by activity type — check the approved copy for your type before using this table**:
 
-| English | Burmese — Instant Challenge | Burmese — Auto Redeem 3-tier | Vietnamese (VND) | Bengali (BDT) |
-|---|---|---|---|---|
-| turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược | ডোনা টার্নওভার |
-| bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng | পুরস্কার |
+| English | Burmese — Instant Challenge | Burmese — Auto Redeem 3-tier | Vietnamese (VND) | Bengali (BDT) | Malay (MYR) |
+|---|---|---|---|---|---|
+| turnover / 流水 | လောင်းကြေးပမာဏ | လောင်းကြေးပမာဏ | doanh thu cược | ডোনা টার্নওভার | pertaruhan |
+| bonus / prize money | ဘောနပ်စ် | **ဆုကြေး** | tiền thưởng | পুরস্কার | bonus |
 | ticket | တက်ကတ် | **တိကက်** (everywhere, no exceptions) | vé |
-| challenge | စိန်ခေါ်မှု | — | thử thách | চ্যালেঞ্জ |
+| challenge | စိန်ခေါ်မှု | — | thử thách | চ্যালেঞ্জ | cabaran |
 | instant challenge | အမြန်စိန်ခေါ်မှု | — | thử thách tức thì |
 | event / programme | — | အစီအစဉ် | chương trình |
 | unlock | — | လော့ခ်ဖွင့် | mở khóa |
 | max payout | — | အများဆုံးဆုကြေး | — |
-| player | ကစားသမား | ကစားသမား | người chơi | খেলোয়াড় |
-| promotion | ပရိုမိုးရှင်း | ပရိုမိုးရှင်း | khuyến mãi | প্রমোশন |
-| system | စနစ် | စနစ် | hệ thống | সিস্টেম |
+| player | ကစားသမား | ကစားသမား | người chơi | খেলোয়াড় | pemain |
+| promotion | ပရိုမိုးရှင်း | ပရိုမိုးရှင်း | khuyến mãi | প্রমোশন | promosi |
+| system | စနစ် | စနစ် | hệ thống | সিস্টেম | sistem |
 | Menu / Member Info | မီနူး / အဖွဲ့ဝင်အချက်အလက် | **keep English** | Menu / Thông tin thành viên |
 
 Extend this table when a new market or term comes up.
@@ -64,6 +64,58 @@ For a count above 10, write the Bengali numeral plus `টি` (e.g. 12 → `১�
 - `প্রচারণা` for promotion, not the transliteration `প্রমোশন`.
 - Spelling is `পুরষ্কার` (ষ্ক), `প্রতিদিনের মিশন`, `যোগ দেবে`.
 - Game titles end with a plain period `.`, but line 1 and 2 end with the danda `।`, and **the last line carries no final punctuation at all**. Reproduce this inconsistency exactly.
+
+### Malay (MYR) copy — Claude-translated, not yet human-approved
+Brian confirmed MYR bodies are Malay and that no reference copy exists, so translate from the English skeleton with gambling terminology. Terms used on the JILI MYR nine-box build — reuse them for consistency:
+
+| English | Malay |
+|---|---|
+| to bet (verb) | bertaruh |
+| bet / turnover (noun) | pertaruhan |
+| ticket | tiket |
+| redeem / redeemed | tebus / ditebus |
+| random bonus | bonus rawak |
+| Bonus Claim | Tuntutan Bonus |
+| instantly | serta-merta |
+| Each player maximum N per day | Setiap pemain maksimum N ... setiap hari |
+| must be redeemed before | mesti ditebus sebelum |
+| is not equivalent to | tidak bersamaan dengan |
+| can check the number of | boleh menyemak jumlah |
+| EX / Example | Contoh |
+| Nth day | Hari ke-N |
+| Company reserves the right to amend, suspend or cancel the promotion at any time | Syarikat berhak mengubah, menggantung atau membatalkan promosi pada bila-bila masa |
+| TODAY you bet | HARI INI anda bertaruh |
+| more tickets | tiket tambahan |
+
+`Menu / Member Info` stays in English, as in the Auto Redeem 3-tier convention. Malay uses Arabic numerals and comma thousands separators exactly like English — there is no second numeral system to worry about, so the per-type numeral rule does not apply here. `RM` keeps its trailing space (`RM 800`).
+
+Replace this block and mark it approved if Brian ever supplies real MYR copy.
+
+### Vietnamese (VND) copy — Daily Mission — Claude-translated, not yet approved
+No approved VND Daily Mission copy on file. Terms used on the JDB VND build — reuse for consistency:
+
+```
+<!-- Footer Html with challenge-VN-->
+<li>{DAYS} nhiệm vụ hàng ngày, mỗi ngày một nhiệm vụ.</li>
+<li>Hoàn thành nhiệm vụ hàng ngày để nhận thưởng ngay lập tức.</li>
+<li>Chỉ {N} trò chơi {PROVIDER} được bao gồm trong nhiệm vụ hàng ngày: {game titles}. (Nhấp vào "GO" để vào danh sách trò chơi sự kiện)</li>
+<li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ chương trình khuyến mãi bất cứ lúc nào.</li>
+```
+
+| English | Vietnamese |
+|---|---|
+| daily mission | nhiệm vụ hàng ngày |
+| complete | hoàn thành |
+| receive rewards instantly | nhận thưởng ngay lập tức |
+| only N games are included | chỉ N trò chơi được bao gồm |
+| game | trò chơi |
+| event game list | danh sách trò chơi sự kiện |
+| Company reserves the right to amend, suspend or cancel | Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ |
+| at any time | bất cứ lúc nào |
+
+Vietnamese is Latin-script with Arabic numerals, so the per-type native-numeral rule in `html-rules.md` does not apply — same as Malay. The HTML comment suffix is `-VN-`. Game titles stay in English.
+
+**VND amounts never appear in a Daily Mission body** — the ladder renders from `dailyMissionSetting`, so the 1:1000 `K` suffix rule doesn't come up here. It still applies to any VND type whose copy does state amounts.
 
 ### A title line is NOT truncated body copy — never ask for "the rest"
 

@@ -225,6 +225,73 @@ Brian's internal label carries it: `202608-LH4` → `displayOrder: 4`, `PHLH1` �
 - Tier count in `rewardSetting` == tier count in the brief == line count in `tipText`.
 - The brief's cost note (`c: 26W` style) maps to **no API field**. Compute Σ(`name` × `quotas`) and compare; if it disagrees with the stated cost, flag it rather than adjusting any field to force a match.
 
+## probability and prizes are INDEPENDENT — never cross-check them
+
+`probability` sets the draw odds; `prizes` sets each amount's stock cap. They are separate controls and **do not have to be proportional to each other.** Two amounts with the same stock but different odds (e.g. both `150張`, one at 20% and one at 15%) is perfectly valid — the higher-odds one simply exhausts its stock sooner. An earlier pass through this skill wrongly called that a contradiction; it is not.
+
+The only hard requirement is that `probability` values sum to **100**.
+
+**The brief's 每張價值 / per-ticket value is Brian's own cost estimate, not an API field.** It usually equals the probability-weighted expected value, so it is a useful sanity signal — but when it doesn't match, say so in one line and carry on building. It is never a blocker and never a reason to withhold the request. (Example: the JILI MYR nine-box brief stated 2.87 while the stated probabilities give 3.15; Brian confirmed the probabilities as written are what matters.)
+
+## "無限張" has no sentinel value — pick the same-type template's number
+
+A brief saying a tier is 無限張 / unlimited does **not** map to a magic constant. The stored templates disagree:
+
+| Template | mega `maxTicketPerPlayer` |
+|---|---|
+| Auto Redeem 3-tier (VND) | `100` |
+| Treasure Pick 3-tier Instant Pay (MMK) | `1000` |
+| Treasure Pick 3-tier + Medal (PHP) | `9999` |
+
+`maxTicketPerPlayer` at tier level is a **daily** cap (the SVCASINO build's 每人每天1張 tiers use `1`). "Unlimited" just needs a number the tier's turnover threshold makes unreachable — at 30,000 per ticket, `100` already means 3,000,000 turnover in a day.
+
+Rule: use the value from the **same activity type's** template, and say which number you used in one line so Brian can raise it. When the brief gives an explicit count instead (e.g. 設定2000張), use that number directly.
+
+The HTML always reads "Players can receive unlimited tickets" regardless of the number — that line is not derived from this field.
+
+## rankType 3 (週累計贏額) — field conventions
+
+Mirror image of rankType 0. Evidence is 35 stored records from `findAllRankRecordSetting`; **no verified successful insert exists for this type yet** — unlike rankType 0, where Brian's LH4 submission confirms the send format. Treat the empty-vs-`0` encoding below as inferred by symmetry and ask Brian for a HAR after the first weekly submission succeeds.
+
+| Field | rankType 3 | rankType 0 | Evidence |
+|---|---|---|---|
+| `weeklyRankLimit` | the ranking count | send empty | 15/35 use 5, 8/35 use 6 |
+| `dailyRankLimit` | send empty (stored as `0`) | the ranking count | 28/35 stored as 0 |
+| `monthlyRankLimit` | send empty (stored as `0`) | send empty | 35/35 stored as 0 |
+| `weeklyOrderType` | `1` | `0` | 27/35 vs 131/140 |
+| `isOnlyWeek` | `1` (true) | `0` (false) | 27/35 vs 134/140 |
+| `allowGameType` | `SLOT,ARCADE,FH,RNGTABLE` | `SLOT,ARCADE` | 27/35 vs 121/140 — the two types differ, don't copy across |
+| `rankDays` | 14 is the norm | varies | 28/35 |
+| `reserveRanking` | `2` | `2` | 24/35 |
+
+`rewardSetting` puts the prizes under `weekly` and sends `[{"name":"0","quotas":0}]` placeholders for `daily` and `monthly` — the inverse of a daily board.
+
+### The rule sentence in tipText identifies the type
+Each stored record's own `tipText` `number_2` line states its ranking rule, and the four types separate cleanly with no overlap. This is what the rankType decode was derived from:
+
+| rankType | Rule sentence keyword | Sample count |
+|---|---|---|
+| 0 | **Single** Winning amount / single bet | 19+18+9 |
+| 1 | Winning **Ratio** / win rate | — |
+| 2 | **Daily Wager** | — |
+| 3 | **Weekly Total Winning** amount | 11+4+3 |
+
+When a brief's mode wording is ambiguous, match it against this table rather than guessing from the field values.
+
+## rankRewardSetting (勛章) — values are PERCENTAGES
+
+Used by `insertBonusEvent` types that carry medals (TREASURE_PICK 3-tier, GOLDEN_EGG). Not to be confused with RANK_RECORD's `rewardSetting`, which holds absolute amounts.
+
+Comma-separated string of exactly 10 values per period, ranked positions 1–10. **The numbers are percentages, not currency amounts**: `50` = 50%, `300` = 3X, `600` = 6X, `1200` = 12X. Confirmed by Brian.
+
+```
+{"daily":"50,50,50,50,50,300,300,300,600,600","weekly":"300,300,300,300,300,600,600,600,1200,1200"}
+```
+
+A brief written as 「日勛章 50%*5, 3X*3, 6X*2」 maps position by position: 5 entries of `50`, then 3 of `300`, then 2 of `600`. Multiply any `NX` by 100; drop the `%` sign from a percentage. The 5/3/2 grouping matches the stored template (`50,50,50,50,50,300,300,300,500,500` = 50%×5, 3X×3, 5X×2).
+
+Set `isAllowRankReward: true` whenever this field is populated; types without medals leave it `false` and the field empty. Medal payouts render from this field automatically — **no medal line goes in the HTML.**
+
 # RANK_RECORD (龍虎榜/排行榜) — full field spec
 
 Same endpoint and encoding as RACE_WIN: `POST /admin/insertRankRecordSetting`, `application/x-www-form-urlencoded`, 29 fields, **no `updateTime`/`createTime`** (server-generated). There is no `bonusId` on this endpoint — leaderboards are not given an activity ID like `insertBonusEvent` types are.

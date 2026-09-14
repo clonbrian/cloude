@@ -86,6 +86,11 @@ Note the second form: when the amount stands alone as a unit reference rather th
 
 **Unverified:** no stored VND example reaches 1,000, so whether a displayed VND number of 1,000+ takes a thousands separator (`₫ 1,000 K` vs `₫ 1000 K`) is not established. Ask Brian the first time it comes up rather than assuming.
 
+### Season words in tropical markets
+Neither the Philippines nor Malaysia has an autumn — both are tropical with wet/dry seasons only. The words exist and are understood (`TAGLAGAS` in Tagalog, `MUSIM LURUH` in Malay; Indonesian uses `musim gugur`), so translate them straight for a title, but mention once that the seasonal association won't land locally. Renaming the activity is Brian's call, not a translation fix.
+
+Worked examples: `JILI Autumn Bonus Event` → 簡中 `JILI 秋季奖金活动`, TL `JILI TAGLAGAS BONUS EVENT`, ms `JILI BONUS MUSIM LURUH`. `BONUS` and `EVENT` stay in English in both TL and ms — that is the local gambling-copy convention.
+
 ## Currency → HTML content language
 | Currency | Language |
 |---|---|
@@ -94,7 +99,7 @@ Note the second form: when the amount stands alone as a unit reference rather th
 | VND | Vietnamese (VI) |
 | BDT | Bengali (BN) |
 | CAD (Quebec) | French (FR) |
-| MYR | English (same as PHP's approach) |
+| MYR | **Malay (ms)** — confirmed by Brian |
 
 Rewrite the ENTIRE HTML body into the target language. Do not leave the template's original language in place. Currency symbols and HTML tags/attributes/comments stay as-is; only human-readable text is translated.
 
@@ -108,6 +113,20 @@ An earlier version of this file claimed numbers always stay in Arabic numerals. 
 | AUTO_REDEEM 3-tier | Arabic | `8 ခု`, `K 90,000` (Brian-approved) |
 
 Dates and money amounts stay in Arabic numerals in every type — only counts follow the table above. Native numerals are a **style** choice, not a comprehension one — Bengali and Burmese readers read Arabic numerals fluently, so this never justifies stopping to ask. Match the approved copy for the type when one exists (it keeps new activities consistent with the ones already live), and when none exists pick either and say which you used. When building a type with no approved copy on file, say which convention you used so Brian can correct it.
+
+## Deliver announcement titles unprompted (settled)
+
+**Every activity build includes the 3-language announcement titles in the reply — Brian does not have to ask.** He confirmed this: 「公告標題以後直接給吧」.
+
+Recognising the input: a brief's **trailing block** carries the announcement material, separate from the settings above it. It typically looks like
+
+```
+JILI Autumn Bonus Event          <- EN title
+RM 500,000                       <- grandPrize
+11th Sep. 2026, 12:00 PM ~ 29th Sep, 2026, 12:00 PM   <- date range for the copy
+```
+
+Treat all three lines as given data. **Cross-check the date range** against the computed `startDate`/`endDate` and the market's clearing time — it is the one part that can be stale (a copied-forward brief). Report a mismatch in one line; a match needs no comment.
 
 ## Announcement title — always 3 languages
 For every activity, produce three title variants:

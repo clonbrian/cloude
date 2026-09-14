@@ -4293,7 +4293,7 @@
             },
             {
               "key": "bonusId",
-              "value": "JDBVNDDM09211004",
+              "value": "JILIVNDDM09211004",
               "type": "text"
             },
             {
@@ -4328,7 +4328,7 @@
             },
             {
               "key": "platform",
-              "value": "JDB",
+              "value": "JILI",
               "type": "text"
             },
             {
@@ -4358,12 +4358,12 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-09-14 10:07:10.510",
+              "value": "2026-09-14 11:19:57.024",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-09-14 10:07:10.510",
+              "value": "2026-09-14 11:19:57.024",
               "type": "text"
             },
             {
@@ -4453,12 +4453,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"JDB\":[\"\"]}",
+              "value": "{\"JILI\":[\"\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"JDB\":[\"121001\",\"14100\",\"7003\"]}",
+              "value": "{\"JILI\":[\"696\",\"32\",\"211\"]}",
               "type": "text"
             },
             {
@@ -4468,7 +4468,7 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"500\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"700\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"900\"},\"5\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"800\"}},\"dailySchedule\":[{\"missionDate\":\"2026-09-21\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-22\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-23\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-24\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-25\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-26\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-27\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-28\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-29\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-09-30\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-01\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-02\",\"reward\":\"3\",\"missions\":[\"1\",\"5\"]},{\"missionDate\":\"2026-10-03\",\"reward\":\"3\",\"missions\":[\"1\",\"5\"]},{\"missionDate\":\"2026-10-04\",\"reward\":\"3\",\"missions\":[\"1\",\"5\"]}]}",
+              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"900\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"1500\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"1200\"}},\"dailySchedule\":[{\"missionDate\":\"2026-09-21\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-22\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-23\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-24\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-25\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-26\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-27\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-28\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-29\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-09-30\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-01\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-02\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-03\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-04\",\"reward\":\"4\",\"missions\":[\"1\",\"4\"]}]}",
               "type": "text"
             },
             {
@@ -4518,7 +4518,7 @@
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-VN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 nhiệm vụ hàng ngày, mỗi ngày một nhiệm vụ.</li>\r\n    <li>Hoàn thành nhiệm vụ hàng ngày để nhận thưởng ngay lập tức.</li>\r\n    <li>Chỉ 3 trò chơi JDB được bao gồm trong nhiệm vụ hàng ngày:\r\n        Mahjong Wins, Koi Trio, Cai Shen Fishing. \r\n        (Nhấp vào \"GO\" để vào danh sách trò chơi sự kiện)\r\n    </li>\r\n    <li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ chương trình khuyến mãi bất cứ lúc nào.</li>\r\n</ul>\r\n</div>",
+              "value": "<!-- Footer Html with challenge-VN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 nhiệm vụ hàng ngày, mỗi ngày một nhiệm vụ.</li>\r\n    <li>Hoàn thành nhiệm vụ hàng ngày để nhận thưởng ngay lập tức.</li>\r\n    <li>Chỉ 3 trò chơi JILI được bao gồm trong nhiệm vụ hàng ngày:\r\n        Fortune Garuda 500, Jackpot Fishing, Pusoy Go. \r\n        (Nhấp vào \"GO\" để vào danh sách trò chơi sự kiện)\r\n    </li>\r\n    <li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ chương trình khuyến mãi bất cứ lúc nào.</li>\r\n</ul>\r\n</div>",
               "type": "text"
             },
             {

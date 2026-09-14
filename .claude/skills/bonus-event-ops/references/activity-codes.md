@@ -25,7 +25,17 @@ The MGGAMING prefixes (`SMG_`, `P5_`, `P6_`) are part of the ID and differ betwe
 
 `platform` accepts a comma-separated list — production has a `FACHAI,JILI` record. `requiredGames` / `challengeGames` are keyed by provider, so a two-provider activity looks like `{"ACEWIN":["1007"],"MGGAMING":["P5_pocketAce"]}`.
 
-But **do not assume a brief naming two providers is one activity.** Brian split `202608-PHDM3 ACEWIN/MG挑戰簽到` into two separate submissions sharing the same internal campaign number, one per provider, each with its own `bonusId`. Ask which shape he wants before building; the single-provider split is the more common case.
+But **a brief naming two providers is normally two activities, not one.** The per-provider split is now the established pattern — three campaigns confirm it, each sharing one internal number across separate submissions with their own `bonusId`:
+
+| Campaign | Providers | bonusIds |
+|---|---|---|
+| `202608-PHDM3` | ACEWIN / MG | `AWPHPDM08310913`, `MGPHPDM08310913` |
+| `BDDM1` | PLAYSTAR / JILI | `PSBDTDM09071004`, `JILIBDTDM09071004` |
+| `202609-VNDM2` | JDB / JILI | `JDBVNDDM09211004`, `JILIVNDDM09211004` |
+
+Note the second and third campaigns pair different providers on identical dates but with **different ladders and game lists** — so never copy one provider's settings across to the other. Build each from its own brief.
+
+Default to the split without asking. Only a brief that explicitly says one activity covers both providers calls for the comma-separated `platform` form.
 
 ## Provider abbreviation quirks (ID text vs. API field value)
 Some providers use a short form in the activity ID/display text but a different, longer/different string in the actual API `platform` field. Always check this table before generating an API request — using the wrong one silently fails.

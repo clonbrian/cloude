@@ -233,6 +233,36 @@ The only hard requirement is that `probability` values sum to **100**.
 
 **The brief's 每張價值 / per-ticket value is Brian's own cost estimate, not an API field.** It usually equals the probability-weighted expected value, so it is a useful sanity signal — but when it doesn't match, say so in one line and carry on building. It is never a blocker and never a reason to withhold the request. (Example: the JILI MYR nine-box brief stated 2.87 while the stated probabilities give 3.15; Brian confirmed the probabilities as written are what matters.)
 
+## presentPrizeNum is per type — and RAFFLE enforces it server-side
+
+`insertBonusEvent` rejects a RAFFLE whose `presentPrizeNum` differs from the number of entries in `prizeDistribution.probability`:
+
+```
+{"error": "RAFFLE: Present Prize Num should be equal to Prize Distribution count:9"}
+```
+
+So for RAFFLE it is **the prize count, not the game count**. An earlier build set it to the game count and was rejected.
+
+| presentType | presentPrizeNum | Template evidence |
+|---|---|---|
+| RAFFLE | **8** — the physical number of poke holes, and `prizeDistribution` must hold exactly that many prizes (Brian-confirmed) | 8 prizes / 8 |
+| RAFFLE_MULTI | **24** — same rule, 24 holes (Brian-confirmed) | — |
+| TREASURE_PICK single-tier | **prize count** | 9 prizes / 6 games / 9 |
+| ROULETTE | **unconfirmed** — template has 8 prizes, 8 games and 8, so it cannot distinguish | 8 / 8 / 8 |
+
+### Zero-probability prizes: keep or drop depends on the type
+Briefs routinely list a headline amount at `0張 / 0%` (e.g. `金額：100 0張 0%`). Whether it belongs in `prizeDistribution` is type-specific:
+
+- **RAFFLE / RAFFLE_MULTI — drop it.** The hole count is fixed at 8 / 24, and the server checks `presentPrizeNum` against the prize count, so a 9th zero-probability entry breaks the activity. The stored Raffle template has no zero entries at all.
+- **TREASURE_PICK single-tier — keep it.** Its template carries `777` at 0% inside the 9 prizes and `presentPrizeNum` counts it.
+
+Dropping a 0% entry never disturbs the probability sum, so re-check that it still totals 100 and move on. Remove the amount from `prizeDisplayOrder` too.
+| GOLDEN_EGG | `3` — neither prize (9) nor game (8) count; likely the egg count | 3 |
+| AUTO_REDEEM, REBATE, INSTANT_CHALLENGE | `0` | — |
+| DAILY_MISSION, TREASURE_PICK 3-tier, SIGNUP | `1` | — |
+
+⚠️ **Never infer this field from a template whose prize count and game count happen to be equal.** Raffle and Roulette both have 8/8/8 and are useless as evidence on their own. Cross-check against a template where the two differ — Treasure Pick single-tier (9 prizes vs 6 games) is the one that settles it.
+
 ## "無限張" has no sentinel value — pick the same-type template's number
 
 A brief saying a tier is 無限張 / unlimited does **not** map to a magic constant. The stored templates disagree:

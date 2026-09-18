@@ -248,13 +248,16 @@ So for RAFFLE it is **the prize count, not the game count**. An earlier build se
 | RAFFLE | **8** — the physical number of poke holes, and `prizeDistribution` must hold exactly that many prizes (Brian-confirmed) | 8 prizes / 8 |
 | RAFFLE_MULTI | **24** — same rule, 24 holes (Brian-confirmed) | — |
 | TREASURE_PICK single-tier | **prize count** | 9 prizes / 6 games / 9 |
-| ROULETTE | **unconfirmed** — template has 8 prizes, 8 games and 8, so it cannot distinguish | 8 / 8 / 8 |
+| ROULETTE | **prize count** — a wheel's segments *are* its prizes, so 9 prizes means 9 segments | 8 / 8 / 8 |
 
 ### Zero-probability prizes: keep or drop depends on the type
 Briefs routinely list a headline amount at `0張 / 0%` (e.g. `金額：100 0張 0%`). Whether it belongs in `prizeDistribution` is type-specific:
 
 - **RAFFLE / RAFFLE_MULTI — drop it.** The hole count is fixed at 8 / 24, and the server checks `presentPrizeNum` against the prize count, so a 9th zero-probability entry breaks the activity. The stored Raffle template has no zero entries at all.
 - **TREASURE_PICK single-tier — keep it.** Its template carries `777` at 0% inside the 9 prizes and `presentPrizeNum` counts it.
+- **ROULETTE — keep it.** The wheel segments are the prizes, so a 0% headline amount is a visible segment nobody lands on. 9 prizes means 9 segments.
+
+The distinction is what the number counts. RAFFLE/RAFFLE_MULTI have a **fixed board** (8 or 24 holes) that the prize list has to fit; ROULETTE and TREASURE_PICK have a **variable board built from the prize list**. Never carry the rule from one group to the other — an earlier build dropped to the game count on a Roulette and set `presentPrizeNum` 8 against 9 prizes, which is wrong.
 
 Dropping a 0% entry never disturbs the probability sum, so re-check that it still totals 100 and move on. Remove the amount from `prizeDisplayOrder` too.
 | GOLDEN_EGG | `3` — neither prize (9) nor game (8) count; likely the egg count | 3 |

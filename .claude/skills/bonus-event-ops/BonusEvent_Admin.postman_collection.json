@@ -4268,7 +4268,7 @@
           "formdata": [
             {
               "key": "prizeDisplayOrder",
-              "value": "2,4,8,16,32,40,50,80",
+              "value": "",
               "type": "text"
             },
             {
@@ -4283,7 +4283,7 @@
             },
             {
               "key": "presentType",
-              "value": "RAFFLE",
+              "value": "DAILY_MISSION",
               "type": "text"
             },
             {
@@ -4293,32 +4293,32 @@
             },
             {
               "key": "bonusId",
-              "value": "BNGPHPRF09231002",
+              "value": "HSPHPDM09281011",
               "type": "text"
             },
             {
               "key": "startDate",
-              "value": "2026-09-23 12",
+              "value": "2026-09-28 12",
               "type": "text"
             },
             {
               "key": "endDate",
-              "value": "2026-10-03 12",
+              "value": "2026-10-12 12",
               "type": "text"
             },
             {
               "key": "bannerStartTime",
-              "value": "2026-09-23 12",
+              "value": "2026-09-28 12",
               "type": "text"
             },
             {
               "key": "drawFinishDate",
-              "value": "2026-09-22 12",
+              "value": "2026-09-27 12",
               "type": "text"
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-10-04 12",
+              "value": "2026-10-12 12",
               "type": "text"
             },
             {
@@ -4328,7 +4328,7 @@
             },
             {
               "key": "platform",
-              "value": "BNG",
+              "value": "HACKSAW",
               "type": "text"
             },
             {
@@ -4358,12 +4358,12 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-09-18 14:47:08.706",
+              "value": "2026-09-18 17:35:39.887",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-09-18 14:47:08.706",
+              "value": "2026-09-18 17:35:39.887",
               "type": "text"
             },
             {
@@ -4378,12 +4378,12 @@
             },
             {
               "key": "grandPrize",
-              "value": "5000000",
+              "value": "1",
               "type": "text"
             },
             {
               "key": "turnoverPerTicket",
-              "value": "2700",
+              "value": "1",
               "type": "text"
             },
             {
@@ -4393,7 +4393,7 @@
             },
             {
               "key": "maxTicketPerPlayer",
-              "value": "100",
+              "value": "1",
               "type": "text"
             },
             {
@@ -4403,22 +4403,22 @@
             },
             {
               "key": "presentPrizeNum",
-              "value": "8",
+              "value": "1",
               "type": "text"
             },
             {
               "key": "isAllowChallenge",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
               "key": "isForcingChallenge",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
               "key": "isChallengeFailNoBonus",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
@@ -4433,12 +4433,12 @@
             },
             {
               "key": "minBonusToMultiply",
-              "value": "1",
+              "value": "0",
               "type": "text"
             },
             {
               "key": "challengeExpireHours",
-              "value": "1",
+              "value": "24",
               "type": "text"
             },
             {
@@ -4453,12 +4453,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"BNG\":[\"1027\",\"1031\",\"991\",\"986\",\"871\",\"913\",\"391\",\"305\"]}",
+              "value": "{\"HACKSAW\":[\"\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{}",
+              "value": "{\"HACKSAW\":[\"201875\",\"201897\",\"201902\"]}",
               "type": "text"
             },
             {
@@ -4468,12 +4468,12 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{}",
+              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"50\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"99\"}},\"dailySchedule\":[{\"missionDate\":\"2026-09-28\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-29\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-30\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-01\",\"reward\":\"2\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-02\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-03\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-04\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-05\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-06\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-07\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-08\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-09\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-10\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-11\",\"reward\":\"3\",\"missions\":[\"1\",\"3\"]}]}",
               "type": "text"
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"probability\":{\"2\":25,\"4\":25,\"8\":20,\"16\":20,\"32\":3,\"40\":3,\"50\":2,\"80\":2},\"prizes\":{\"2\":12500,\"4\":12500,\"8\":10000,\"16\":10000,\"32\":1500,\"40\":1500,\"50\":1000,\"80\":1000}}",
+              "value": "{\"prizes\":{}}",
               "type": "text"
             },
             {
@@ -4513,17 +4513,17 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>1st day 23-09 12:00 ~ 24-09 12:00</li>\r\n        <li>2nd day 24-09 12:00 ~ 25-09 12:00</li>\r\n        <li>3rd day 25-09 12:00 ~ 26-09 12:00</li>\r\n        <li>4th day 26-09 12:00 ~ 27-09 12:00</li>\r\n        <li>5th day 27-09 12:00 ~ 28-09 12:00</li>\r\n        <li>6th day 28-09 12:00 ~ 29-09 12:00</li>\r\n        <li>7th day 29-09 12:00 ~ 30-09 12:00</li>\r\n        <li>8th day 30-09 12:00 ~ 01-10 12:00</li>\r\n        <li>9th day 01-10 12:00 ~ 02-10 12:00</li>\r\n        <li>10th day 02-10 12:00 ~ 03-10 12:00</li>\r\n        <p><strong>EX:</strong></p>\r\n        <ul class=\"list-dot\">\r\n            <li>Bet ₱27,000 → 10 tickets</li>\r\n            <li>Bet ₱67,500 → 25 tickets</li>\r\n            <li>Bet ₱135,000 → 50 tickets</li>\r\n            <li>Bet ₱270,000 → 100 tickets</li>\r\n        </ul>\r\n    </ul>\r\n</div>",
+              "value": "<!-- Hint Html -->",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html 即時版-->\r\n<div class=\"ticket-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong>₱2,700</strong></span> to<br>\r\n            get <span style=\"color:#FFD700;\"><strong>1</strong></span> ticket\r\n        </li>\r\n        <li>One player Max <span style=\"color:#FFD700;\"><strong>100</strong></span> tickets everyday.</li>\r\n        <li><span style=\"color:#FFD700;\"><strong>Bonus Claim</strong></span>: redeem 1 ticket to get random bonus instantly!</li>\r\n        <li>All tickets must redeem before <span style=\"color:#FFD700;\"><strong>04-10-2026, 12:00 (PM)</strong></span></li>\r\n        <li>Bet 8 bonus games for <span style=\"color:#FFD700;\"><strong>₱100</strong></span> to<br>\r\n            get <span style=\"color:#FFD700;\"><strong>1</strong></span> MPS VIP Point.\r\n        </li>\r\n        <li>1 MPS VIP Point is not equivalent to ₱1.</li>\r\n        <li>Player can check number of MPS VIP Points at Menu / Member Info.</li>\r\n        <li>EX: Bet 8 bonus games for ₱2,700 will get 1 ticket and 27 MPS VIP Points.</li>\r\n        <li>Company reserves the right to amend, suspend or cancel the promotion at any time.</li>\r\n    </ul>\r\n</div>",
+              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 HACKSAW games are included in the daily missions:\r\n        Le Vampire, Demonic Dolls, Wicked Grin. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
               "type": "text"
             },
             {
               "key": "infoHtml",
-              "value": "<!-- Info Html -->\r\nTODAY you bet <span id=\"eventTurnover\"  class=\"txt-rate\"></span> <!--今天投了多少--> → \r\n<span id=\"todayTickets\"></span><!--今天的票--> ticket(s) <br>\r\nBet <span id=\"needMoreTurnover\"  class=\"txt-rate\"></span><!--再投多少-->\r\nto get <span id=\"earnTicket\"></span><!--可以再拿幾張票--> more ticket",
+              "value": "<!-- Info Html -->",
               "type": "text"
             },
             {
@@ -4533,7 +4533,7 @@
             },
             {
               "key": "backgroundUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11211BNGPHPRA_BG.webp",
+              "value": "",
               "type": "text"
             },
             {
@@ -4543,7 +4543,7 @@
             },
             {
               "key": "gameHallBannerUrl",
-              "value": "img.mpsimg.com/Bonusevent/Banner/11211BNGPHPRA.webp",
+              "value": "img.mpsimg.com/Bonusevent/Banner/11173HACKSAWPLAYSTARPHPDA.webp",
               "type": "text"
             },
             {

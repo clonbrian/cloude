@@ -60,6 +60,14 @@ Values above marked "confirmed in production" were verified against stored `allo
 ## Market-code prefix ambiguity
 A 2-letter market prefix in an activity label (e.g. "MY1", "PH2", "MM1") is NOT the same thing as an ISO currency code, and can be ambiguous — e.g. "MY" could mean Myanmar (MMK) or Malaysia (MYR). Cross-check against the currency symbol used in the brief/promo copy (K→MMK, RM→MYR, ₱→PHP, ₫→VND, ৳→BDT) before locking in a currency, and ask the user to confirm if there's any doubt. Getting this wrong cascades into wrong clearing time, wrong symbol, wrong language, and a wrong activity ID.
 
+## Banner filenames are NOT evidence for anything
+
+UI names the banner files ad hoc, and the suffix in them does **not** track the activity type code. `10697JDBPHPRA.webp` and `11211BNGPHPRA.webp` both end in `RA` while the type code for 戳戳樂 is `RF`. Brian confirmed: 「BANNER的取名都不要管,那是ui隨便命名的」.
+
+Store `gameHallBannerUrl` / `backgroundUrl` exactly as given and never infer a type code, provider abbreviation or anything else from the filename. The table below is the only source for type codes.
+
+Likewise the Raffle template's `bonusId` `W23JDBPHP` is a legacy week-number format, not a pattern to copy — build the ID from the standard scheme.
+
 ## Activity type code table (insertBonusEvent, `presentType` field)
 | presentType | Code |
 |---|---|

@@ -64,7 +64,11 @@ A 2-letter market prefix in an activity label (e.g. "MY1", "PH2", "MM1") is NOT 
 
 UI names the banner files ad hoc, and the suffix in them does **not** track the activity type code. `10697JDBPHPRA.webp` and `11211BNGPHPRA.webp` both end in `RA` while the type code for 戳戳樂 is `RF`. Brian confirmed: 「BANNER的取名都不要管,那是ui隨便命名的」.
 
-Store `gameHallBannerUrl` / `backgroundUrl` exactly as given and never infer a type code, provider abbreviation or anything else from the filename. The table below is the only source for type codes.
+Store `gameHallBannerUrl` / `backgroundUrl` exactly as given and **never read the filename at all** — not to infer a type code, not to infer a provider, and **not to raise a question about it either.**
+
+That last part matters: a filename like `11173HACKSAWPLAYSTARPHPDA.webp` on a Hacksaw-only activity looks like a mismatch, but UI names these files however it likes and sharing one image across activities is normal. Asking "is this banner wrong?" is still treating the filename as evidence, and Brian has had to say so twice. Paste the path in, say nothing about it.
+
+The table below is the only source for type codes.
 
 Likewise the Raffle template's `bonusId` `W23JDBPHP` is a legacy week-number format, not a pattern to copy — build the ID from the standard scheme.
 

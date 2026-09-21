@@ -56,7 +56,7 @@ Note this is a *display* convention only. API `prizeDistribution` and other nume
 | MMK | `K 90,000`, `K 100`, `K 1` | **yes** | 10/10 stored occurrences (Roulette, Treasure Pick 3-Tier) |
 | VND | **`₫ 100 K`** — see the VND note below | **yes** | 2/2 |
 | MYR | `RM 100` | **yes** | — |
-| PHP | `₱3,600`, `₱100`, `₱1` | **no** | 7 activities without space; only Raffle uses `₱ 3,900`, treat as outlier |
+| PHP | `₱3,600`, `₱100`, `₱1` | **no** | Brian-confirmed as the single rule for all types. Raffle / Raffle Multi templates carry `₱ 3,900` with a space — legacy, do not copy |
 | BDT | `৳` | no | — |
 | CAD | `CA$` | no | — |
 | USD | `$` | no | — |

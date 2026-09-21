@@ -245,19 +245,20 @@ So for RAFFLE it is **the prize count, not the game count**. An earlier build se
 
 | presentType | presentPrizeNum | Template evidence |
 |---|---|---|
-| RAFFLE | **8** — the physical number of poke holes, and `prizeDistribution` must hold exactly that many prizes (Brian-confirmed) | 8 prizes / 8 |
-| RAFFLE_MULTI | **24** — same rule, 24 holes (Brian-confirmed) | — |
+| RAFFLE | **8** — the poke-hole count, and the server **enforces** `presentPrizeNum == prize count`, so `prizeDistribution` must hold exactly 8 prizes | 8 prizes / 8 |
+| RAFFLE_MULTI | **24** — fixed board size, **independent of the prize count**. No server check | 9 prizes / 24 — production record `YBPHPRM08180827` |
 | TREASURE_PICK single-tier | **prize count** | 9 prizes / 6 games / 9 |
 | ROULETTE | **prize count** — a wheel's segments *are* its prizes, so 9 prizes means 9 segments | 8 / 8 / 8 |
 
 ### Zero-probability prizes: keep or drop depends on the type
 Briefs routinely list a headline amount at `0張 / 0%` (e.g. `金額：100 0張 0%`). Whether it belongs in `prizeDistribution` is type-specific:
 
-- **RAFFLE / RAFFLE_MULTI — drop it.** The hole count is fixed at 8 / 24, and the server checks `presentPrizeNum` against the prize count, so a 9th zero-probability entry breaks the activity. The stored Raffle template has no zero entries at all.
+- **RAFFLE — drop it.** The server checks `presentPrizeNum` against the prize count and the hole count is 8, so a 9th zero-probability entry breaks the activity. The stored Raffle template has no zero entries at all.
+- **RAFFLE_MULTI — keep it.** Despite being a fixed 24-hole board, it carries no server check and its production record keeps `777` at 0% inside 9 prizes. Do **not** carry RAFFLE's drop rule across: an earlier version of this file grouped the two together and was wrong.
 - **TREASURE_PICK single-tier — keep it.** Its template carries `777` at 0% inside the 9 prizes and `presentPrizeNum` counts it.
 - **ROULETTE — keep it.** The wheel segments are the prizes, so a 0% headline amount is a visible segment nobody lands on. 9 prizes means 9 segments.
 
-The distinction is what the number counts. RAFFLE/RAFFLE_MULTI have a **fixed board** (8 or 24 holes) that the prize list has to fit; ROULETTE and TREASURE_PICK have a **variable board built from the prize list**. Never carry the rule from one group to the other — an earlier build dropped to the game count on a Roulette and set `presentPrizeNum` 8 against 9 prizes, which is wrong.
+The distinction is what the number counts. RAFFLE has a **fixed board of 8** that the prize list must fit exactly, because the server checks it. RAFFLE_MULTI has a fixed board of 24 but **no check**, so its prize list is free. ROULETTE and TREASURE_PICK have a **variable board built from the prize list**. Never carry the rule from one group to the other — an earlier build dropped to the game count on a Roulette and set `presentPrizeNum` 8 against 9 prizes, which is wrong.
 
 Dropping a 0% entry never disturbs the probability sum, so re-check that it still totals 100 and move on. Remove the amount from `prizeDisplayOrder` too.
 | GOLDEN_EGG | `3` — neither prize (9) nor game (8) count; likely the egg count | 3 |
@@ -265,6 +266,27 @@ Dropping a 0% entry never disturbs the probability sum, so re-check that it stil
 | DAILY_MISSION, TREASURE_PICK 3-tier, SIGNUP | `1` | — |
 
 ⚠️ **Never infer this field from a template whose prize count and game count happen to be equal.** Raffle and Roulette both have 8/8/8 and are useless as evidence on their own. Cross-check against a template where the two differ — Treasure Pick single-tier (9 prizes vs 6 games) is the one that settles it.
+
+## RAFFLE_MULTI (多重戳戳樂) — field conventions
+
+Verified against production record `YBPHPRM08180827` (YB / PHP, 10 days, now stored as the `Raffle Multi (多重戳戳樂)` template).
+
+| Field | Value |
+|---|---|
+| `presentType` | `RAFFLE_MULTI` |
+| type code in `bonusId` | `RM` — `YBPHPRM08180827` follows the standard scheme (start 08/18, end 08/28 → `0827` = end − 1) |
+| `presentPrizeNum` | **24**, always — not the prize count |
+| `prizeDistribution` | `{"probability": {...}, "prizes": {...}}`, no `adjust` key |
+| `isInstantPay` / `isJackpotMode` / `isAllowChallenge` / `isAllowRankReward` | all `false` |
+| `bonusMultiplier` / `turnoverMultiplier` / `minBonusToMultiply` / `challengeExpireHours` | all `1` |
+| `issueType` | `1` |
+| `prizeDisplayOrder` | comma-separated amounts including the 0% one |
+
+`prizes` values are the whole-run totals (700/day × 10 days = 7000), the same convention as Roulette and Raffle.
+
+HTML is the Treasure-Pick-single-tier family: day list plus an `EX:` block in `hintHtml`, gold `<strong>` highlights in `footerHtml`, four system spans in `infoHtml`.
+
+Note this record's copy writes `₱ 5,500` with a space, as does the Raffle template. That is legacy formatting, not a convention to follow — Brian: 「有沒有空格沒差, 你好管控就好」. Use the single PHP rule in `html-rules.md` (`₱3,900`, no space) for every type, including the Raffle family.
 
 ## "無限張" has no sentinel value — pick the same-type template's number
 

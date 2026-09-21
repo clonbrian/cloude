@@ -53,12 +53,39 @@ Some providers use a short form in the activity ID/display text but a different,
 | ACEWIN | `AW` — inferred from the two-word-initials pattern, **awaiting Brian's confirmation** | `ACEWIN` |
 | MG / MicroGaming | `MG` — Brian writes "MG" in briefs | `MGGAMING` — confirmed in production (1 record) |
 | PLAYSTAR | `PS` — confirmed by Brian | `PLAYSTAR` — confirmed by Brian (absent from the 354-record production sample) |
-| VERTEXPLAY | (abbreviation not yet seen) | `VERTEXPLAY` |
+| VERTEXPLAY | `VP` — confirmed by Brian | `VERTEXPLAY` — confirmed in production |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.
 
 ## Market-code prefix ambiguity
 A 2-letter market prefix in an activity label (e.g. "MY1", "PH2", "MM1") is NOT the same thing as an ISO currency code, and can be ambiguous — e.g. "MY" could mean Myanmar (MMK) or Malaysia (MYR). Cross-check against the currency symbol used in the brief/promo copy (K→MMK, RM→MYR, ₱→PHP, ₫→VND, ৳→BDT) before locking in a currency, and ask the user to confirm if there's any doubt. Getting this wrong cascades into wrong clearing time, wrong symbol, wrong language, and a wrong activity ID.
+
+## Three different names per provider — do not mix them up
+
+Each provider can carry three distinct strings, and putting one in another's slot is a real error:
+
+| Slot | What it is | Example |
+|---|---|---|
+| `bonusId` prefix | the short internal abbreviation | `VP`, `SV`, `PG`, `HS`, `FC` |
+| `allowPlatform` / `platform` | the exact API value, matched server-side | `VERTEXPLAY`, `SVCASINO`, `POCKET`, `HACKSAW`, `FACHAI` |
+| copy (`tipText`, HTML) | the brand name players recognise | `VERTEXPLAY`, `PGSoft`, `Hacksaw`, `SEXY` |
+
+**Abbreviations belong in `bonusId` only** — Brian: 「以後縮寫統一都用在 bonus id 就好」. Never write `VP Platform(...)` in `tipText`; write the brand name.
+
+Production copy is inconsistent (FACHAI's tipText says `FC` in 15 records, `Fachai` in 3), so do not take a single record as the pattern. Known brand spellings for copy:
+
+| API value | Copy |
+|---|---|
+| POCKET | PGSoft |
+| SEXYBCRT | SEXY |
+| HACKSAW | Hacksaw |
+| VERTEXPLAY | VERTEXPLAY |
+| FACHAI | Fachai |
+| BNG / JDB / JILI / YB / RELAX | same as the API value |
+
+When a provider isn't listed here, use the API value in copy and say which you used.
+
+Reminder: RANK_RECORD (`insertRankRecordSetting`) has **no `bonusId` field at all**, so the abbreviation never comes up for 龍虎榜 — Brian confirmed 「LH 不用填 bonus id」.
 
 ## Banner filenames are NOT evidence for anything
 

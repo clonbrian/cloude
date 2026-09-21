@@ -4255,6 +4255,10 @@
             "value": "application/json, text/javascript, */*; q=0.01"
           },
           {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          {
             "key": "X-Requested-With",
             "value": "XMLHttpRequest"
           },
@@ -4264,76 +4268,11 @@
           }
         ],
         "body": {
-          "mode": "formdata",
-          "formdata": [
+          "mode": "urlencoded",
+          "urlencoded": [
             {
-              "key": "prizeDisplayOrder",
+              "key": "syncUserIds",
               "value": "",
-              "type": "text"
-            },
-            {
-              "key": "miniGameOriginalDisplayOrder",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "miniGameExtraDisplayOrder",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "presentType",
-              "value": "DAILY_MISSION",
-              "type": "text"
-            },
-            {
-              "key": "skinName",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "bonusId",
-              "value": "PSPHPDM09281011",
-              "type": "text"
-            },
-            {
-              "key": "startDate",
-              "value": "2026-09-28 12",
-              "type": "text"
-            },
-            {
-              "key": "endDate",
-              "value": "2026-10-12 12",
-              "type": "text"
-            },
-            {
-              "key": "bannerStartTime",
-              "value": "2026-09-28 12",
-              "type": "text"
-            },
-            {
-              "key": "drawFinishDate",
-              "value": "2026-09-27 12",
-              "type": "text"
-            },
-            {
-              "key": "redeemDeadlineDate",
-              "value": "2026-10-12 12",
-              "type": "text"
-            },
-            {
-              "key": "activeHours",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "platform",
-              "value": "PLAYSTAR",
-              "type": "text"
-            },
-            {
-              "key": "isShowEasyGame",
-              "value": "false",
               "type": "text"
             },
             {
@@ -4347,220 +4286,145 @@
               "type": "text"
             },
             {
-              "key": "paymentShareholder",
+              "key": "allowPlatform",
+              "value": "VERTEXPLAY",
+              "type": "text"
+            },
+            {
+              "key": "allowGameType",
+              "value": "SLOT",
+              "type": "text"
+            },
+            {
+              "key": "amountLimit",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "winRateLimit",
               "value": "",
               "type": "text"
             },
             {
-              "key": "accessLevel",
-              "value": "public",
+              "key": "dailyRankLimit",
+              "value": "5",
               "type": "text"
             },
             {
-              "key": "updateTime",
-              "value": "2026-09-18 17:46:57.143",
+              "key": "weeklyRankLimit",
+              "value": "",
               "type": "text"
             },
             {
-              "key": "createTime",
-              "value": "2026-09-18 17:46:57.143",
+              "key": "monthlyRankLimit",
+              "value": "",
               "type": "text"
             },
             {
-              "key": "isInstantPay",
-              "value": "false",
+              "key": "reserveRanking",
+              "value": "2",
               "type": "text"
             },
             {
-              "key": "isJackpotMode",
-              "value": "false",
-              "type": "text"
-            },
-            {
-              "key": "grandPrize",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "turnoverPerTicket",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "turnoverPerPoint",
-              "value": "100",
-              "type": "text"
-            },
-            {
-              "key": "maxTicketPerPlayer",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "issueType",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "presentPrizeNum",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "isAllowChallenge",
-              "value": "true",
-              "type": "text"
-            },
-            {
-              "key": "isForcingChallenge",
-              "value": "true",
-              "type": "text"
-            },
-            {
-              "key": "isChallengeFailNoBonus",
-              "value": "true",
-              "type": "text"
-            },
-            {
-              "key": "bonusMultiplier",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "turnoverMultiplier",
-              "value": "1",
-              "type": "text"
-            },
-            {
-              "key": "minBonusToMultiply",
+              "key": "weeklyOrderType",
               "value": "0",
               "type": "text"
             },
             {
-              "key": "challengeExpireHours",
-              "value": "24",
+              "key": "monthlyOrderType",
+              "value": "0",
               "type": "text"
             },
             {
-              "key": "isStickerSliding",
-              "value": "false",
+              "key": "latestSuccessSyncTime",
+              "value": "",
               "type": "text"
             },
             {
-              "key": "isOnlyApp",
-              "value": "false",
+              "key": "freeSpinExpiredTime",
+              "value": "2026-10-07 12:00:00",
               "type": "text"
             },
             {
-              "key": "requiredGames",
-              "value": "{\"PLAYSTAR\":[\"\"]}",
+              "key": "startTime",
+              "value": "2026-09-23 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "rankDays",
+              "value": "14",
+              "type": "text"
+            },
+            {
+              "key": "displayTime",
+              "value": "2026-10-07 12:00:00",
+              "type": "text"
+            },
+            {
+              "key": "displayOrder",
+              "value": "4",
+              "type": "text"
+            },
+            {
+              "key": "challengeLimitHour",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "turnoverMultiplier",
+              "value": "",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"PLAYSTAR\":[\"PSS-ON-00170\",\"PSS-ON-00174\",\"PSS-ON-00173\"]}",
-              "type": "text"
-            },
-            {
-              "key": "freeSpinGameIds",
               "value": "",
               "type": "text"
             },
             {
-              "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"499\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"699\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"899\"}},\"dailySchedule\":[{\"missionDate\":\"2026-09-28\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-29\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-09-30\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-01\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-02\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-03\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-04\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-05\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-06\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-07\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-08\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-09\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-10\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-11\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]}]}",
+              "key": "rewardSetting",
+              "value": "{\"daily\":[{\"name\":\"12000\",\"quotas\":1},{\"name\":\"5000\",\"quotas\":1},{\"name\":\"1500\",\"quotas\":1},{\"name\":\"1000\",\"quotas\":1},{\"name\":\"500\",\"quotas\":1}],\"weekly\":[{\"name\":\"0\",\"quotas\":0}],\"monthly\":[{\"name\":\"0\",\"quotas\":0}]}",
               "type": "text"
             },
             {
-              "key": "prizeDistribution",
-              "value": "{\"prizes\":{}}",
+              "key": "tipText",
+              "value": "<ul>\n<li class=\"tit\">VERTEXPLAY Single Win Tournament (23rd September 2026 12:00 pm. ~ 7th October 2026 12:00 pm.)</li>\n<li class=\"tit\">Term and Condition</li>\n<li class=\"number_1\">VERTEXPLAY Platform(Slot Games)</li>\n<li class=\"number_2\">Winning amount for Single Bet more than 2,000 peso will be ranked</li>\n<li>Reward</li>\n<li class=\"number_3\">List 5 Ranking</li>\n<li class=\"number_4\">Daily Reward\n<br>1st Prize 12,000 peso\n<br>2nd Prize 5,000 peso\n<br>3rd Prize 1,500 peso\n<br>4th Prize 1,000 peso\n<br>5th Prize 500 peso\n</li>\n<!--將會隱藏\n<li class=\"number_5\">Weekly Leader Board (based on number of times you rank on the Daily Leader Board)\n<br>1st Prize 30,000 peso\n<br>2nd Prize 15,000 peso\n<br>3rd~5th Prize 5,000 peso\n</li>\n將會隱藏-->\n<li class=\"tit\">(1) Ranking could delay for 5 minutes and would reward to your account by 13:00 every day.</li>\n<li class=\"tit\">(2) No challenge required and reward will be issued instantly.</li>\n</ul>",
               "type": "text"
             },
             {
-              "key": "usedPrizeDistribution",
-              "value": "",
+              "key": "rankType",
+              "value": "0",
               "type": "text"
             },
             {
-              "key": "miniGamePrizeDistribution",
-              "value": "{}",
+              "key": "isOnlyWeek",
+              "value": "0",
               "type": "text"
             },
             {
-              "key": "isAllowRankReward",
-              "value": "false",
+              "key": "presentType",
+              "value": "RANK_RECORD",
               "type": "text"
             },
             {
-              "key": "rankRewardSetting",
-              "value": "",
+              "key": "beforeStartDisplayTime",
+              "value": "0",
               "type": "text"
             },
             {
-              "key": "miniJackpotPool",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "majorJackpotPool",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "megaJackpotPool",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "hintHtml",
-              "value": "<!-- Hint Html -->",
-              "type": "text"
-            },
-            {
-              "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 PLAYSTAR games are included in the daily missions:\r\n        Mahjong Origin 2, BOUNTY EXPRESS, SUPER GEMS 2. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
-              "type": "text"
-            },
-            {
-              "key": "infoHtml",
-              "value": "<!-- Info Html -->",
-              "type": "text"
-            },
-            {
-              "key": "multiplyHtml",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "backgroundUrl",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "signupBannerUrl",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "gameHallBannerUrl",
-              "value": "",
-              "type": "text"
-            },
-            {
-              "key": "arenaCode",
-              "value": "",
+              "key": "afterStartDisplayTime",
+              "value": "0",
               "type": "text"
             }
           ]
         },
         "url": {
-          "raw": "{{baseUrl}}/admin/insertBonusEvent",
+          "raw": "{{baseUrl}}/admin/insertRankRecordSetting",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "admin",
-            "insertBonusEvent"
+            "insertRankRecordSetting"
           ]
         }
       },

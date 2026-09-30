@@ -26,6 +26,17 @@ The clearing times are not arbitrary — each is the server's 12:00 GMT+8 expres
 | MMK | UTC+6:30 | 10:30 AM |
 | BDT | UTC+6 | 10:00 AM |
 
+### Clearing time is a per-market substitution, not part of the skeleton
+
+When reusing another activity's HTML as a structure, **the clearing time is a value to swap, not text to copy.** A JILI PHP template carries `12:00 PM` because PHP clears at noon; the same structure built for VND must read `11:00 AM` everywhere. This has been got wrong once — a VND 三級寶箱 shipped with 26 instances of `12:00 PM` copied straight from a PHP template.
+
+Every place the market time appears has to change together:
+- the `hintHtml` day list (both ends of every row)
+- any "rewards will be cleared at …" line in `footerHtml`
+- any redemption-deadline line
+
+After building, grep the finished HTML for time strings and confirm they all match the market's clearing time from the table above. One stray value means the copy contradicts itself.
+
 ## The one-line rule for every timestamp (settled)
 
 > **API parameter → server time. Player-facing HTML → converted to market time.**

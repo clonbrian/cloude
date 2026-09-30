@@ -267,6 +267,20 @@ Dropping a 0% entry never disturbs the probability sum, so re-check that it stil
 
 ⚠️ **Never infer this field from a template whose prize count and game count happen to be equal.** Raffle and Roulette both have 8/8/8 and are useless as evidence on their own. Cross-check against a template where the two differ — Treasure Pick single-tier (9 prizes vs 6 games) is the one that settles it.
 
+## 寶箱只有兩種:一般寶箱與三級寶箱
+
+Brian: 「就只有三級寶箱 & 一般寶箱」。Everything else is a flag on one of those two, not a separate activity:
+
+| Variant | What it actually is |
+|---|---|
+| 單寶箱 / 九寶箱 | 一般寶箱 with `presentPrizeNum` 1 or 9 — same type, different number |
+| 即時發放 / Instant Pay | `isInstantPay: true` on either type |
+| 帶勛章 | `isAllowRankReward: true` + `rankRewardSetting` |
+
+**Instant Pay is not 自爆.** They behave alike (no manual claim) but are different `presentType` values — `TREASURE_PICK` vs `AUTO_REDEEM`. An earlier collection carried a template named 「三單寶箱自爆」 that was actually a TREASURE_PICK; the name mixed two activity types and has been removed.
+
+The collection now holds exactly two treasure-pick templates — `Treasure Pick (一般寶箱)` and `Treasure Pick (三級寶箱)`. Do not add a third for a flag combination; set the flag on one of these.
+
 ## RAFFLE_MULTI (多重戳戳樂) — field conventions
 
 Verified against production record `YBPHPRM08180827` (YB / PHP, 10 days, now stored as the `Raffle Multi (多重戳戳樂)` template).

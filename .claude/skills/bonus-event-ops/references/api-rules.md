@@ -335,6 +335,24 @@ Mirror image of rankType 0. Evidence is 35 stored records from `findAllRankRecor
 
 `rewardSetting` puts the prizes under `weekly` and sends `[{"name":"0","quotas":0}]` placeholders for `daily` and `monthly` — the inverse of a daily board.
 
+### tipText vs settings — the full cross-check
+
+Brian expects `tipText` to be verified against the settings, not just transcribed. Run **all** of these before shipping; report any mismatch and ask which side is right rather than silently picking one.
+
+| # | Check | How |
+|---|---|---|
+| 1 | Prize amounts | every `Nth Prize X` in the copy matches `rewardSetting` in rank order, including grouped ranks (`4th/5th`, `6th~9th`) against `quotas` |
+| 2 | Rank count | `List N Ranking` == the sum of `quotas` == `dailyRankLimit` (or `weeklyRankLimit` for a weekly board) |
+| 3 | Date range | both ends match `startTime` and `startTime + rankDays`, **month and year included** |
+| 4 | Threshold | the peso/K figure in the rule sentence matches `amountLimit` (or `winRateLimit`) |
+| 5 | Platform | the name before `Platform` matches `allowPlatform`'s brand name |
+| 6 | **Board period** | the copy's wording matches `rankType`. `Daily Reward` / `Single Win` belongs to a daily board; `Weekly Reward` / `Weekly Total Win` to a weekly one. A daily board whose copy says Weekly — or the reverse — is a real error, not a wording nit |
+| 7 | **Game scope** | `(Any games)` vs `(Slot Games)` matches `allowGameType` — `SLOT` alone should not read "Any games" |
+
+Errors caught by these in practice: a 4-prize board whose copy said `List 5`, prize amounts shifted by one rank, a start date written as August for a September activity, a start date missing its year while the end date had one.
+
+The hidden `<!--將會隱藏 ... 將會隱藏-->` weekly block is boilerplate carried in every brief — it is commented out, so its figures need no check.
+
 ### The rule sentence in tipText identifies the type
 Each stored record's own `tipText` `number_2` line states its ranking rule, and the four types separate cleanly with no overlap. This is what the rankType decode was derived from:
 

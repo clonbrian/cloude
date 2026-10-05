@@ -3972,7 +3972,7 @@
             },
             {
               "key": "bonusId",
-              "value": "YBMMKDM10121025",
+              "value": "F1PHPDM10121025",
               "type": "text"
             },
             {
@@ -4007,7 +4007,7 @@
             },
             {
               "key": "platform",
-              "value": "YB",
+              "value": "F1",
               "type": "text"
             },
             {
@@ -4017,12 +4017,12 @@
             },
             {
               "key": "currency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
@@ -4037,12 +4037,12 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-10-05 09:17:27.229",
+              "value": "2026-10-05 10:19:49.741",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-10-05 09:17:27.229",
+              "value": "2026-10-05 10:19:49.741",
               "type": "text"
             },
             {
@@ -4132,12 +4132,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"YB\":[\"\"]}",
+              "value": "{\"F1\":[\"\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"YB\":[\"1068\",\"3003\",\"1070\"]}",
+              "value": "{\"F1\":[\"840\",\"844\",\"930\"]}",
               "type": "text"
             },
             {
@@ -4147,7 +4147,7 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"20000\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"40000\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"60000\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]}]}",
+              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"499\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"699\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"899\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]}]}",
               "type": "text"
             },
             {
@@ -4197,7 +4197,7 @@
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-MY-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>နေ့စဉ်မစ်ရှင် ၁၄ ခုရှိပြီး တစ်ရက်လျှင် မစ်ရှင်တစ်ခုဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်ကို ပြီးမြောက်ပါက ဆုကြေးကို ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်တွင် YB ဂိမ်း ၃ ခုသာ ပါဝင်သည် —\r\n        Calavera Fiesta, Bingo Bingo, Dragon Gems 500။\r\n        (\"GO\" ကိုနှိပ်၍ အီးဗင့်ဂိမ်းစာရင်းသို့ ဝင်ရောက်နိုင်သည်)\r\n    </li>\r\n    <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>\r\n</ul>\r\n</div>",
+              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 F1 games are included in the daily missions:\r\n        Redline Drive, Glow City, Dollar Vault. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
               "type": "text"
             },
             {
@@ -4293,7 +4293,7 @@
             },
             {
               "key": "bonusId",
-              "value": "BNGMMKDM10121025",
+              "value": "AWPHPDM10121025",
               "type": "text"
             },
             {
@@ -4328,7 +4328,7 @@
             },
             {
               "key": "platform",
-              "value": "BNG",
+              "value": "ACEWIN",
               "type": "text"
             },
             {
@@ -4338,12 +4338,12 @@
             },
             {
               "key": "currency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "MMK",
+              "value": "PHP",
               "type": "text"
             },
             {
@@ -4358,12 +4358,12 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-10-05 09:17:27.229",
+              "value": "2026-10-05 10:19:49.741",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-10-05 09:17:27.229",
+              "value": "2026-10-05 10:19:49.741",
               "type": "text"
             },
             {
@@ -4453,12 +4453,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"BNG\":[\"\"]}",
+              "value": "{\"ACEWIN\":[\"\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"BNG\":[\"986\",\"861\",\"951\"]}",
+              "value": "{\"ACEWIN\":[\"1022\",\"1050\",\"1026\"]}",
               "type": "text"
             },
             {
@@ -4468,7 +4468,7 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"20000\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"40000\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"60000\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"100\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"200\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"300\",\"missions\":[\"1\",\"4\"]}]}",
+              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"499\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"699\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"999\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]}]}",
               "type": "text"
             },
             {
@@ -4518,7 +4518,7 @@
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-MY-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>နေ့စဉ်မစ်ရှင် ၁၄ ခုရှိပြီး တစ်ရက်လျှင် မစ်ရှင်တစ်ခုဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်ကို ပြီးမြောက်ပါက ဆုကြေးကို ချက်ချင်းရရှိမည်ဖြစ်သည်။</li>\r\n    <li>နေ့စဉ်မစ်ရှင်တွင် BNG ဂိမ်း ၃ ခုသာ ပါဝင်သည် —\r\n        Sugar Teddy x1000, Pig Up, 4 Supercharged Clovers: Hold and Win။\r\n        (\"GO\" ကိုနှိပ်၍ အီးဗင့်ဂိမ်းစာရင်းသို့ ဝင်ရောက်နိုင်သည်)\r\n    </li>\r\n    <li>ကုမ္ပဏီသည် ပရိုမိုးရှင်းကို အချိန်မရွေး ပြင်ဆင်ခြင်း၊ ရပ်ဆိုင်းခြင်း သို့မဟုတ် ပယ်ဖျက်ခြင်း ပြုလုပ်ပိုင်ခွင့်ရှိသည်။</li>\r\n</ul>\r\n</div>",
+              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 ACEWIN games are included in the daily missions:\r\n        Altar Riches, Masskara Mania Multi Gala, Brawl Rooster. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
               "type": "text"
             },
             {

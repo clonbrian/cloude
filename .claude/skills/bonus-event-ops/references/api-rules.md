@@ -267,6 +267,29 @@ Dropping a 0% entry never disturbs the probability sum, so re-check that it stil
 
 ⚠️ **Never infer this field from a template whose prize count and game count happen to be equal.** Raffle and Roulette both have 8/8/8 and are useless as evidence on their own. Cross-check against a template where the two differ — Treasure Pick single-tier (9 prizes vs 6 games) is the one that settles it.
 
+## Two slots: Latest Activity and Latest Activity 2
+
+Brian's workflow, confirmed:
+
+| Activities in the brief | Where they go |
+|---|---|
+| one | `Latest Activity` only — and **clear `Latest Activity 2`**, so no stale request is left sitting there to be fired by accident |
+| two | first into `Latest Activity`, second into `Latest Activity 2` |
+
+Two activities in one brief always share the same date range. Never write into a named permanent template (`Daily Mission (with Challenge)` and the rest stay as reference).
+
+## Numbers in parentheses in a brief are Brian's own records — never ask
+
+Figures that appear beside a ladder or a prize table and map to no setting are Brian's issuance/cost notes. Examples seen: `(300)1：完成流水20000元`, `每日預計送出2400~3800張票券`, `600~1500張`, `c: 3000W`, `總額<50W`, `每張價值12.4元`.
+
+None of them is an API field. Compute what you can for a sanity signal, mention a mismatch in one line, and move on. **Brian has been asked about these more than once — do not ask again.**
+
+The one exception worth raising: if the reward-to-turnover ratio looks wrong for the currency. Across markets it sits near 0.5–0.6% (MMK 20,000→100 is 0.50%; PHP 499→3 is 0.60%). An activity an order of magnitude off that is worth one line.
+
+## Identical ladders across two providers are fine
+
+Two providers in one campaign often share a date range; their ladders may be identical or different, and both are normal. Do not query a match.
+
 ## 寶箱只有兩種:一般寶箱與三級寶箱
 
 Brian: 「就只有三級寶箱 & 一般寶箱」。Everything else is a flag on one of those two, not a separate activity:

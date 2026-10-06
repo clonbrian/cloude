@@ -3947,7 +3947,7 @@
           "formdata": [
             {
               "key": "prizeDisplayOrder",
-              "value": "",
+              "value": "{\"mega\":[\"5\",\"10\",\"15\",\"20\",\"30\",\"50\",\"588\"],\"mini\":[\"1\",\"2\",\"3\",\"4\",\"10\",\"15\",\"88\"],\"major\":[\"2\",\"5\",\"7\",\"10\",\"20\",\"30\",\"288\"]}",
               "type": "text"
             },
             {
@@ -3962,7 +3962,7 @@
             },
             {
               "key": "presentType",
-              "value": "DAILY_MISSION",
+              "value": "TREASURE_PICK",
               "type": "text"
             },
             {
@@ -3972,32 +3972,32 @@
             },
             {
               "key": "bonusId",
-              "value": "F1PHPDM10121025",
+              "value": "JILIMYR3TP10081029",
               "type": "text"
             },
             {
               "key": "startDate",
-              "value": "2026-10-12 12",
+              "value": "2026-10-08 12",
               "type": "text"
             },
             {
               "key": "endDate",
-              "value": "2026-10-26 12",
+              "value": "2026-10-30 12",
               "type": "text"
             },
             {
               "key": "bannerStartTime",
-              "value": "2026-10-12 12",
+              "value": "2026-10-08 12",
               "type": "text"
             },
             {
               "key": "drawFinishDate",
-              "value": "2026-10-11 12",
+              "value": "2026-10-07 12",
               "type": "text"
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-10-26 12",
+              "value": "2026-10-31 12",
               "type": "text"
             },
             {
@@ -4007,7 +4007,7 @@
             },
             {
               "key": "platform",
-              "value": "F1",
+              "value": "JILI",
               "type": "text"
             },
             {
@@ -4017,12 +4017,12 @@
             },
             {
               "key": "currency",
-              "value": "PHP",
+              "value": "MYR",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "PHP",
+              "value": "MYR",
               "type": "text"
             },
             {
@@ -4037,17 +4037,17 @@
             },
             {
               "key": "updateTime",
-              "value": "2026-10-05 10:19:49.741",
+              "value": "2026-10-06 14:42:17.126",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-10-05 10:19:49.741",
+              "value": "2026-10-06 14:42:17.126",
               "type": "text"
             },
             {
               "key": "isInstantPay",
-              "value": "false",
+              "value": "true",
               "type": "text"
             },
             {
@@ -4057,7 +4057,7 @@
             },
             {
               "key": "grandPrize",
-              "value": "1",
+              "value": "500000",
               "type": "text"
             },
             {
@@ -4072,7 +4072,7 @@
             },
             {
               "key": "maxTicketPerPlayer",
-              "value": "1",
+              "value": "0",
               "type": "text"
             },
             {
@@ -4087,17 +4087,17 @@
             },
             {
               "key": "isAllowChallenge",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
               "key": "isForcingChallenge",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
               "key": "isChallengeFailNoBonus",
-              "value": "true",
+              "value": "false",
               "type": "text"
             },
             {
@@ -4112,12 +4112,12 @@
             },
             {
               "key": "minBonusToMultiply",
-              "value": "0",
+              "value": "1",
               "type": "text"
             },
             {
               "key": "challengeExpireHours",
-              "value": "24",
+              "value": "1",
               "type": "text"
             },
             {
@@ -4132,12 +4132,12 @@
             },
             {
               "key": "requiredGames",
-              "value": "{\"F1\":[\"\"]}",
+              "value": "{\"JILI\":[\"720\",\"109\",\"379\",\"259\",\"38\",\"696\",\"539\",\"736\"]}",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"F1\":[\"840\",\"844\",\"930\"]}",
+              "value": "{}",
               "type": "text"
             },
             {
@@ -4147,12 +4147,12 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"499\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"699\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"899\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"5\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]}]}",
+              "value": "{}",
               "type": "text"
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"prizes\":{}}",
+              "value": "{\"mega\":{\"probability\":{\"5\":30,\"10\":25,\"15\":25,\"20\":15,\"30\":3,\"50\":2,\"588\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"5\":2147483647,\"10\":2147483647,\"15\":2147483647,\"20\":2147483647,\"30\":2147483647,\"50\":2147483647,\"588\":2147483647},\"turnoverPerTicket\":5000,\"maxTicketPerPlayer\":100},\"mini\":{\"probability\":{\"1\":38,\"2\":37,\"3\":10,\"4\":10,\"10\":3,\"15\":2,\"88\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"1\":2147483647,\"2\":2147483647,\"3\":2147483647,\"4\":2147483647,\"10\":2147483647,\"15\":2147483647,\"88\":2147483647},\"turnoverPerTicket\":700,\"maxTicketPerPlayer\":1},\"major\":{\"probability\":{\"2\":30,\"5\":25,\"7\":25,\"10\":15,\"20\":3,\"30\":2,\"288\":0},\"adjust\":{\"min\":-50,\"max\":50},\"prizes\":{\"2\":2147483647,\"5\":2147483647,\"7\":2147483647,\"10\":2147483647,\"20\":2147483647,\"30\":2147483647,\"288\":2147483647},\"turnoverPerTicket\":2000,\"maxTicketPerPlayer\":1},\"instantPaySetting\":{\"ticketExpireDays\":7}}",
               "type": "text"
             },
             {
@@ -4192,12 +4192,12 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html -->",
+              "value": "<!-- Hint Html -->\r\n<div class=\"tooltip-box\">\r\n    <ul class=\"list-dot\">\r\n        <li>Hari ke-1 08/10 12:00 PM ~ 09/10 12:00 PM</li>\r\n        <li>Hari ke-2 09/10 12:00 PM ~ 10/10 12:00 PM</li>\r\n        <li>Hari ke-3 10/10 12:00 PM ~ 11/10 12:00 PM</li>\r\n        <li>Hari ke-4 11/10 12:00 PM ~ 12/10 12:00 PM</li>\r\n        <li>Hari ke-5 12/10 12:00 PM ~ 13/10 12:00 PM</li>\r\n        <li>Hari ke-6 13/10 12:00 PM ~ 14/10 12:00 PM</li>\r\n        <li>Hari ke-7 14/10 12:00 PM ~ 15/10 12:00 PM</li>\r\n        <li>Hari ke-8 15/10 12:00 PM ~ 16/10 12:00 PM</li>\r\n        <li>Hari ke-9 16/10 12:00 PM ~ 17/10 12:00 PM</li>\r\n        <li>Hari ke-10 17/10 12:00 PM ~ 18/10 12:00 PM</li>\r\n        <li>Hari ke-11 18/10 12:00 PM ~ 19/10 12:00 PM</li>\r\n        <li>Hari ke-12 19/10 12:00 PM ~ 20/10 12:00 PM</li>\r\n        <li>Hari ke-13 20/10 12:00 PM ~ 21/10 12:00 PM</li>\r\n        <li>Hari ke-14 21/10 12:00 PM ~ 22/10 12:00 PM</li>\r\n        <li>Hari ke-15 22/10 12:00 PM ~ 23/10 12:00 PM</li>\r\n        <li>Hari ke-16 23/10 12:00 PM ~ 24/10 12:00 PM</li>\r\n        <li>Hari ke-17 24/10 12:00 PM ~ 25/10 12:00 PM</li>\r\n        <li>Hari ke-18 25/10 12:00 PM ~ 26/10 12:00 PM</li>\r\n        <li>Hari ke-19 26/10 12:00 PM ~ 27/10 12:00 PM</li>\r\n        <li>Hari ke-20 27/10 12:00 PM ~ 28/10 12:00 PM</li>\r\n        <li>Hari ke-21 28/10 12:00 PM ~ 29/10 12:00 PM</li>\r\n        <li>Hari ke-22 29/10 12:00 PM ~ 30/10 12:00 PM</li>\r\n    </ul>\r\n</div>",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 F1 games are included in the daily missions:\r\n        Redline Drive, Glow City, Dollar Vault. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
+              "value": "<!-- Footer Html --> <div class=\"ticket-box\"> <ul class=\"list-dot\"> <li>Bertaruh pada 8 permainan bonus untuk mendapat tiket mengikut peringkat.</li> <li>Pemain boleh menerima tiket tanpa had.</li> <li>Acara bermula dari LV1. LV2 akan dibuka setelah LV1 mencapai jumlah tiket maksimum, dan LV3 akan dibuka setelah LV2 mencapai jumlah tiket maksimum.</li> <li class=\"ticket-tier-summary\"><ul class=\"ticket-tier-list\"><li class=\"ticket-tier-item tier-min\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV1</span><span class=\"ticket-tier-caption\">Bayaran Maksimum :</span><span class=\"txt-rate MYR\" id=\"miniMaxPrize\"></span></li><li class=\"ticket-tier-item tier-med\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV2</span><span class=\"ticket-tier-caption\">Bayaran Maksimum :</span><span class=\"txt-rate MYR\" id=\"majorMaxPrize\"></span></li><li class=\"ticket-tier-item tier-max\"><span class=\"ticket-tier-label\"><i class=\"icon icon-ticket\" aria-hidden=\"true\"></i>LV3</span><span class=\"ticket-tier-caption\">Bayaran Maksimum :</span><span class=\"txt-rate MYR\" id=\"megaMaxPrize\"></span></li></ul></li> <li><span style=\"color:#FFD700;\"><strong>Tuntutan Bonus</strong></span>: setelah pemain mencapai pertaruhan yang diperlukan, <span style=\"color:#FFD700;\">klik peti harta karun</span> untuk menebus tiket peringkat berkenaan, dan ganjaran akan dikreditkan serta-merta.</li> <li><span style=\"color:#FFD700;\"><strong>Tiket mesti ditebus dalam tempoh 7 hari selepas dikeluarkan.</strong></span></li> <li>Bertaruh pada 8 permainan bonus sebanyak <strong>RM 100</strong> untuk mendapat <strong>1</strong> MPS VIP Point.</li> <li>1 MPS VIP Point tidak bersamaan dengan RM 1.</li> <li>Pemain boleh menyemak jumlah MPS VIP Points di Menu / Member Info.</li> <li>Syarikat berhak mengubah, menggantung atau membatalkan promosi pada bila-bila masa.</li> </ul> </div>",
               "type": "text"
             },
             {
@@ -4283,7 +4283,7 @@
             },
             {
               "key": "presentType",
-              "value": "DAILY_MISSION",
+              "value": "",
               "type": "text"
             },
             {
@@ -4293,32 +4293,32 @@
             },
             {
               "key": "bonusId",
-              "value": "AWPHPDM10121025",
+              "value": "",
               "type": "text"
             },
             {
               "key": "startDate",
-              "value": "2026-10-12 12",
+              "value": "",
               "type": "text"
             },
             {
               "key": "endDate",
-              "value": "2026-10-26 12",
+              "value": "",
               "type": "text"
             },
             {
               "key": "bannerStartTime",
-              "value": "2026-10-12 12",
+              "value": "",
               "type": "text"
             },
             {
               "key": "drawFinishDate",
-              "value": "2026-10-11 12",
+              "value": "",
               "type": "text"
             },
             {
               "key": "redeemDeadlineDate",
-              "value": "2026-10-26 12",
+              "value": "",
               "type": "text"
             },
             {
@@ -4328,22 +4328,22 @@
             },
             {
               "key": "platform",
-              "value": "ACEWIN",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isShowEasyGame",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
               "key": "currency",
-              "value": "PHP",
+              "value": "",
               "type": "text"
             },
             {
               "key": "walletCurrency",
-              "value": "PHP",
+              "value": "",
               "type": "text"
             },
             {
@@ -4353,112 +4353,112 @@
             },
             {
               "key": "accessLevel",
-              "value": "public",
+              "value": "",
               "type": "text"
             },
             {
               "key": "updateTime",
-              "value": "2026-10-05 10:19:49.741",
+              "value": "",
               "type": "text"
             },
             {
               "key": "createTime",
-              "value": "2026-10-05 10:19:49.741",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isInstantPay",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isJackpotMode",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
               "key": "grandPrize",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "turnoverPerTicket",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "turnoverPerPoint",
-              "value": "100",
+              "value": "",
               "type": "text"
             },
             {
               "key": "maxTicketPerPlayer",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "issueType",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "presentPrizeNum",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isAllowChallenge",
-              "value": "true",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isForcingChallenge",
-              "value": "true",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isChallengeFailNoBonus",
-              "value": "true",
+              "value": "",
               "type": "text"
             },
             {
               "key": "bonusMultiplier",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "turnoverMultiplier",
-              "value": "1",
+              "value": "",
               "type": "text"
             },
             {
               "key": "minBonusToMultiply",
-              "value": "0",
+              "value": "",
               "type": "text"
             },
             {
               "key": "challengeExpireHours",
-              "value": "24",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isStickerSliding",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isOnlyApp",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
               "key": "requiredGames",
-              "value": "{\"ACEWIN\":[\"\"]}",
+              "value": "",
               "type": "text"
             },
             {
               "key": "challengeGames",
-              "value": "{\"ACEWIN\":[\"1022\",\"1050\",\"1026\"]}",
+              "value": "",
               "type": "text"
             },
             {
@@ -4468,12 +4468,12 @@
             },
             {
               "key": "dailyMissionSetting",
-              "value": "{\"missionSetting\":{\"1\":{\"action\":\"CHECK_IN\",\"atLeast\":\"1\"},\"2\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"499\"},\"3\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"699\"},\"4\":{\"action\":\"TURNOVER_REQUIRE_CHALLENGE\",\"atLeast\":\"999\"}},\"dailySchedule\":[{\"missionDate\":\"2026-10-12\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-13\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-14\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-15\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-16\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-17\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-18\",\"reward\":\"3\",\"missions\":[\"1\",\"2\"]},{\"missionDate\":\"2026-10-19\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-20\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-21\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-22\",\"reward\":\"5\",\"missions\":[\"1\",\"3\"]},{\"missionDate\":\"2026-10-23\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-24\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]},{\"missionDate\":\"2026-10-25\",\"reward\":\"5\",\"missions\":[\"1\",\"4\"]}]}",
+              "value": "",
               "type": "text"
             },
             {
               "key": "prizeDistribution",
-              "value": "{\"prizes\":{}}",
+              "value": "",
               "type": "text"
             },
             {
@@ -4483,12 +4483,12 @@
             },
             {
               "key": "miniGamePrizeDistribution",
-              "value": "{}",
+              "value": "",
               "type": "text"
             },
             {
               "key": "isAllowRankReward",
-              "value": "false",
+              "value": "",
               "type": "text"
             },
             {
@@ -4513,17 +4513,17 @@
             },
             {
               "key": "hintHtml",
-              "value": "<!-- Hint Html -->",
+              "value": "",
               "type": "text"
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-EN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 daily missions, one mission per day.</li>\r\n    <li>Complete the daily mission to receive rewards instantly.</li>\r\n    <li>Only 3 ACEWIN games are included in the daily missions:\r\n        Altar Riches, Masskara Mania Multi Gala, Brawl Rooster. \r\n        (Click \"GO\" to enter the event game list)\r\n    </li>\r\n    <li>The company reserves the right to amend, suspend, or cancel the promotion at any time.</li>\r\n</ul>\r\n</div>",
+              "value": "",
               "type": "text"
             },
             {
               "key": "infoHtml",
-              "value": "<!-- Info Html -->",
+              "value": "",
               "type": "text"
             },
             {

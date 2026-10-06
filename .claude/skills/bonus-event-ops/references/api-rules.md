@@ -290,6 +290,21 @@ The one exception worth raising: if the reward-to-turnover ratio looks wrong for
 
 Two providers in one campaign often share a date range; their ladders may be identical or different, and both are normal. Do not query a match.
 
+## instantPaySetting.ticketExpireDays (3TP 領票期限)
+
+Three-tier treasure pick (`3TP`) carries a top-level `instantPaySetting` key **inside** `prizeDistribution`, alongside `mega` / `mini` / `major`:
+
+```json
+{"mega":{...},"mini":{...},"major":{...},"instantPaySetting":{"ticketExpireDays":7}}
+```
+
+- The brief states it as 「領票期限N days」.
+- **If the brief doesn't mention it, send `7`** — that is the server default and Brian's instruction: 「如果沒帶的話, 預設就是7, 我之後如果給你活動內容, 沒有講7, 你就自己帶7」.
+- Always send the key explicitly rather than relying on the default, so the value is visible in the request.
+- Mirror the number in the player-facing copy ("tickets must be redeemed within N days of issue"); it is a rule players need.
+
+Stored 3TP templates predate this field and do not carry it — their absence is not evidence against it.
+
 ## 寶箱只有兩種:一般寶箱與三級寶箱
 
 Brian: 「就只有三級寶箱 & 一般寶箱」。Everything else is a flag on one of those two, not a separate activity:

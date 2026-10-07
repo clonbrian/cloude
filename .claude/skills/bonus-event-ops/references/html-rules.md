@@ -26,6 +26,34 @@ The clearing times are not arbitrary — each is the server's 12:00 GMT+8 expres
 | MMK | UTC+6:30 | 10:30 AM |
 | BDT | UTC+6 | 10:00 AM |
 
+## HTML fields are capped at 4000 bytes (Oracle VARCHAR2)
+
+Each of `hintHtml`, `footerHtml`, `infoHtml`, `multiplyHtml` is bound to an Oracle `VARCHAR2`, so a field over **4000 bytes of UTF-8** is rejected:
+
+```
+ORA-01461: can bind a LONG value only for insert into a LONG column
+```
+
+The error names no field, so measure all of them when it appears.
+
+**Count bytes, not characters.** Burmese and Bengali are 3 bytes per character, so bilingual copy reaches the cap fast — a 22-day Burmese+English day list came out at 7,537 bytes on the first attempt.
+
+Where the budget goes, and what to cut first:
+
+| Part | Typical cost | Lever |
+|---|---|---|
+| day list, long date form | ~340 bytes × days | **use the short form** `၀၈/၁၀ ၁၂:၀၀ ~ ၀၉/၁၀ ၁၂:၀၀` per row |
+| full date range | ~330 bytes | keep — it appears once |
+| tier summary block | ~720 bytes | drop the localized half of `Max Payout :`, it labels a number |
+| a long bilingual sentence | 400–800 bytes | compress the **localized** half, leave the English canonical text alone |
+| `<span style="color:#FFD700;">` | 31 bytes each | keep; they are the agreed styling |
+
+**The long date form Brian specified is for the overall activity period, which appears once — not for every row of the day list.** Using it per row is what blew the budget; the day list keeps the compact form the other templates already use.
+
+When compressing, cut redundancy in the translated line rather than dropping a rule. Example: the LV1→LV2→LV3 unlock sentence repeated "after reaching the max ticket amount" twice in Burmese; collapsing it to `LV1 ပြည့်မီပါက LV2၊ LV2 ပြည့်မီပါက LV3 ကို လော့ခ်ဖွင့်မည်ဖြစ်သည်။` saved 245 bytes with no loss of meaning.
+
+**Check every HTML field's byte length before shipping any build**, not only bilingual ones.
+
 ## MYR is a Burmese-speaking market — bilingual copy, not Malay
 
 ⚠️ **This reverses an earlier decision.** Brian first confirmed MYR copy should be Malay and one activity shipped that way; he has since corrected it. MYR uses **Burmese and English together**. The ringgit is the currency, but the players are Burmese — the brand list gives it away (`shwe777`, `mykyat`, `Yarzar`). Do not write Malay for MYR.

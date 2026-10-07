@@ -301,7 +301,20 @@ Three-tier treasure pick (`3TP`) carries a top-level `instantPaySetting` key **i
 - The brief states it as 「領票期限N days」.
 - **If the brief doesn't mention it, send `7`** — that is the server default and Brian's instruction: 「如果沒帶的話, 預設就是7, 我之後如果給你活動內容, 沒有講7, 你就自己帶7」.
 - Always send the key explicitly rather than relying on the default, so the value is visible in the request.
-- Mirror the number in the player-facing copy ("tickets must be redeemed within N days of issue"); it is a rule players need.
+- **Mirror it in the copy with the standard sentence below** — Brian wrote this himself after an earlier build stated only the N days and left out the Redeem Day ceiling. Two limits apply at once and players need both.
+
+### Standard ticket-expiry sentence (use verbatim, gold `<strong>`)
+
+| Language | Text |
+|---|---|
+| EN | `Tickets must be redeemed within N days of issue and no later than the Redeem Day, whichever comes first.` |
+| Burmese | `တိကက်များကို ထုတ်ပေးသည့်နေ့မှ ၇ ရက်အတွင်းနှင့် Redeem Day မကျော်မီ ရယူရပါမည်။` (swap `၇` for the actual N in Burmese numerals) |
+
+`Redeem Day` stays in English in the Burmese line — it is the name of a UI element.
+
+Wrap both in `<span style="color:#FFD700;"><strong>…</strong></span>`. Never trim this line when fitting a field under the 4000-byte cap; cut redundancy elsewhere.
+
+Applies to every type that carries `ticketExpireDays`.
 
 Stored 3TP templates predate this field and do not carry it — their absence is not evidence against it.
 

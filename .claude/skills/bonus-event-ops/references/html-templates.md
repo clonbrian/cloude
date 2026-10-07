@@ -65,7 +65,10 @@ For a count above 10, write the Bengali numeral plus `টি` (e.g. 12 → `১�
 - Spelling is `পুরষ্কার` (ষ্ক), `প্রতিদিনের মিশন`, `যোগ দেবে`.
 - Game titles end with a plain period `.`, but line 1 and 2 end with the danda `।`, and **the last line carries no final punctuation at all**. Reproduce this inconsistency exactly.
 
-### Malay (MYR) copy — Claude-translated, not yet human-approved
+### Malay copy — SUPERSEDED, no market uses it
+⚠️ MYR moved to Burmese + English bilingual (see `html-rules.md`). This block is kept only in case a genuinely Malay market appears later. Do not use it for MYR.
+
+#### (archived) Malay terms
 Brian confirmed MYR bodies are Malay and that no reference copy exists, so translate from the English skeleton with gambling terminology. Terms used on the JILI MYR nine-box build — reuse them for consistency:
 
 | English | Malay |

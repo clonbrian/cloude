@@ -26,6 +26,35 @@ The clearing times are not arbitrary — each is the server's 12:00 GMT+8 expres
 | MMK | UTC+6:30 | 10:30 AM |
 | BDT | UTC+6 | 10:00 AM |
 
+## MYR is a Burmese-speaking market — bilingual copy, not Malay
+
+⚠️ **This reverses an earlier decision.** Brian first confirmed MYR copy should be Malay and one activity shipped that way; he has since corrected it. MYR uses **Burmese and English together**. The ringgit is the currency, but the players are Burmese — the brand list gives it away (`shwe777`, `mykyat`, `Yarzar`). Do not write Malay for MYR.
+
+**Format: one Burmese line, then the English line, paired.** Put both inside the same `<li>` separated by `<br>` so they stay together.
+
+```
+၂၀၂၆ ခုနှစ် အောက်တိုဘာလ ၈ ရက်၊ နေ့လယ် ၁၂:၀၀ နာရီ ~ ၂၀၂၆ ခုနှစ် အောက်တိုဘာလ ၃၀ ရက်၊ နေ့လယ် ၁၂:၀၀ နာရီ
+8th Oct. 2026, 12:00 PM ~ 30th Oct, 2026, 12:00 PM
+```
+
+- **Burmese line uses Burmese numerals** (`၂၀၂၆`, `၈`, `၁၂:၀၀`); the English line uses Arabic.
+- Burmese date form: `<year> ခုနှစ် <month>လ <day> ရက်၊ <time of day> <hh:mm> နာရီ`
+- English date form: `8th Oct. 2026, 12:00 PM`
+- Clearing time stays 12:00 PM (MYR is UTC+8) — only the script changes, not the hour.
+
+Burmese numerals: `၀၁၂၃၄၅၆၇၈၉`
+
+| Month | Burmese |
+|---|---|
+| Jan–Jun | ဇန်နဝါရီလ / ဖေဖော်ဝါရီလ / မတ်လ / ဧပြီလ / မေလ / ဇွန်လ |
+| Jul–Dec | ဇူလိုင်လ / ဩဂုတ်လ / စက်တင်ဘာလ / အောက်တိုဘာလ / နိုဝင်ဘာလ / ဒီဇင်ဘာလ |
+
+Times of day: `နံနက်` morning, `နေ့လယ်` midday, `ညနေ` evening, `ည` night.
+
+**The announcement title also gets a Burmese version** for MYR — so the three variants are EN / 簡中 / Burmese, same as MMK.
+
+The Malay glossary in `html-templates.md` is kept for reference only; no market currently uses it.
+
 ### Clearing time is a per-market substitution, not part of the skeleton
 
 When reusing another activity's HTML as a structure, **the clearing time is a value to swap, not text to copy.** A JILI PHP template carries `12:00 PM` because PHP clears at noon; the same structure built for VND must read `11:00 AM` everywhere. This has been got wrong once — a VND 三級寶箱 shipped with 26 instances of `12:00 PM` copied straight from a PHP template.
@@ -110,7 +139,7 @@ Worked examples: `JILI Autumn Bonus Event` → 簡中 `JILI 秋季奖金活动`,
 | VND | Vietnamese (VI) |
 | BDT | Bengali (BN) |
 | CAD (Quebec) | French (FR) |
-| MYR | **Malay (ms)** — confirmed by Brian |
+| MYR | **Burmese + English, bilingual** — see the MYR section below. NOT Malay |
 
 Rewrite the ENTIRE HTML body into the target language. Do not leave the template's original language in place. Currency symbols and HTML tags/attributes/comments stay as-is; only human-readable text is translated.
 

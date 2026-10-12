@@ -207,6 +207,20 @@ An earlier version of this file claimed numbers always stay in Arabic numerals. 
 
 Dates and money amounts stay in Arabic numerals in every type — only counts follow the table above. Native numerals are a **style** choice, not a comprehension one — Bengali and Burmese readers read Arabic numerals fluently, so this never justifies stopping to ask. Match the approved copy for the type when one exists (it keeps new activities consistent with the ones already live), and when none exists pick either and say which you used. When building a type with no approved copy on file, say which convention you used so Brian can correct it.
 
+## RACE_WIN and RANK_RECORD get NO announcement title
+
+Brian: 「racewin 跟 LH 都不用公告標題, 其他活動才需要」. Both go through `insertRankRecordSetting`, and neither is announced — so produce no title set for them at all.
+
+**Never mine `tipText` for an EN title.** Its `<li class="tit">` line (`JILI RACE WINNER`, `BNG Single Win Tournament`) is the heading shown inside the activity page, not an announcement name. Treating it as one produced a three-language set for a RACE_WIN that needed none.
+
+| Type | Announcement title |
+|---|---|
+| RACE_WIN (快贏) | none |
+| RANK_RECORD (龍虎榜 / LH) | none |
+| every `insertBonusEvent` type | yes — three languages |
+
+For the types that do need one, the EN title comes from the brief, normally on its own line near the end alongside `grandPrize` and the date range. If a brief for one of those types has no EN title, ask for it rather than inventing one from the HTML.
+
 ## Deliver announcement titles unprompted (settled)
 
 **Every activity build includes the 3-language announcement titles in the reply — Brian does not have to ask.** He confirmed this: 「公告標題以後直接給吧」.

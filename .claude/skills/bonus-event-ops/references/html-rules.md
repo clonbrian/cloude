@@ -154,6 +154,31 @@ Note the second form: when the amount stands alone as a unit reference rather th
 
 **Unverified:** no stored VND example reaches 1,000, so whether a displayed VND number of 1,000+ takes a thousands separator (`₫ 1,000 K` vs `₫ 1000 K`) is not established. Ask Brian the first time it comes up rather than assuming.
 
+### The third title must actually differ from the EN one
+
+If the market-language version comes out identical to the EN title, the translation was skipped. Month names and season words **do** get translated even though the market reads English fine — otherwise the three-language set is really two.
+
+| EN | TL (Tagalog) |
+|---|---|
+| Hacksaw **October** Bonus | HACKSAW **OKTUBRE** BONUS |
+
+Tagalog months: Enero, Pebrero, Marso, Abril, Mayo, Hunyo, Hulyo, Agosto, Setyembre, Oktubre, Nobyembre, Disyembre.
+
+Words that genuinely stay English in TL and ms: `BONUS`, `EVENT`, the provider name. Everything else gets translated.
+
+### Translate every word of the EN title, including "Event"
+
+An EN title ending in **Event** needs that word carried into the other two versions. Dropping it is a real omission, not a stylistic choice — Brian has corrected it once.
+
+| EN | 簡中 | Burmese |
+|---|---|---|
+| JILI Autumn Bonus **Event** | JILI 秋季奖金**活动** | JILI ဆောင်းဦးရာသီ ဘောနပ်စ်**ပွဲ** |
+| SVCASINO Summer Bonus | SVCASINO 夏季奖金 | SVCASINO နွေရာသီ ဘောနပ်စ် |
+
+`ပွဲ` is the Burmese for event/festival and 活动 the Chinese — append them only when the EN title actually carries "Event". The second row has none, so neither translation adds one.
+
+Burmese season words: `နွေရာသီ` summer, `မိုးရာသီ` rainy, `ဆောင်းဦးရာသီ` autumn (literally early-cold), `ဆောင်းရာသီ` winter.
+
 ### Season words in tropical markets
 Neither the Philippines nor Malaysia has an autumn — both are tropical with wet/dry seasons only. The words exist and are understood (`TAGLAGAS` in Tagalog, `MUSIM LURUH` in Malay; Indonesian uses `musim gugur`), so translate them straight for a title, but mention once that the seasonal association won't land locally. Renaming the activity is Brian's call, not a translation fix.
 

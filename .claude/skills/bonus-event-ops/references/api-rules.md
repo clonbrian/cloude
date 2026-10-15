@@ -286,6 +286,12 @@ None of them is an API field. Compute what you can for a sanity signal, mention 
 
 The one exception worth raising: if the reward-to-turnover ratio looks wrong for the currency. Across markets it sits near 0.5–0.6% (MMK 20,000→100 is 0.50%; PHP 499→3 is 0.60%). An activity an order of magnitude off that is worth one line.
 
+## Don't flag a small expected-value gap
+
+The brief's 每張價值 is Brian's own figure. A difference of well under 1% is noise he does not want raised — 「差2.5沒差吧」 on a stated 450 against a computed 447.5.
+
+Raise it only when the gap is material: roughly **5% or more**, or when it points at a specific wrong input (a probability that doesn't sum to 100, a prize amount that looks like a typo). Otherwise build with the probabilities as given and say nothing.
+
 ## Identical ladders across two providers are fine
 
 Two providers in one campaign often share a date range; their ladders may be identical or different, and both are normal. Do not query a match.

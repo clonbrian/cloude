@@ -54,6 +54,7 @@ Some providers use a short form in the activity ID/display text but a different,
 | MG / MicroGaming | `MG` — Brian writes "MG" in briefs | `MGGAMING` — confirmed in production (1 record) |
 | PLAYSTAR | `PS` — confirmed by Brian | `PLAYSTAR` — confirmed by Brian (absent from the 354-record production sample) |
 | F1 | `F1` | `F1` — confirmed by Brian (absent from the collection and from the production sample) |
+| KingMidas | `KM` | `KINGMIDAS` — confirmed by Brian. Note the ID abbreviation `KM` does **not** shorten the API value; they are unrelated strings |
 | VERTEXPLAY | `VP` — confirmed by Brian | `VERTEXPLAY` — confirmed in production |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.

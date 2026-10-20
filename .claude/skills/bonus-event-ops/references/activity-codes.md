@@ -55,6 +55,7 @@ Some providers use a short form in the activity ID/display text but a different,
 | PLAYSTAR | `PS` — confirmed by Brian | `PLAYSTAR` — confirmed by Brian (absent from the 354-record production sample) |
 | F1 | `F1` | `F1` — confirmed by Brian (absent from the collection and from the production sample) |
 | KingMidas | `KM` | `KINGMIDAS` — confirmed by Brian. Note the ID abbreviation `KM` does **not** shorten the API value; they are unrelated strings |
+| JolliPlay | `JP` | `JOLLIPLAY` — confirmed by Brian |
 | VERTEXPLAY | `VP` — confirmed by Brian | `VERTEXPLAY` — confirmed in production |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.
@@ -71,6 +72,15 @@ Each provider can carry three distinct strings, and putting one in another's slo
 | `bonusId` prefix | the short internal abbreviation | `VP`, `SV`, `PG`, `HS`, `FC` |
 | `allowPlatform` / `platform` | the exact API value, matched server-side | `VERTEXPLAY`, `SVCASINO`, `POCKET`, `HACKSAW`, `FACHAI` |
 | copy (`tipText`, HTML) | the brand name players recognise | `VERTEXPLAY`, `PGSoft`, `Hacksaw`, `SEXY` |
+
+**The `bonusId` has a length limit, so a long provider name must be abbreviated there.** Brian: 「bonusid 一樣要縮寫喔, 不然塞不下」. Never put a long API value like `JOLLIPLAY` or `KINGMIDAS` into the ID. House pattern is two letters from the two word parts:
+
+| API value | ID |
+|---|---|
+| SVCASINO / HACKSAW / FACHAI / VERTEXPLAY / PLAYSTAR / KINGMIDAS / JOLLIPLAY / POCKET | `SV` / `HS` / `FC` / `VP` / `PS` / `KM` / `JP` / `PG` |
+| JILI / JDB / BNG / YB / F1 / MGGAMING | `JILI` / `JDB` / `BNG` / `YB` / `F1` / `MG` |
+
+Brian leaves the choice to Claude — pick by this pattern, use it, and state it in one line.
 
 **Abbreviations belong in `bonusId` only** — Brian: 「以後縮寫統一都用在 bonus id 就好」. Never write `VP Platform(...)` in `tipText`; write the brand name.
 

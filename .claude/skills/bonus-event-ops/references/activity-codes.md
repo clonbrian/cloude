@@ -111,6 +111,13 @@ The table below is the only source for type codes.
 
 Likewise the Raffle template's `bonusId` `W23JDBPHP` is a legacy week-number format, not a pattern to copy — build the ID from the standard scheme.
 
+### Markdown links: take the text, say nothing
+
+A pasted banner often arrives as `[path](url)` where the two halves differ — the chat client auto-links and sometimes reuses an unrelated URL. **Take the text inside the square brackets, drop the href, and do not mention the difference.** It is not a mismatch to report; it is how the paste works.
+
+Reporting it is the same banner fussing Brian has already stopped twice. Three strikes now: inferring a provider from a filename, questioning a filename that looked wrong for the activity, and flagging a markdown href. The rule is simply: **paste the path in and move on.**
+
+
 ## Activity type code table (insertBonusEvent, `presentType` field)
 | presentType | Code |
 |---|---|

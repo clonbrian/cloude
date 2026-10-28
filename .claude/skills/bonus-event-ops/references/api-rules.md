@@ -377,13 +377,13 @@ The HTML always reads "Players can receive unlimited tickets" regardless of the 
 
 ## rankType 3 (週累計贏額) — field conventions
 
-Mirror image of rankType 0. Evidence is 35 stored records from `findAllRankRecordSetting`; **no verified successful insert exists for this type yet** — unlike rankType 0, where Brian's LH4 submission confirms the send format. Treat the empty-vs-`0` encoding below as inferred by symmetry and ask Brian for a HAR after the first weekly submission succeeds.
+Mirror image of rankType 0. **Verified**: the JILI PHLH1 weekly board (`startTime` 2026-11-04, `rankDays` 14, `weeklyRankLimit` 5) submitted successfully with exactly the field values below, so the empty-vs-`0` encoding is now confirmed rather than inferred. The 35 stored records from `findAllRankRecordSetting` remain the source for the majority patterns.
 
 | Field | rankType 3 | rankType 0 | Evidence |
 |---|---|---|---|
 | `weeklyRankLimit` | the ranking count | send empty | 15/35 use 5, 8/35 use 6 |
-| `dailyRankLimit` | send empty (stored as `0`) | the ranking count | 28/35 stored as 0 |
-| `monthlyRankLimit` | send empty (stored as `0`) | send empty | 35/35 stored as 0 |
+| `dailyRankLimit` | **send empty** (stored as `0`) — confirmed by a successful insert | the ranking count | 28/35 stored as 0 |
+| `monthlyRankLimit` | **send empty** (stored as `0`) — confirmed | send empty | 35/35 stored as 0 |
 | `weeklyOrderType` | `1` | `0` | 27/35 vs 131/140 |
 | `isOnlyWeek` | `1` (true) | `0` (false) | 27/35 vs 134/140 |
 | `allowGameType` | `SLOT,ARCADE,FH,RNGTABLE` | `SLOT,ARCADE` | 27/35 vs 121/140 — the two types differ, don't copy across |
@@ -409,6 +409,12 @@ Brian expects `tipText` to be verified against the settings, not just transcribe
 Errors caught by these in practice: a 4-prize board whose copy said `List 5`, prize amounts shifted by one rank, a start date written as August for a September activity, a start date missing its year while the end date had one.
 
 The hidden `<!--將會隱藏 ... 將會隱藏-->` weekly block is boilerplate carried in every brief — it is commented out, so its figures need no check.
+
+### allowGameType wording in a weekly brief
+
+「全總類遊戲, 包含 fish/e-table/slot/arcade」 maps straight to `SLOT,ARCADE,FH,RNGTABLE` — fish is `FH`, e-table is `RNGTABLE`. That is also the majority value for rankType 3 (27/35), so a brief naming all four categories and the stored pattern agree.
+
+A `tipText` platform line with no parenthetical (`JILI Platform`, not `JILI Platform(Any games)`) is consistent with the all-categories scope; check 7 passes.
 
 ### The rule sentence in tipText identifies the type
 Each stored record's own `tipText` `number_2` line states its ranking rule, and the four types separate cleanly with no overlap. This is what the rankType decode was derived from:

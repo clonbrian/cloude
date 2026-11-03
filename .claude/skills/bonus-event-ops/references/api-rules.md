@@ -267,6 +267,35 @@ Dropping a 0% entry never disturbs the probability sum, so re-check that it stil
 
 ⚠️ **Never infer this field from a template whose prize count and game count happen to be equal.** Raffle and Roulette both have 8/8/8 and are useless as evidence on their own. Cross-check against a template where the two differ — Treasure Pick single-tier (9 prizes vs 6 games) is the one that settles it.
 
+## Container reset: restore from Brian's GitHub repo, not from the last output
+
+The skill lives at **https://github.com/clonbrian/cloude** under `.claude/skills/bonus-event-ops/` — public, so it can be cloned read-only at any time. Push requires Brian's credentials, so he runs `update-skill.ps1` himself.
+
+When the container resets and `/mnt/skills/user/` is gone, **clone the repo first** and restore from there:
+
+```bash
+cd /tmp && git clone -q --depth 1 https://github.com/clonbrian/cloude.git gh
+cp -r /tmp/gh/.claude/skills/bonus-event-ops /tmp/pkg/
+```
+
+Restoring from `/mnt/user-data/outputs/bonus-event-ops.skill` instead has already cost one section — the "abbreviation is just naming" block in `activity-codes.md` vanished that way. The repo has version history; the output file is only ever the last snapshot.
+
+**The repo can be behind.** Brian may batch several skill updates before running the script, which is fine — each package is a full snapshot, not a diff, so one run catches up every pending change. After restoring from the repo, diff it against the newest `.skill` in outputs and carry forward anything the repo is missing.
+
+Also use the clone to answer "how far behind am I?" — compare the six files by hash, normalising `\r\n` to `\n` since Brian's `core.autocrlf` stores LF but checks out CRLF.
+
+Note the Postman collection cannot be batched the way the rule files can: every activity overwrites `Latest Activity`, so a skipped import loses that activity's settings.
+
+## A repeated brief: say so, do not rebuild
+
+Brian sometimes re-sends a brief he has already had built, usually because he forgot it was done. **Tell him it is already built and stop** — 「之後如果有重複開到的, 你直接跟我說就好, 不要重新產一次」.
+
+Check by `bonusId`: same provider, currency, type and dates means the same activity. Before building anything, compare the brief against what is currently in the two slots and against what has been built earlier in the conversation.
+
+When the re-send carries something genuinely new — an EN title that was missing, a corrected date, an added game — say which part is new and supply **only that part**. An announcement title alone needs no rebuild at all; it lives outside the API request.
+
+Rebuilding wastes his time twice: he downloads a file he already has, and he has to work out whether anything changed.
+
 ## Two slots: Latest Activity and Latest Activity 2
 
 Brian's workflow, confirmed:

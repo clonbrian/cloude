@@ -207,6 +207,22 @@ An earlier version of this file claimed numbers always stay in Arabic numerals. 
 
 Dates and money amounts stay in Arabic numerals in every type — only counts follow the table above. Native numerals are a **style** choice, not a comprehension one — Bengali and Burmese readers read Arabic numerals fluently, so this never justifies stopping to ask. Match the approved copy for the type when one exists (it keeps new activities consistent with the ones already live), and when none exists pick either and say which you used. When building a type with no approved copy on file, say which convention you used so Brian can correct it.
 
+## Label every announcement title with its language code
+
+Brian: 「以後你給的公告標題要給我語系代碼」. Present the set as a table with the code in its own column, never prose.
+
+| Code | Language | Used for |
+|---|---|---|
+| `en` | English | every activity |
+| `zh-CN` | 简体中文 | every activity |
+| `tl` | Tagalog | PHP |
+| `my` | Burmese | MMK **and MYR** |
+| `vi` | Vietnamese | VND |
+| `bn` | Bengali | BDT |
+| — | — | CAD / USD take no third title, English only |
+
+`my` is Burmese. Do not confuse it with `ms` (Malay) or `mr` (Marathi) — and note that the MYR market takes `my`, because its players are Burmese even though the currency is the ringgit.
+
 ## RACE_WIN and RANK_RECORD get NO announcement title
 
 Brian: 「racewin 跟 LH 都不用公告標題, 其他活動才需要」. Both go through `insertRankRecordSetting`, and neither is announced — so produce no title set for them at all.

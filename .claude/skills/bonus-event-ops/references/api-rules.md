@@ -286,6 +286,36 @@ Also use the clone to answer "how far behind am I?" — compare the six files by
 
 Note the Postman collection cannot be batched the way the rule files can: every activity overwrites `Latest Activity`, so a skipped import loses that activity's settings.
 
+## SIGNUP: bannerStartTime is startDate minus 2 days
+
+Every other type sets `bannerStartTime` equal to `startDate`. **SIGNUP is the exception** — Brian: 「signup 的活動, 設定的 Banner Start Time 需要在 start time 的前兩天」. The banner goes up two days early so the offer is visible before registration opens.
+
+```
+bannerStartTime = startDate - 2 days
+```
+
+Example: `startDate` `2026-11-11 12` → `bannerStartTime` `2026-11-09 12`. The time stays 12:00; only the date shifts.
+
+This does not change `drawFinishDate`, which stays at `startDate - 1 day` for SIGNUP as for everything else — so the two fields are two days and one day before the start respectively, and they are not the same value.
+
+## REBATE: recompute the copy's worked example
+
+`prizeDistribution` is `{"minRebateTurnover": N, "prizes": {}, "rebateRatio": R}` where R is a decimal (0.3% is `0.003`). `presentPrizeNum` is `0` — rebate has no prize list.
+
+**Always check the example sentence against the ratio**: `example_bet × rebateRatio` must equal the peso figure the copy states. This has been wrong once.
+
+| Activity | Ratio | Threshold | Example bet | Copy says | Check |
+|---|---|---|---|---|---|
+| Hacksaw Sept | 1% | 100 | 100 | 1 peso | ✓ 100 × 0.01 = 1 |
+| F1 Nov, as briefed | 0.3% | 100 | 100 | 3 peso | ✗ gives 0.30 |
+| F1 Nov, corrected | 0.3% | 100 | **1000** | 3 peso | ✓ 1000 × 0.003 = 3 |
+
+The September copy was right only because 1% of 100 happens to be 1, so the threshold and the example could share a number. Lowering the ratio breaks that coincidence — the stated payout follows the **digits of the percentage** in the brief ("0.3%" → "3 peso"), which is the mistake to look for.
+
+Fix by raising the example bet until the payout is the round number the copy wants; leave `minRebateTurnover` at the briefed threshold. Also confirm the "no rebate" day in the example sits below the threshold.
+
+`infoHtml` repeats the threshold (`Start to rebate R% after total bet>=₱N.`) — keep all three in step: `hintHtml`, `infoHtml`, and the field.
+
 ## A repeated brief: say so, do not rebuild
 
 Brian sometimes re-sends a brief he has already had built, usually because he forgot it was done. **Tell him it is already built and stop** — 「之後如果有重複開到的, 你直接跟我說就好, 不要重新產一次」.

@@ -4137,7 +4137,7 @@
             },
             {
               "key": "challengeGames",
-              "value": "{\"ICF\":[\"ICF\"]}",
+              "value": "{\"ICF\":[\"1\"]}",
               "type": "text"
             },
             {
@@ -4197,7 +4197,7 @@
             },
             {
               "key": "footerHtml",
-              "value": "<!-- Footer Html with challenge-VN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 nhiệm vụ hàng ngày, mỗi ngày một nhiệm vụ.</li>\r\n    <li>Hoàn thành nhiệm vụ hàng ngày để nhận thưởng ngay lập tức.</li>\r\n    <li>Chỉ 1 trò chơi ICF được bao gồm trong nhiệm vụ hàng ngày: ICF. \r\n        (Nhấp vào \"GO\" để vào danh sách trò chơi sự kiện)\r\n    </li>\r\n    <li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ chương trình khuyến mãi bất cứ lúc nào.</li>\r\n</ul>\r\n</div>",
+              "value": "<!-- Footer Html with challenge-VN-->\r\n<div class=\"ticket-box\">\r\n<ul class=\"list-dot\">\r\n    <li>14 nhiệm vụ hàng ngày, mỗi ngày một nhiệm vụ.</li>\r\n    <li>Hoàn thành nhiệm vụ hàng ngày để nhận thưởng ngay lập tức.</li>\r\n    <li>Chỉ trò chơi ICF được bao gồm trong nhiệm vụ hàng ngày.\r\n        (Nhấp vào \"GO\" để vào danh sách trò chơi sự kiện)\r\n    </li>\r\n    <li>Công ty có quyền sửa đổi, tạm ngừng hoặc hủy bỏ chương trình khuyến mãi bất cứ lúc nào.</li>\r\n</ul>\r\n</div>",
               "type": "text"
             },
             {

@@ -56,7 +56,7 @@ Some providers use a short form in the activity ID/display text but a different,
 | F1 | `F1` | `F1` — confirmed by Brian (absent from the collection and from the production sample) |
 | KingMidas | `KM` | `KINGMIDAS` — confirmed by Brian. Note the ID abbreviation `KM` does **not** shorten the API value; they are unrelated strings |
 | JolliPlay | `JP` | `JOLLIPLAY` — confirmed by Brian |
-| ICF | `ICF` | `ICF` — confirmed by Brian. In-house platform; also the schema name in his SQL (`icf.bonus_ticket`). **Its game ID is also the literal string `ICF`**, so `challengeGames` reads `{"ICF":["ICF"]}` — 「遊戲清單就 ICF 就好」 names the game, it does not mean the whole platform |
+| ICF | `ICF` | `ICF` — confirmed by Brian. In-house platform; also the schema name in his SQL (`icf.bonus_ticket`). its game ID is `1`, so `challengeGames` reads `{"ICF":["1"]}`. When Brian says 「遊戲清單就 ICF 就好」 he is naming the game, not asking for the whole platform — ask for the ID rather than filling `[""]` |
 | VERTEXPLAY | `VP` — confirmed by Brian | `VERTEXPLAY` — confirmed in production |
 
 Values above marked "confirmed in production" were verified against stored `allowPlatform` values in a `findAllRankRecordSetting` response. If a new provider is encountered with a possible mismatch, ask the user to confirm rather than assuming the ID abbreviation equals the API value — and if a query-response HAR is available, read the real value out of it instead of asking.

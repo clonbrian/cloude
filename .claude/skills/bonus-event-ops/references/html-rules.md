@@ -207,6 +207,19 @@ An earlier version of this file claimed numbers always stay in Arabic numerals. 
 
 Dates and money amounts stay in Arabic numerals in every type — only counts follow the table above. Native numerals are a **style** choice, not a comprehension one — Bengali and Burmese readers read Arabic numerals fluently, so this never justifies stopping to ask. Match the approved copy for the type when one exists (it keeps new activities consistent with the ones already live), and when none exists pick either and say which you used. When building a type with no approved copy on file, say which convention you used so Brian can correct it.
 
+## ICF: one fixed game, so drop the count and the name list
+
+ICF always runs on a single game whose ID is `1` — Brian: 「ICF的遊戲固定為"1" 不會有其他的」 — and that game's display name is also `ICF`.
+
+The usual sentence ("Only N <provider> games are included in the daily missions: <names>") doubles the word up: *Only 1 ICF game ... : ICF*. For ICF, drop both the count and the list:
+
+| Language | Line |
+|---|---|
+| EN | `Only the ICF game is included in the daily missions.` |
+| VI | `Chỉ trò chơi ICF được bao gồm trong nhiệm vụ hàng ngày.` |
+
+The `("GO")` pointer stays. `challengeGames` is always `{"ICF":["1"]}`, so never ask for an ICF game list again.
+
 ## Label every announcement title with its language code
 
 Brian: 「以後你給的公告標題要給我語系代碼」. Present the set as a table with the code in its own column, never prose.

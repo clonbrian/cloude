@@ -286,6 +286,27 @@ Also use the clone to answer "how far behind am I?" — compare the six files by
 
 Note the Postman collection cannot be batched the way the rule files can: every activity overwrites `Latest Activity`, so a skipped import loses that activity's settings.
 
+## COMMIT_MSG.txt accumulates until Brian pushes
+
+Brian batches skill updates, so a package may sit undownloaded for several rounds. **Do not overwrite `COMMIT_MSG.txt` — append to it**, or the earlier rounds' descriptions are lost and the eventual commit message describes only the last change. This happened once: the REBATE rule shipped under a commit titled only "SIGNUP 的 bannerStartTime 要提前兩天".
+
+Decide which to do by checking whether the repo has caught up:
+
+```bash
+cd /tmp && git clone -q --depth 1 https://github.com/clonbrian/cloude.git chk
+# compare the six files (normalise \r\n to \n) against the .skill in outputs
+```
+
+- **Repo matches the last package** → he pushed; the old message is spent. Write a fresh `COMMIT_MSG.txt`.
+- **Repo is behind** → the old message is still pending. Read it out of the existing zip and add the new round's lines to it.
+
+```python
+import zipfile
+prev = zipfile.ZipFile('/mnt/user-data/outputs/bonus-event-ops.zip').read('COMMIT_MSG.txt').decode()
+```
+
+Keep the subject line a summary of everything pending, not just the newest item, and list each round's changes under its own file heading. The collection line always reflects the current `Latest Activity`, replacing any earlier collection line.
+
 ## SIGNUP: bannerStartTime is startDate minus 2 days
 
 Every other type sets `bannerStartTime` equal to `startDate`. **SIGNUP is the exception** — Brian: 「signup 的活動, 設定的 Banner Start Time 需要在 start time 的前兩天」. The banner goes up two days early so the offer is visible before registration opens.

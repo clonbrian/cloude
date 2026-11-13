@@ -307,6 +307,36 @@ prev = zipfile.ZipFile('/mnt/user-data/outputs/bonus-event-ops.zip').read('COMMI
 
 Keep the subject line a summary of everything pending, not just the newest item, and list each round's changes under its own file heading. The collection line always reflects the current `Latest Activity`, replacing any earlier collection line.
 
+## Prize amounts are JSON keys — a repeated amount silently loses its probability
+
+In `prizeDistribution`, the amount is the **key** and the probability the value:
+
+```json
+"probability": {"2":20, "5":20, "8":20, "12":10}
+```
+
+So a brief listing the same amount twice — `金額：20 8%` on two lines — cannot be sent as written. JSON keeps only the last occurrence; the two are **not** added together:
+
+```
+written  {"2":40,"4":18,"7":18,"20":8,"20":8,"30":6,"50":2,"500":0}
+parsed   {"2":40,"4":18,"7":18,"20":8,        "30":6,"50":2,"500":0}
+```
+
+The damage is not just a missing prize slot:
+
+| | Intended | Actually sent |
+|---|---|---|
+| probability total | 100% | **92%** |
+| expected value | 8.78 | 7.18 |
+
+A total under 100 may be rejected outright, and if it isn't, payouts run below plan.
+
+**When a brief repeats an amount, stop and ask.** Two fixes, and they are not equivalent:
+- **merge** into one entry at the combined probability — same expected value, but one fewer prize slot on the board
+- **correct one of them** to the amount that was meant — keeps the slot count and the probabilities as written
+
+The JDB VND case was the second: `7 / 20 / 20 / 30` was meant to be `7 / 10 / 20 / 30`, which brought the expected value from 8.78 to 7.98. Never pick for him — the two outcomes differ.
+
 ## SIGNUP: bannerStartTime is startDate minus 2 days
 
 Every other type sets `bannerStartTime` equal to `startDate`. **SIGNUP is the exception** — Brian: 「signup 的活動, 設定的 Banner Start Time 需要在 start time 的前兩天」. The banner goes up two days early so the offer is visible before registration opens.

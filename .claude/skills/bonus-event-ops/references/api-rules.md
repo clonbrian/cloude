@@ -307,6 +307,19 @@ prev = zipfile.ZipFile('/mnt/user-data/outputs/bonus-event-ops.zip').read('COMMI
 
 Keep the subject line a summary of everything pending, not just the newest item, and list each round's changes under its own file heading. The collection line always reflects the current `Latest Activity`, replacing any earlier collection line.
 
+## registerCutoffTime — send it only when the brief excludes late registrations
+
+A field in the `insertBonusEvent` form, sitting between `redeemDeadlineDate` and `activeHours`.
+
+**Default: leave it empty.** Fill it only when the brief explicitly says players who registered after a given date cannot join — Brian: 「假設活動我有特別說幾月幾號以後註冊的玩家不能參加, 就需要填入這個參數, 不然就一律不帶值」.
+
+| Brief says | `registerCutoffTime` |
+|---|---|
+| nothing about registration dates | empty |
+| 「X月X日之後註冊的玩家不能參加」 | that date, `YYYY-MM-DD HH` at 12 like every other date field |
+
+Do not infer a cutoff from the start date or from anything else — an absent cutoff means everyone can join, including players who register during the event.
+
 ## Prize amounts are JSON keys — a repeated amount silently loses its probability
 
 In `prizeDistribution`, the amount is the **key** and the probability the value:
